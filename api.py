@@ -1,55 +1,32 @@
 #!flask3/bin/python
 
-from flask import Flask, Response, make_response, jsonify, abort
-from models import *
+from flask import Flask, Response, make_response, abort, jsonify
+from models import app, Celebrity, Attorney, Crime, Charge
 import json
 
+def make_get_table(path, table): 
+  def get_table(): 
+    json_list = [a.to_json() for a in table.query.all()]
+    return Response(json.dumps(json_list),  mimetype='application/json') 
+  app.add_url_rule('/' + path, path + '_many' , get_table, methods=['GET'])
 
-# json helpers
-def jsonify_table(table):
-  json_list = [a.to_json() for a in table.query.all()]
-  return Response(json.dumps(json_list),  mimetype='application/json') # cause jsonify doesn't like arrays
+def make_get_element(path, table): 
+  def get_element(elmt_id):
+    match = table.query.filter(table.id == elmt_id).first()
+    if match:
+      return jsonify(match.to_json())
+    abort(404)
+  app.add_url_rule('/' + path + '/<int:elmt_id>', path + '_one', get_element, methods=['GET'])
 
-def jsonify_id_in_table(ID, table):
-  match = table.query.filter(table.id == ID).first()
-  if match:
-    return jsonify(match.to_json())
-  abort(404)
+make_get_table('celebrities', Celebrity)
+make_get_table('attorneys', Attorney)
+make_get_table('charges', Charge)
+make_get_table('crimes', Crime)
 
-
-##### API functions #######
-@app.route('/celebrities', methods=['GET'])
-def get_celebrities():
-  return jsonify_table(Celebrity)
-
-@app.route('/celebrities/<int:celeb_id>', methods=['GET'])
-def get_celebrity(celeb_id):
-  return jsonify_id_in_table(celeb_id, Celebrity)
-
-@app.route('/attorneys', methods=['GET'])
-def get_attorneys():
-  return jsonify_table(Attorney)
-  
-@app.route('/attorneys/<int:attorney_id>', methods=['GET'])
-def get_attorney(attorney_id):
-  return jsonify_id_in_table(attorney_id, Attorney)
-
-@app.route('/crimes', methods=['GET'])
-def get_crimes():
-  return jsonify_table(Crime)
-
-@app.route('/crimes/<int:crime_id>', methods=['GET'])
-def get_crime(crime_id):
-  return jsonify_id_in_table(crime_id, Crime)
-
-
-@app.route('/charges', methods=['GET'])
-def get_charges():
-  return jsonify_table(Charge)
-
-@app.route('/charges/<int:charge_id>', methods=['GET'])
-def get_charge(charge_id):
-  return jsonify_id_in_table(charge_id, Charge)
+make_get_element('celebrity', Celebrity)
+make_get_element('attorney', Attorney)
+make_get_element('charge', Charge)
+make_get_element('crime', Crime)
 
 @app.errorhandler(404)
 def not_found(error):
@@ -59,5 +36,4 @@ def not_found(error):
 if __name__ == '__main__':
     app.run(debug=True)
   
-
 
