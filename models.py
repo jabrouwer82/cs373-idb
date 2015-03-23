@@ -1,10 +1,8 @@
-#!flask3/bin/python
-
 from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
 from json import JSONEncoder 
+from app import app
 
-app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2:///celebsdb'
 db = SQLAlchemy(app)
 

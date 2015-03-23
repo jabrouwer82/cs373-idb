@@ -1,6 +1,5 @@
-#!flask3/bin/python
 
-from models import *
+from models import Celebrity, Attorney, Crime, Charge, db
 from datetime import date
 
 # remove all existing tables

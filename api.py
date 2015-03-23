@@ -1,7 +1,6 @@
-#!flask3/bin/python
-
 from flask import Flask, Response, make_response, abort, jsonify
-from models import app, Celebrity, Attorney, Crime, Charge
+from models import Celebrity, Attorney, Crime, Charge
+from app import app
 import json
 
 def make_get_table(path, table): 
@@ -33,7 +32,4 @@ def not_found(error):
     return make_response(jsonify({'error': 'Not found'}), 404)
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
-  
 
