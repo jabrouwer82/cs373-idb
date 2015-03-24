@@ -1,6 +1,6 @@
-from flask import Flask, Response, make_response, abort, jsonify, request, url_for
-from models import Celebrity, Crime, Charge
 from app import app
+from flask import Flask, Response, make_response, abort, jsonify, request, url_for
+from models import Celebrity, CelebrityAlias, Crime, CrimeDescription, Charge
 import json
 
 class JsonBuild:
@@ -22,20 +22,29 @@ class JsonBuild:
 
 # TODO(jabrouwer82): Fix these to match the new models
 def celebrity_to_json(r):
-  return JsonBuild(r).add_scalars('id', 'name', 'description') \
-                    .add_items(crime_abbrev, 'crimes') \
-                    .add_items(charge_abbrev, 'charges').json_map
+  return JsonBuild(r).add_scalars('id', 'name', 'description', 'wiki_url',
+                                  'imdb_url', 'picture_url') \
+                     .add('birthday',
+                          r.birthday.strftime('%m-%d-%Y') if r.birthday else None) \
+                     .add_items(crime_abbrev, 'crimes') \
+                     .add_items(charge_abbrev, 'charges') \
+                     .add_items(alias_abbrev, 'aliases') \
+                     .json_map
                 
 def crime_to_json(r):
-  return JsonBuild(r).add_scalars('id', 'name') \
-                    .add_items(celebrity_abbrev, 'celebrities') \
-                    .add_items(charge_abbrev, 'charges').json_map
+  return JsonBuild(r).add_scalars('id', 'name', 'wiki_url') \
+                     .add_items(celebrity_abbrev, 'celebrities') \
+                     .add_items(charge_abbrev, 'charges') \
+                     .add_items(crime_description_abbrev, 'descriptions') \
+                     .json_map
 
 def charge_to_json(r):
-  return JsonBuild(r).add_scalars('location') \
-                    .add('date', r.date.strftime("%m-%d-%Y")) \
-                    .add('crime', crime_abbrev(r.crime)) \
-                    .add('celebrity', celebrity_abbrev(r.celebrity)).json_map
+  return JsonBuild(r).add_scalars('location', 'description',
+                                  'attorney', 'classification') \
+                     .add('date', r.date.strftime('%m-%d-%Y')) \
+                     .add('crime', crime_abbrev(r.crime)) \
+                     .add('celebrity', celebrity_abbrev(r.celebrity)) \
+                     .json_map
 
          
 
@@ -51,13 +60,19 @@ def url_for_call(func, ID):
 
 # Functions to abbreviate a row in each table
 def crime_abbrev(r):
-  return {'id':r.id, 'uri':url_for_call('get_crime', r.id), 'name':r.name}
+  return {'id': r.id, 'uri': url_for_call('get_crime', r.id), 'name': r.name}
 
-def celebrity_abbrev(r):
-  return {'id':r.id, 'uri':url_for_call('get_celebrity', r.id), 'name':r.name}
+def celebrity_abbrev(r): 
+  return {'id': r.id, 'uri': url_for_call('get_celebrity', r.id), 'name': r.name}
 
-def charge_abbrev(r):
-  return {'id':r.id, 'uri':url_for_call('get_charge', r.id)}
+def charge_abbrev(r): 
+  return {'id': r.id, 'uri': url_for_call('get_charge', r.id)}
+
+def alias_abbrev(r): 
+  return {'id': r.id, 'alias': r.alias}
+
+def crime_description_abbrev(r):
+  return {'id': r.id, 'location': r.location, 'description': r.description}
 
 
 
