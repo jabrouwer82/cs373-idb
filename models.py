@@ -25,7 +25,7 @@ class Celebrity(db.Model):
 class Attorney(db.Model):
   id = db.Column(db.Integer, primary_key=True)
   name = db.Column(db.String(80), unique=True)
-  firm = db.Column(db.String(80), unique=True)
+  firm = db.Column(db.String(80))
 
   celebrities = db.relationship("Celebrity", secondary='charge')
   crimes = db.relationship("Crime", secondary='charge')
@@ -57,7 +57,7 @@ class Charge(db.Model):
 
   id = db.Column(db.Integer, primary_key=True)
   date = db.Column(db.DateTime)
-  location = db.Column(db.String(80), unique=True)
+  location = db.Column(db.String(80))
 
   celebrity_id = db.Column(db.Integer, db.ForeignKey('celebrity.id'))
   attorney_id = db.Column(db.Integer, db.ForeignKey('attorney.id'))
