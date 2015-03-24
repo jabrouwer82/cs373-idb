@@ -89,29 +89,29 @@ def get_element(table, elmt_id, item_func):
   
 
 ## Get abbreviations for tables
-@app.route('/celebrity')
+@app.route('/api/celebrity')
 def get_celebrities():
   return table_abbrev_json(Celebrity, celebrity_abbrev)
 
-@app.route('/crime')
+@app.route('/api/crime')
 def get_crimes():
   return table_abbrev_json(Crime, crime_abbrev)
 
-@app.route('/charge')
+@app.route('/api/charge')
 def get_charges():
   return table_abbrev_json(Charge, charge_abbrev)
 
 
 ## Get specific elements in tables
-@app.route('/celebrity/<int:elmt_id>')
+@app.route('/api/celebrity/<int:elmt_id>')
 def get_celebrity(elmt_id):
   return get_element(Celebrity, elmt_id, celebrity_to_json)
 
-@app.route('/crime/<int:elmt_id>')
+@app.route('/api/crime/<int:elmt_id>')
 def get_crime(elmt_id):
   return get_element(Crime, elmt_id, crime_to_json)
 
-@app.route('/charge/<int:elmt_id>')
+@app.route('/api/charge/<int:elmt_id>')
 def get_charge(elmt_id):
   return get_element(Charge, elmt_id, charge_to_json)
 
