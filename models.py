@@ -118,6 +118,8 @@ class Charge(db.Model):
     self.location = location
     self.celebrity = celebrity
     self.crime = crime
+    self.description = description
+    self.classification = classification
 
   def __repr__(self):
     return '(Charge {num}: {celebrity}, {crime})'.format(
