@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+	<div class="page-header">
+		<h1>Crimes</h1>
+	</div>
+        <ul class="list-group">           
+            {% for crime in crimes %}
+            <li class="list-group-item" style="text-overflow:ellipsis;">{{ crime.name }} - description </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
