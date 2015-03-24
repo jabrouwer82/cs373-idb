@@ -1,0 +1,11 @@
+
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <ul class="list-unstyled">           
+            {% for celebrity in celebrities %}
+            <li>{{ celebrity.name }} </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
