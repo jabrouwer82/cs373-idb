@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+	<div class="page-header">
+		<h1>Charges</h1>
+	</div>
+        <ul class="list-group">           
+            {% for charge in charges %}
+            <li class="list-group-item" style="text-overflow:ellipsis;">
+		<dl>
+			<dt> {{ charge.crime }} </dt>
+			<dd> {{ charge.celebrity }} - {{ charge.location }} ({{ charge.date }}) </dd>
+		</dl>
+	    </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
