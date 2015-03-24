@@ -7,73 +7,119 @@ db = SQLAlchemy(app)
 
 class Celebrity(db.Model):
   id = db.Column(db.Integer, primary_key=True)
-  name = db.Column(db.String(80), unique=True)
+  name = db.Column(db.String(4000))
   description = db.Column(db.Text)
+  twitter_handle = db.Column(db.String(4000))
+  birthday = db.Column(db.DateTime)
+  wiki_url = db.Column(db.String(4000))
+  imdb_url = db.Column(db.String(4000))
+  picture_url = db.Column(db.String(4000))
 
-  attorneys = db.relationship("Attorney", secondary='charge')
-  crimes = db.relationship("Crime", secondary='charge')
-  charges = db.relationship("Charge")
+  aliases = db.relationship('CelebrityAlias')
+  crimes = db.relationship('Crime', secondary='charge')
+  charges = db.relationship('Charge')
 
-  def __init__(self, name, description = None):
+  def __init__(self,
+               name,
+               description=None,
+               twitter_handle=None,
+               birthday=None,
+               wiki_url=None,
+               imdb_url=None,
+               picture_url=None):
     self.name = name
     self.description = description
+    self.twitter_handle=twitter_handle
+    self.birthday = birthday
+    self.wiki_url = wiki_url
+    self.imdb_url = imdb_url
+    self.picture_url = picture_url
 
   def __repr__(self):
-    return '(Celebrity %r)' % self.name
+    return '(Celebrity {num}: {name})'.format(name=self.name, num=self.id)
 
-
-class Attorney(db.Model):
+class CelebrityAlias(db.Model):
   id = db.Column(db.Integer, primary_key=True)
-  name = db.Column(db.String(80), unique=True)
-  firm = db.Column(db.String(80))
-
-  celebrities = db.relationship("Celebrity", secondary='charge')
-  crimes = db.relationship("Crime", secondary='charge')
-  charges = db.relationship("Charge")
-
-  def __init__(self, name, firm = None):
-    self.name = name
-    self.firm = firm
+  alias = db.Column(db.String(4000))
+  
+  celebrity_id = db.Column(db.Integer, db.ForeignKey('celebrity.id'))
+  
+  celebrity = db.relationship('Celebrity')
+  
+  def __init__(self, alias, celebrity):
+    self.alias = alias
+    self.celebrity = celebrity
 
   def __repr__(self):
-    return '(Attorney %r)' % self.name
-      
+    return '(Celebrity Alias {num}: {celebrity}/{alias})'.format(
+        alias=self.alias, celebrity=self.celebrity, num=self.id)
+
 class Crime(db.Model):
   id = db.Column(db.Integer, primary_key=True)
-  name = db.Column(db.String(80), unique=True)
-  celebrities = db.relationship("Celebrity", secondary='charge')
-  attorneys = db.relationship("Attorney", secondary='charge')
-  charges = db.relationship("Charge")
+  name = db.Column(db.String(4000))
+  wiki_url = db.Column(db.String(4000))
 
-  def __init__(self, name):
+  descriptions = db.relationship('CrimeDescription')
+  celebrities = db.relationship('Celebrity', secondary='charge')
+  charges = db.relationship('Charge')
+
+  def __init__(self, name, wiki_url=None):
     self.name = name 
+    self.wiki_url = wiki_url
 
   def __repr__(self):
-    return '(Crime %r)' % self.name
+    return '(Crime {num}: {name})'.format(name=self.name, num=self.id)
 
-
-# make this association table
-class Charge(db.Model):
-
+class CrimeDescription(db.Model):
   id = db.Column(db.Integer, primary_key=True)
-  date = db.Column(db.DateTime)
-  location = db.Column(db.String(80))
-
-  celebrity_id = db.Column(db.Integer, db.ForeignKey('celebrity.id'))
-  attorney_id = db.Column(db.Integer, db.ForeignKey('attorney.id'))
+  location = db.Column(db.String(4000))
+  description = db.Column(db.Text)
+  
   crime_id = db.Column(db.Integer, db.ForeignKey('crime.id'))
   
   crime = db.relationship('Crime')
-  attorney = db.relationship('Attorney')
+  
+  def __init__(self, description, crime, location=None):
+    self.location = location
+    self.description = description
+    self.crime = crime
+
+  def __repr__(self):
+    return '(Crime Description {num}: {crime})'.format(
+        num=self.id, crime=self.crime)
+
+# Association table
+class Charge(db.Model):
+  id = db.Column(db.Integer, primary_key=True)
+  date = db.Column(db.DateTime)
+  location = db.Column(db.String(4000))
+  description = db.Column(db.Text)
+  attorney = db.Column(db.String(4000))
+  classification = db.Column(db.String(4000))
+
+  celebrity_id = db.Column(db.Integer, db.ForeignKey('celebrity.id'))
+  crime_id = db.Column(db.Integer, db.ForeignKey('crime.id'))
+  
+  crime = db.relationship('Crime')
   celebrity = db.relationship('Celebrity')
 
-  def __init__(self, celebrity, crime, attorney, date , location):
+  def __init__(self,
+               celebrity,
+               crime,
+               date=None,
+               location=None,
+               description=None,
+               attorney=None,
+               classification=None):
     self.celebrity = celebrity
     self.crime = crime
     self.attorney = attorney
     self.date = date
     self.location = location
-
+    self.celebrity = celebrity
+    self.crme = crime
 
   def __repr__(self):
-    return '(Charge %r %r %r)' % (self.crime, self.celebrity, self.attorney)
+    return '(Charge {num}: {celebrity}, {crime})'.format(
+        self.id, self.crime, self.celebrity)
+

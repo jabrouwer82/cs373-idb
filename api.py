@@ -1,5 +1,5 @@
 from flask import Flask, Response, make_response, abort, jsonify, request, url_for
-from models import Celebrity, Attorney, Crime, Charge
+from models import Celebrity, Crime, Charge
 from app import app
 import json
 
@@ -20,29 +20,20 @@ class JsonBuild:
     self.json_map[k] = [abbrev_func(a) for a in getattr(self.obj, k)]
     return self
 
-
+# TODO(jabrouwer82): Fix these to match the new models
 def celebrity_to_json(r):
   return JsonBuild(r).add_scalars('id', 'name', 'description') \
-                    .add_items(attorney_abbrev, 'attorneys') \
                     .add_items(crime_abbrev, 'crimes') \
                     .add_items(charge_abbrev, 'charges').json_map
                 
-def attorney_to_json(r):
-  return JsonBuild(r).add_scalars('id', 'name', 'firm') \
-                    .add_items(celebrity_abbrev, 'celebrities') \
-                    .add_items(crime_abbrev, 'crimes') \
-                    .add_items(charge_abbrev, 'charges').json_map
-
 def crime_to_json(r):
   return JsonBuild(r).add_scalars('id', 'name') \
                     .add_items(celebrity_abbrev, 'celebrities') \
-                    .add_items(attorney_abbrev, 'attorneys') \
                     .add_items(charge_abbrev, 'charges').json_map
 
 def charge_to_json(r):
   return JsonBuild(r).add_scalars('location') \
                     .add('date', r.date.strftime("%m-%d-%Y")) \
-                    .add('attorney', attorney_abbrev(r.attorney)) \
                     .add('crime', crime_abbrev(r.crime)) \
                     .add('celebrity', celebrity_abbrev(r.celebrity)).json_map
 
@@ -64,9 +55,6 @@ def crime_abbrev(r):
 
 def celebrity_abbrev(r):
   return {'id':r.id, 'uri':url_for_call('get_celebrity', r.id), 'name':r.name}
-
-def attorney_abbrev(r):
-  return {'id':r.id, 'uri':url_for_call('get_attorney', r.id), 'name':r.name}
 
 def charge_abbrev(r):
   return {'id':r.id, 'uri':url_for_call('get_charge', r.id)}
@@ -94,10 +82,6 @@ def get_celebrities():
 def get_crimes():
   return table_abbrev_json(Crime, crime_abbrev)
 
-@app.route('/attorney')
-def get_attorneys():
-  return table_abbrev_json(Attorney, attorney_abbrev)
-
 @app.route('/charge')
 def get_charges():
   return table_abbrev_json(Charge, charge_abbrev)
@@ -111,10 +95,6 @@ def get_celebrity(elmt_id):
 @app.route('/crime/<int:elmt_id>')
 def get_crime(elmt_id):
   return get_element(Crime, elmt_id, crime_to_json)
-
-@app.route('/attorney/<int:elmt_id>')
-def get_attorney(elmt_id):
-  return get_element(Attorney, elmt_id, attorney_to_json)
 
 @app.route('/charge/<int:elmt_id>')
 def get_charge(elmt_id):
