@@ -1,6 +1,5 @@
-
-from models import Celebrity, Attorney, Crime, Charge, db
 from datetime import date
+from models import Celebrity, Attorney, Crime, Charge, db
 
 # remove all existing tables
 db.drop_all()
