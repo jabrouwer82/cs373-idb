@@ -200,4 +200,18 @@ http://www.imdb.com/name/nm0000123/
 5-6-1961
 3-16-2012 Clooney was arrested Friday for civil disobedience after taking part in a protest outside of the Sudanese embassy in Washington, D.C.
 
+Reese Witherspoon
+4-19-2013 he and husband Jim Toth had been arrested in a DUI incident
+
+Paul Reubens (Pee Wee Herman)
+7-12-1991 Indecent exposure, masturbating in an adult theater. Nearly two decades later, Reubens claimed he was innocent in a Playboy interview: "I'm right-handed, and the police report said I was jerking off with my left hand. That would have been the end of the case right there, proof it couldn't have been me."
+
+Fred Willard
+7-18-2012 Lewd conduct, the then-72-year-old actor was handcuffed after he was caught with his pants down at a Hollywood porn theater. "It was embarrassing. Embrassing as hell," the "American Pie" actor told Jimmy Kimmel. "It's the last time I'm going to listen to my wife when she says, 'Why don't you go out to see a movie?'"
+
+Winona Ryder
+12-12-2001 Ryder was caught shoplifting almost $5,000 worth of merchandise from a Saks Fifth Avenue in Beverly Hills. Ryder remains notoriously tight-lipped about the incident, but did tell Vogue in 2007 that she didn't feel all that bad about it. "I didn't have this tremendous sense of guilt, because I hadn't hurt anyone," she said 
+
+Ozzy Osbourne
+2-19-1982  Public urination, intoxication Osbourne was arrested for urinating on a statue honoring the Alamo defenders in San Antonio, Texas. To make things weirder, he was wearing his wife’s dress at the time of his arrest. The arrest got him banned from the city for 10 years, and he was eventually pardoned after making a $10,000 donation to the organization that maintains the Alamo.
 '''
