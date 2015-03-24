@@ -2,6 +2,9 @@
 # Example: python3 run.py -p 5050
 # -p or --port to specify the port to run the server on (default 5000)
 
+# Be sure to run 'sudo ufw allow <port num>' to enable the port you are using
+# for external facing servers.
+
 from app import app
 import getopt
 import sys
