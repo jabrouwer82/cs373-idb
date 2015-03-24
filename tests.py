@@ -35,26 +35,24 @@ class TestModels(TestCase):
     db.drop_all()
 
 
-  def test_crime_alone(self):
+  def test_crime_attributes(self):
     c = self.speeding
-
-    # Test object
     self.assertEqual(c.name, "Speeding")
     self.assertEqual(c.wiki_url, "www.speeding.com")
     self.assertEqual(c.descriptions, [])
     self.assertEqual(c.celebrities, [])
     self.assertEqual(c.charges, [])
 
-    # Test db access 
+  def test_crime_in_db(self):
+    c = self.speeding
     db.session.add(c)
     db.session.commit()
     self.assertEqual(Crime.query.all(), [c])
 
 
-  def test_celebrity_alone(self):
+  def test_celebrity_attributes(self):
     c = self.ched
 
-    # Test object
     self.assertEqual(c.name, "Ched")
     self.assertEqual(c.description, 'Actor')
     self.assertEqual(c.twitter_handle, "@Ched")
@@ -67,14 +65,14 @@ class TestModels(TestCase):
     self.assertEqual(c.crimes, [])
     self.assertEqual(c.aliases, [])
 
-    # Test db access 
+  def test_celebrity_in_db(self):
+    c = self.ched
     db.session.add(c)
     db.session.commit()
     self.assertEqual(Celebrity.query.all(), [c])
 
-  def test_charge_alone(self):
+  def test_charge_attributes(self):
     c = self.charge1
-
     self.assertEqual(c.date, date(2000,1,1))
     self.assertEqual(c.description, 'Driving Fast!')
     self.assertEqual(c.location, 'Austin, Texas')
@@ -83,31 +81,39 @@ class TestModels(TestCase):
     self.assertEqual(c.crime, self.speeding)
     self.assertEqual(c.celebrity, self.ched)
 
-    # Test db access 
+  def test_charge_in_db(self):
+    c = self.charge1
     db.session.add(c)
     db.session.commit()
     self.assertEqual(Charge.query.all(), [c])
 
-
-
-
-
-  def test_celebrity_alias_alone(self):
+  def test_celebrity_alias_attributes(self):
     alias = CelebrityAlias("Cheese Man", self.ched)
-
-    # Test object
     self.assertEqual(alias.alias, "Cheese Man")
     self.assertEqual(alias.celebrity, self.ched)
 
-    # Test db access 
+  def test_celebrity_alias_in_db(self):
+    alias = CelebrityAlias("Cheese Man", self.ched)
     db.session.add(alias)
     db.session.commit()
     self.assertEqual(CelebrityAlias.query.all(), [alias])
 
 
-  
+  def test_crimedescription_attributes(self):
+    desc = CrimeDescription(location='Austin', description='Driving Fast', crime=self.speeding)    
+    self.assertEqual(desc.location, 'Austin')
+    self.assertEqual(desc.description, 'Driving Fast')
+    self.assertEqual(desc.crime, self.speeding)
 
- 
+  def test_crimedescription_in_db(self):
+    desc = CrimeDescription(location='Austin', description='Driving Fast', crime=self.speeding)    
+    db.session.add(desc)
+    db.session.commit()
+    self.assertEqual(CrimeDescription.query.all(), [desc])
+
+
+
+
 
 
 if __name__ == "__main__" :
