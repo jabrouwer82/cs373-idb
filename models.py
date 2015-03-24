@@ -117,7 +117,7 @@ class Charge(db.Model):
     self.date = date
     self.location = location
     self.celebrity = celebrity
-    self.crme = crime
+    self.crime = crime
 
   def __repr__(self):
     return '(Charge {num}: {celebrity}, {crime})'.format(
