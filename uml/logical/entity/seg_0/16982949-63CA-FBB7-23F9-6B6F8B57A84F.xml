@@ -1,0 +1,134 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="16982949-63CA-FBB7-23F9-6B6F8B57A84F" name="Charge">
+<createdBy>jacobbrouwer</createdBy>
+<createdTime>2015-03-24 20:38:17 UTC</createdTime>
+<ownerDesignName>uml</ownerDesignName>
+<engineerTo>
+<item key="229F7542-0ACA-84EC-1F0E-D6BE5A08378A" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="354D33E9-9F7D-21FE-92B2-26195C6AE713">
+<createdBy>jacobbrouwer</createdBy>
+<createdTime>2015-03-24 20:38:22 UTC</createdTime>
+<ownerDesignName>uml</ownerDesignName>
+<engineerTo>
+<item key="229F7542-0ACA-84EC-1F0E-D6BE5A08378A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="location" id="4CDF476E-3927-3DE7-A0D6-EC609B7C254E">
+<createdBy>jacobbrouwer</createdBy>
+<createdTime>2015-03-24 20:38:30 UTC</createdTime>
+<ownerDesignName>uml</ownerDesignName>
+<engineerTo>
+<item key="229F7542-0ACA-84EC-1F0E-D6BE5A08378A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+</Attribute>
+<Attribute name="description" id="1764D56D-3AE8-BE11-A9C7-94D1AF5F92B8">
+<createdBy>jacobbrouwer</createdBy>
+<createdTime>2015-03-24 20:38:44 UTC</createdTime>
+<ownerDesignName>uml</ownerDesignName>
+<engineerTo>
+<item key="229F7542-0ACA-84EC-1F0E-D6BE5A08378A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+</Attribute>
+<Attribute name="attorney" id="CCA80344-2789-CD40-4BE0-5EC2030BAB1F">
+<createdBy>jacobbrouwer</createdBy>
+<createdTime>2015-03-24 20:38:53 UTC</createdTime>
+<ownerDesignName>uml</ownerDesignName>
+<engineerTo>
+<item key="229F7542-0ACA-84EC-1F0E-D6BE5A08378A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+</Attribute>
+<Attribute name="date" id="E55267A1-7DA5-5F22-109C-59486C164CEB">
+<createdBy>jacobbrouwer</createdBy>
+<createdTime>2015-03-24 20:39:10 UTC</createdTime>
+<ownerDesignName>uml</ownerDesignName>
+<engineerTo>
+<item key="229F7542-0ACA-84EC-1F0E-D6BE5A08378A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+</Attribute>
+<Attribute name="classification" id="929806ED-3A71-09EC-DB0A-BF527AC80700">
+<createdBy>jacobbrouwer</createdBy>
+<createdTime>2015-03-24 20:39:21 UTC</createdTime>
+<ownerDesignName>uml</ownerDesignName>
+<engineerTo>
+<item key="229F7542-0ACA-84EC-1F0E-D6BE5A08378A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+</Attribute>
+<Attribute name="celebrity_id" id="639E8936-80AA-3203-7045-CFD9CE3E6151">
+<createdBy>jacobbrouwer</createdBy>
+<createdTime>2015-03-24 20:40:21 UTC</createdTime>
+<generatorID>49B4437D-DB27-C306-D3BE-A36C7C954FDC</generatorID>
+<ownerDesignName>uml</ownerDesignName>
+<engineerTo>
+<item key="229F7542-0ACA-84EC-1F0E-D6BE5A08378A" value="true"/>
+</engineerTo>
+<referedAttribute>EA7E344C-1C44-CB4C-BACD-17905EF12FCA</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="crime_id" id="ED527A69-1A6A-9715-2D95-D671256A4EE8">
+<createdBy>jacobbrouwer</createdBy>
+<createdTime>2015-03-24 20:51:33 UTC</createdTime>
+<generatorID>DE4AFF58-3611-C2A4-7F17-1C9F62A62C02</generatorID>
+<ownerDesignName>uml</ownerDesignName>
+<engineerTo>
+<item key="229F7542-0ACA-84EC-1F0E-D6BE5A08378A" value="true"/>
+</engineerTo>
+<referedAttribute>C92587D8-0A56-5F3F-50C4-A7C29B8D2EF0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="998810AC-FCCF-8D6B-82A7-C8EC14AB803D" name="Charge PK">
+<createdBy>jacobbrouwer</createdBy>
+<createdTime>2015-03-24 20:38:29 UTC</createdTime>
+<ownerDesignName>uml</ownerDesignName>
+<engineerTo>
+<item key="229F7542-0ACA-84EC-1F0E-D6BE5A08378A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>354D33E9-9F7D-21FE-92B2-26195C6AE713</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

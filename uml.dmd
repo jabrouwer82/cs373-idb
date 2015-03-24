@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="uml" id="5F28C8C7-B4E0-01DB-9AEF-8E96E152FBC2" version="3.5">
+<createdBy>jacobbrouwer</createdBy>
+<createdTime>2015-03-24 20:33:44 UTC</createdTime>
+<ownerDesignName>uml</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>5F28C8C7-B4E0-01DB-9AEF-8E96E152FBC2</designId>
+</OSDM_Design>

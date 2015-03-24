@@ -1,0 +1,70 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F1AC1169-6A23-B6B6-6626-5D408E727E78" name="CelebrityAlias">
+<createdBy>jacobbrouwer</createdBy>
+<createdTime>2015-03-24 20:36:09 UTC</createdTime>
+<ownerDesignName>uml</ownerDesignName>
+<engineerTo>
+<item key="229F7542-0ACA-84EC-1F0E-D6BE5A08378A" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="1C862E2C-DF2F-6DD2-8424-C4E701E1F0D6">
+<createdBy>jacobbrouwer</createdBy>
+<createdTime>2015-03-24 20:36:41 UTC</createdTime>
+<ownerDesignName>uml</ownerDesignName>
+<engineerTo>
+<item key="229F7542-0ACA-84EC-1F0E-D6BE5A08378A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="Alias" id="2068F302-4749-A059-212B-2874516A3C13">
+<createdBy>jacobbrouwer</createdBy>
+<createdTime>2015-03-24 20:36:24 UTC</createdTime>
+<ownerDesignName>uml</ownerDesignName>
+<engineerTo>
+<item key="229F7542-0ACA-84EC-1F0E-D6BE5A08378A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+</Attribute>
+<Attribute name="celebrity_id" id="0A62D0E7-0F65-BEB9-EAE5-4B8F6B7A744F">
+<createdBy>jacobbrouwer</createdBy>
+<createdTime>2015-03-24 20:42:08 UTC</createdTime>
+<generatorID>D1697BDA-4715-5937-3944-191F83BD8344</generatorID>
+<ownerDesignName>uml</ownerDesignName>
+<engineerTo>
+<item key="229F7542-0ACA-84EC-1F0E-D6BE5A08378A" value="true"/>
+</engineerTo>
+<referedAttribute>EA7E344C-1C44-CB4C-BACD-17905EF12FCA</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F98DCFAC-E2E5-97C5-DC06-0709A20D2FE0" name="CelebrityAlias PK">
+<createdBy>jacobbrouwer</createdBy>
+<createdTime>2015-03-24 20:36:50 UTC</createdTime>
+<ownerDesignName>uml</ownerDesignName>
+<engineerTo>
+<item key="229F7542-0ACA-84EC-1F0E-D6BE5A08378A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>1C862E2C-DF2F-6DD2-8424-C4E701E1F0D6</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
