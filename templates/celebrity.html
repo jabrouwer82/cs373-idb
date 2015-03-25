@@ -1,7 +1,46 @@
 {% extends "base.html" %}
 {% block content %}
 	<div class="container">
-		<div class="container-fluid">
+		<div class="col-md-4 container-fluid">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                  {{ celebrity.name }}
+              </div>
+              <div class="panel-body">
+                  <img src="{{ celebrity.picture_url }}" class="img-thumbnail"/>
+                  <h5>Aliases</h5>
+                  <ul>
+                      {% for alias in celebrity.aliases %}
+                      <li>{{ alias.alias }}</li>
+                      {% endfor %}
+                  </ul>
+                  <h5>Twitter Handle</h5>
+                  {{ celebrity.twitter_handle }}
+                  <h5>Birthday</h5>
+                  {{ celebrity.birthday }}
+                  <h5>Additional Links</h5>
+                  <ul>
+                      <li><a href="{{ celebrity.wiki_url }}">Wikipedia</a></li>
+                      <li><a href="{{ celebrity.imdb_url }}">IMDB</a></li>
+                  </ul>
+              </div>
+            </div>
 		</div>
+        <div class="col-md-8 container-fluid">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Description
+                </div>
+                <div class="panel-body">
+                    <p>{{ celebrity.description }}</p>
+                    <h5 align="center">Crimes charged with:</h5>
+                    <ul class="list-group">
+                        {% for crime in celebrity.crimes %}
+                        <li class="list-group-item">{{ crime.name }}</li>
+                        {% endfor %}
+                    </ul>    
+                </div>
+            </div>
+        </div>
 	</div>
 {% endblock %}
