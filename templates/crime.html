@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <div class="page-header"><h1>Crime Description</h1></div>
+        <div class="panel panel-default">
+            <div class="panel-header">
+                {{ crime.name }}
+            </div>
+            <div class="panel-body">
+                <p>{{ crime.descriptions.description }}</p>
+                <a href="{{ crime.wiki_url }}" target="_blank">More info...</a>
+                <hr/>
+                <p align="center">List of celebrities charged with this crime:</p>
+                <ul class="list-group">
+                    {% for celebrity in crime.celebrities %}
+                    <li class="list-group-item"><a href="/celebrities/{{ celebrity.name }}">{{ celebrity.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
