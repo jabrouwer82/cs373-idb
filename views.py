@@ -46,6 +46,9 @@ def date_formatter(d):
 
 def string_truncater(s):
     truncate = 100
+    if(len(s) < 100):
+        return s
+
     while(s[truncate] != ' '):
         truncate += 1
     return s[truncate] + '...'
