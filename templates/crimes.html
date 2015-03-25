@@ -6,7 +6,7 @@
 	</div>
         <ul class="list-group">           
             {% for crime in crimes %}
-            <li class="list-group-item" style="text-overflow:ellipsis;">{{ crime.name }} - description </li>
+            <li class="list-group-item" style="text-overflow:ellipsis;"><a href="/crimes/{{ crime.name }}">{{ crime.name }}</a> - description </li>
             {% endfor %}
         </ul>
     </div>
