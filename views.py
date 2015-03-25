@@ -13,10 +13,10 @@ def splash():
 def celebrities():
     celebrity_list = Celebrity.query.all()
     return render_template('celebrities.html', celebrities=celebrity_list)
-@app.route('/celebrities/<celebrity>')
-def getCelebrity(celebrity):
-	celebrity_info = Celebrity.query.filter(Celebrity.name == celebrity).first()
-	return render_template('celebrity.html', celebrity=celebrity_info)
+@app.route('/celebrities/<int:celebrity_id>')
+def getCelebrity(celebrity_id):
+  celebrity_info = Celebrity.query.filter(Celebrity.id== celebrity_id).first()
+  return render_template('celebrity.html', celebrity=celebrity_info, date_formatter=date_formatter)
 
 @app.route('/crimes')
 @app.route('/crimes/')
@@ -36,7 +36,9 @@ def about_us():
     return render_template('about_us.html')
 
      
-
+def date_formatter(d):
+  return '{month} {day}, {year}'.format(month=d.strftime('%B'), day=d.day, year=d.year)
+  
 
 
 
