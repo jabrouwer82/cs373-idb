@@ -8,8 +8,8 @@
             {% for charge in charges %}
             <li class="list-group-item" style="text-overflow:ellipsis;">
 		<dl>
-			<dt> {{ charge.crime }} </dt>
-			<dd> {{ charge.celebrity }} - {{ charge.location }} ({{ charge.date }}) </dd>
+			<dt> {{ charge.celebrity.name }} </dt>
+			<dd> {{ charge.crime.name }} - {{ charge.location }} ({{ charge.date }}) </dd>
 		</dl>
 	    </li>
             {% endfor %}
