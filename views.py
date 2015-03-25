@@ -24,6 +24,11 @@ def crimes():
 	crime_list = Crime.query.all()
 	return render_template('crimes.html', crimes=crime_list)
 
+@app.route('/crimes/<crime>')
+def getCrime(crime):
+    crime_info = Crime.query.filter(Crime.name == crime).first()
+    return render_template('crime.html', crime=crime_info)
+
 @app.route('/charges')
 @app.route('/charges/')
 def charges():
