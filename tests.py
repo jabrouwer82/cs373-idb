@@ -7,26 +7,28 @@ class TestModels(TestCase):
 
   def setUp(self):
     app.config['TESTING'] = True
-
-    # Not sure this is legal, as already set in app.py
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2:///testsdb'
+
+    # May want these settings for testing api calls 
     #app.config['WTF_CSRF_ENABLED'] = False
     #self.app = app.test_client()
+
     db.create_all()
 
 
+    self.speeding = Crime("Speeding", "www.speeding.com")
     self.ched = Celebrity(name='Ched', description='Actor', twitter_handle='@Ched', 
                   birthday=date(1900,1,1), wiki_url='ched.wiki', imdb_url='ched.imdb', picture_url='ched.picture')
-  
-    self.speeding = Crime("Speeding", "www.speeding.com")
-
-
     self.charge1 = Charge(date=date(2000,1,1), location='Austin, Texas', 
               description='Driving Fast!', attorney='James Funk',
               classification='Class A misdemeanor', 
               crime = self.speeding, 
               celebrity = self.ched)
 
+    self.cr1 = Crime("1")
+    self.cr2 = Crime("2")
+    self.ce1 = Celebrity("1")
+    self.ce2 = Celebrity("2")
 
 
 
@@ -98,7 +100,6 @@ class TestModels(TestCase):
     db.session.commit()
     self.assertEqual(CelebrityAlias.query.all(), [alias])
 
-
   def test_crimedescription_attributes(self):
     desc = CrimeDescription(location='Austin', description='Driving Fast', crime=self.speeding)    
     self.assertEqual(desc.location, 'Austin')
@@ -111,10 +112,49 @@ class TestModels(TestCase):
     db.session.commit()
     self.assertEqual(CrimeDescription.query.all(), [desc])
 
+  def test_celebs_charges(self):
+    charge1 = Charge(self.ce1, self.cr1)
+    charge2 = Charge(self.ce1, self.cr1)
+    db.session.add_all([charge1, charge2])
+    db.session.commit()
+    self.assertEqual(set(self.ce1.charges), {charge1, charge2})
 
+  def test_celebs_crimes(self):
+    charge1 = Charge(self.ce1, self.cr1)
+    charge2 = Charge(self.ce1, self.cr2)
+    db.session.add_all([charge1, charge2])
+    db.session.commit()
+    self.assertEqual(set(self.ce1.crimes), {self.cr1, self.cr2})
 
+  def test_celebs_crimes_no_dups(self):
+    charge1 = Charge(self.ce1, self.cr1)
+    charge2 = Charge(self.ce1, self.cr1)
+    db.session.add_all([charge1, charge2])
+    db.session.commit()
+    self.assertEqual(self.ce1.crimes, [self.cr1])
 
+  def test_crimes_charges(self):
+    charge1 = Charge(self.ce1, self.cr1)
+    charge2 = Charge(self.ce2, self.cr1)
+    db.session.add_all([charge1, charge2])
+    db.session.commit()
+    self.assertEqual(set(self.cr1.charges), {charge1, charge2})
 
+  def test_crimes_celebs(self):
+    charge1 = Charge(self.ce1, self.cr1)
+    charge2 = Charge(self.ce2, self.cr1)
+    db.session.add_all([charge1, charge2])
+    db.session.commit()
+    self.assertEqual(set(self.cr1.celebrities), {self.ce1, self.ce2})
+
+  def test_crimes_celebs_no_dups(self):
+    charge1 = Charge(self.ce1, self.cr1)
+    charge2 = Charge(self.ce1, self.cr1)
+    db.session.add_all([charge1, charge2])
+    db.session.commit()
+    self.assertEqual(self.cr1.celebrities, [self.ce1])
+
+   
 
 if __name__ == "__main__" :
     main()   
