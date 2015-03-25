@@ -2,7 +2,7 @@
 {% block content %}
     <div class="container">
         <div class="page-header"><h1>Crime Description</h1></div>
-        <div class="panel panel-default">
+        <div class="panel panel-warning">
             <div class="panel-heading">
                 <h4 class="panel-title">{{ crime.name }}</h4>
             </div>
@@ -10,7 +10,7 @@
                 <p>{{ crime.descriptions.description }}</p>
                 <a href="{{ crime.wiki_url }}" target="_blank">More info...</a>
                 <hr/>
-                <h4 align="center">List of celebrities charged with this crime:</h4>
+                <h5 align="center">List of celebrities charged with this crime:</h5>
                 <ul class="list-group">
                     {% for celebrity in crime.celebrities %}
                     <li class="list-group-item"><a href="/celebrities/{{ celebrity.name }}">{{ celebrity.name }}</a></li>
