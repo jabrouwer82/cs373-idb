@@ -13,7 +13,7 @@
                 <h5 align="center">List of celebrities charged with this crime:</h5>
                 <ul class="list-group">
                     {% for celebrity in crime.celebrities %}
-                    <li class="list-group-item"><a href="/celebrities/{{ celebrity.name }}">{{ celebrity.name }}</a></li>
+                    <li class="list-group-item"><a href="/celebrities/{{ celebrity.id }}">{{ celebrity.name }}</a></li>
                     {% endfor %}
                 </ul>
             </div>

@@ -1,6 +1,26 @@
 
 {% extends "base.html" %}
 {% block content %}
-    <p align="center"> Home Page </p>
+    <div class="container">
+        <div class="page-header"><h1 align="center">Celebrity Rap Sheets</h1></div>
+        <div class="col-md-4">
+            <div align="center">
+                <a href="/celebrities"><img src="static/Celebrity_Icon.png"></a>
+                <p align="center"><a href="/celebrities">Celebrities</a></p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div align="center">
+                <a href="/crimes"><img src="static/Crime_Icon.png" align="middle"></a>
+                <p align="center"><a href="/crimes">Crimes</a></p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div align="center">
+                <a href="/charges"><img src="static/Charge_Icon.png" align="middle"></a>
+                <p align="center"><a href="/charges">Charges</a></p>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
