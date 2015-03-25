@@ -51,7 +51,7 @@ def string_truncater(s):
 
     while(s[truncate] != ' '):
         truncate += 1
-    return s[truncate] + '...'
+    return s[0:truncate] + '...'
 
 
 
