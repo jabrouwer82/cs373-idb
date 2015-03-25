@@ -3,6 +3,14 @@ from models import db, Celebrity, Crime, Charge, CelebrityAlias, CrimeDescriptio
 from datetime import date
 from app import app
 
+
+#TODO Remove import alls 
+from views import *
+from api import *
+
+
+import json
+
 class TestModels(TestCase):
 
   def setUp(self):
@@ -10,8 +18,10 @@ class TestModels(TestCase):
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2:///testsdb'
 
     # May want these settings for testing api calls 
-    #app.config['WTF_CSRF_ENABLED'] = False
-    #self.app = app.test_client()
+    app.config['WTF_CSRF_ENABLED'] = False
+    self.app = app.test_client()
+
+  
 
     db.create_all()
 
@@ -154,7 +164,28 @@ class TestModels(TestCase):
     db.session.commit()
     self.assertEqual(self.cr1.celebrities, [self.ce1])
 
-   
+
+  ### Test API functions ###
+  def test_celebrities_api(self):
+    charge1 = Charge(self.ce1, self.cr1)
+    charge2 = Charge(self.ce2, self.cr1)
+    db.session.add_all([charge1, charge2])
+    db.session.commit()
+
+    response_json = self.get_json_from_url('/api/celebrity')
+    expected = [{'id': 1, 'name': '1', 'uri': 'http://localhost/api/celebrity/1'}, 
+        {'id': 2, 'name': '2', 'uri': 'http://localhost/api/celebrity/2'}]
+
+    self.assertEqual(response_json, expected)
+
+    
+
+
+
+  def get_json_from_url(self, url):
+    str_data = self.app.get(url).get_data().decode("utf-8")
+    return json.loads(str_data)
+
 
 if __name__ == "__main__" :
-    main()   
+  main()   
