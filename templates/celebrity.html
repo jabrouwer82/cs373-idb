@@ -7,22 +7,28 @@
                   {{ celebrity.name }}
               </div>
               <div class="panel-body">
-                  <img src="{{ celebrity.picture_url }}" class="img-thumbnail"/>
-                  <h5>Aliases</h5>
-                  <ul>
-                      {% for alias in celebrity.aliases %}
-                      <li>{{ alias.alias }}</li>
-                      {% endfor %}
-                  </ul>
-                  <h5>Twitter Handle</h5>
-                  {{ celebrity.twitter_handle }}
-                  <h5>Birthday</h5>
-                  {{ celebrity.birthday }}
-                  <h5>Additional Links</h5>
-                  <ul>
-                      <li><a href="{{ celebrity.wiki_url }}">Wikipedia</a></li>
-                      <li><a href="{{ celebrity.imdb_url }}">IMDB</a></li>
-                  </ul>
+                  <img src="{{ celebrity.picture_url }}" class="img-thumbnail" alt="{{ celebrity.picture_url }}">
+                  <ul class="list-group">
+                      <li class="list-group-item"><b>Aliases</b></li>
+                      <li class="list-group-item">
+                          <ul class="list-unstyled">
+                              {% for alias in celebrity.aliases %}
+                              <li>{{ alias.alias }}</li>
+                              {% endfor %}
+                          </ul>
+                        </li>
+                        <li class="list-group-item"><b>Twitter Handle</b></li>
+                        <li class="list-group-item">{{ celebrity.twitter_handle }}</li>
+                        <li class="list-group-item"><b>Birthday</b></li>
+                        <li class="list-group-item">{{ celebrity.birthday }}</li>
+                        <li class="list-group-item"><b>Additional Links</b></li>
+                        <li class="list-group-item">
+                          <ul>
+                              <li><a href="{{ celebrity.wiki_url }}">Wikipedia</a></li>
+                              <li><a href="{{ celebrity.imdb_url }}">IMDB</a></li>
+                          </ul>
+                        </li>
+                    </ul>
               </div>
             </div>
 		</div>
