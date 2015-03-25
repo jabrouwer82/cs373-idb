@@ -52,7 +52,7 @@ aliases = [
   ]
 
 
- Crimes
+#Crimes
 possessionMarijuana = Crime('Possession of Marijuana', 'http://en.wikipedia.org/wiki/Drug_possession')
 possessionHeroine = Crime('Possession of Heroine', 'http://en.wikipedia.org/wiki/Drug_possession')
 possessionCocaine = Crime('Possession of Cocaine', 'http://en.wikipedia.org/wiki/Drug_possession')
@@ -63,10 +63,10 @@ underInfContSubstance = Crime('Under the Influence of a Controlled Substance', '
 menacing = Crime('Menacing', 'https://en.wikipedia.org/wiki/Menacing')
 thirdAssault = Crime('Third Degree Assault', 'https://en.wikipedia.org/wiki/Assault')
 mischief = Crime('Criminal Mischief', 'https://en.wikipedia.org/wiki/Mischief')
+possessionGunFelon = Crime('Possession of a Gun by a Felon', 'https://en.wikipedia.org/wiki/Felon_in_possession_of_a_firearm')
+saleTransportMarijuana = Crime('Sale and Transport of Marijuana', 'sales and transport of marijuana')
 
-
-
-crimes = [possessionMarijuana, possessionParaphernalia, possessionHeroine, possessionCocaine, possessionFirearm, resistingArrest]
+crimes = [possessionMarijuana, possessionParaphernalia, possessionHeroine, possessionCocaine, possessionFirearm, resistingArrest, underInfContSubstance, thirdAssault, mischief, possessionGunFelon, saleTransportMarijuana]
 
 
 # Charges
@@ -101,11 +101,11 @@ charges = [
   Charge(cSheen, thirdAssault, date(2009, 12, 25), 'Aspen, Colorado',
     description='Sheen was arrested in Aspen, Colo., on charges of domestic violence, including assault and menacing, against his wife, Brooke Mueller. She reportedly told police that he had held a knife to her throat and threatened to kill her. Three months later, he was charged with felony menacing, and assault and criminal mischief, both misdemeanors. (latimes)', classification='Misdemeanor'),
 
-  Charge(cSheen, criminalMischief, date(2009, 12, 25), 'Aspen, Colorado',
+  Charge(cSheen, mischief, date(2009, 12, 25), 'Aspen, Colorado',
     description='Sheen was arrested in Aspen, Colo., on charges of domestic violence, including assault and menacing, against his wife, Brooke Mueller. She reportedly told police that he had held a knife to her throat and threatened to kill her. Three months later, he was charged with felony menacing, and assault and criminal mischief, both misdemeanors. (latimes)', classification='Misdemeanor'),
 
   Charge(snoop, saleTransportMarijuana, date(2006, 10, 26), 'Burbank California',
-    description='Broadus was first arrested Oct. 26 at Burbank Airport. Thompson said he had 39.14 grams of marijuana – some of it in individual canisters – at the time of this arrest. A search warrant served at his home in the Diamond Bar in November turned up a semi-automatic handgun', classification='Felony')
+    description='Broadus was first arrested Oct. 26 at Burbank Airport. Thompson said he had 39.14 grams of marijuana – some of it in individual canisters – at the time of this arrest. A search warrant served at his home in the Diamond Bar in November turned up a semi-automatic handgun', classification='Felony'),
 
   Charge(snoop, possessionGunFelon, date(2006, 11, 1), 'Burbank, California',
     description='Broadus was first arrested Oct. 26 at Burbank Airport. Thompson said he had 39.14 grams of marijuana – some of it in individual canisters – at the time of this arrest. A search warrant served at his home in the Diamond Bar in November turned up a semi-automatic handgun', classification='Felony')
