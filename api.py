@@ -22,8 +22,8 @@ class JsonBuild:
 
 # TODO(jabrouwer82): Fix these to match the new models
 def celebrity_to_json(r):
-  return JsonBuild(r).add_scalars('id', 'name', 'description', 'wiki_url',
-                                  'imdb_url', 'picture_url') \
+  return JsonBuild(r).add_scalars('id', 'name', 'description', 'twitter_handle', 'wiki_url',
+                                  'imdb_url', 'picture_url', ) \
                      .add('birthday',
                           r.birthday.strftime('%m-%d-%Y') if r.birthday else None) \
                      .add_items(crime_abbrev, 'crimes') \
@@ -41,7 +41,7 @@ def crime_to_json(r):
 def charge_to_json(r):
   return JsonBuild(r).add_scalars('location', 'description',
                                   'attorney', 'classification') \
-                     .add('date', r.date.strftime('%m-%d-%Y')) \
+                     .add('date', r.date.strftime('%m-%d-%Y') if r.date else None) \
                      .add('crime', crime_abbrev(r.crime)) \
                      .add('celebrity', celebrity_abbrev(r.celebrity)) \
                      .json_map
