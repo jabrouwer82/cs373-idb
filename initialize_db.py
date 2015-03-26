@@ -108,8 +108,6 @@ celebrities = [snoop, cSheen, rDowneyJr, mMcconaughey, mSheen, dMX, gClooney, fW
 db.session.add_all(celebrities)
 
 # Aliases
-
-
 aliases = [
     CelebrityAlias('Snoop Dogg', snoop),
     CelebrityAlias('Charlie Sheen', cSheen),
@@ -135,8 +133,26 @@ thirdAssault = Crime('Third Degree Assault', 'http://en.wikipedia.org/wiki/Assau
 mischief = Crime('Criminal Mischief', 'http://en.wikipedia.org/wiki/Mischief')
 possessionGunFelon = Crime('Possession of a Gun by a Felon', 'http://en.wikipedia.org/wiki/Felon_in_possession_of_a_firearm')
 saleTransportMarijuana = Crime('Sale and Transport of Marijuana', 'sales and transport of marijuana')
+drivingSansLicense = Crime('Driving Without a License', 'https://en.wikipedia.org/wiki/Driver%27s_license')
+impersonation = Crime('Criminal Impersonation', 'https://en.wikipedia.org/wiki/Police_impersonation')
+dUI = Crime('Driving Under the Influence of Drugs or Alcohol', 'https://en.wikipedia.org/wiki/Driving_under_the_influence')
+violatingParole = Crime('Violating Parole', 'https://en.wikipedia.org/wiki/Parole')
+theft = Crime('Theft', 'https://en.wikipedia.org/wiki/Theft')
+animalCruelty = Crime('Animal Cruelty', 'https://en.wikipedia.org/wiki/Cruelty_to_animals')
+aggrAssault = Crime('Aggravated Assault', 'https://en.wikipedia.org/wiki/Assault#Aggravated_assault')
+recklessDriving = Crime('Reckless Driving', 'https://en.wikipedia.org/wiki/Reckless_driving')
+speeding = Crime('Speeding', 'https://en.wikipedia.org/wiki/Speed_limit')
+trafficViolation = Crime('Traffic Violation', 'https://en.wikipedia.org/wiki/Moving_violation')
+uninsuredVehicle = Crime('Having an Uninsured Vehicle', 'https://en.wikipedia.org/wiki/Vehicle_insurance_in_the_United_States')
+tresspassing = Crime('Tresspassing', 'https://en.wikipedia.org/wiki/Trespass')
+civilDisobedience = Crime('Civil Disobedience', 'https://en.wikipedia.org/wiki/Civil_disobedience')
+indecentExposure = Crime('Indecent Exposure', 'https://en.wikipedia.org/wiki/Indecent_exposure')
+lewdConduct = Crime('Lewd COnduct', 'https://en.wikipedia.org/wiki/Sexual_misconduct')
+shoplifting = Crime('Shoplifting', 'https://en.wikipedia.org/wiki/Shoplifting')
+publicUrination = Crime('Public Urination', 'https://en.wikipedia.org/wiki/Urination#Urination_without_facilities')
+publicIntoxication = Crime('Public Intoxication', 'https://en.wikipedia.org/wiki/Public_intoxication')
 
-crimes = [possessionMarijuana, possessionParaphernalia, possessionHeroine, possessionCocaine, possessionFirearm, resistingArrest, underInfContSubstance, thirdAssault, mischief, possessionGunFelon, saleTransportMarijuana]
+crimes = [possessionMarijuana, possessionParaphernalia, possessionHeroine, possessionCocaine, possessionFirearm, resistingArrest, underInfContSubstance, thirdAssault, mischief, possessionGunFelon, saleTransportMarijuana, drivingSansLicense, impersonation, dUI, violatingParole, theft, animalCruelty, aggrAssault, recklessDriving, speeding, trafficViolation, uninsuredVehicle, tresspassing, civilDisobedience, indecentExposure, lewdConduct, shoplifting, publicUrination, publicIntoxication]
 
 
 # Charges
