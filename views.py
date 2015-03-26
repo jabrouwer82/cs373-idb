@@ -1,7 +1,12 @@
-from flask import render_template, Flask
+from flask import render_template, Flask, send_from_directory
 from app import app
 from models import Crime, Celebrity, Charge
+import os
 
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 @app.route('/')
 @app.route('/splash')

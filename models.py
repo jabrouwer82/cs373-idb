@@ -57,15 +57,17 @@ class CelebrityAlias(db.Model):
 class Crime(db.Model):
   id = db.Column(db.Integer, primary_key=True)
   name = db.Column(db.String(4000))
+  description = db.Column(db.Text)
   wiki_url = db.Column(db.String(4000))
 
   descriptions = db.relationship('CrimeDescription')
   celebrities = db.relationship('Celebrity', secondary='charge')
   charges = db.relationship('Charge')
 
-  def __init__(self, name, wiki_url=None):
+  def __init__(self, name, wiki_url=None, description=None):
     self.name = name 
     self.wiki_url = wiki_url
+    self.description=description
 
   def __repr__(self):
     return '(Crime {num}: {name})'.format(name=self.name, num=self.id)
@@ -79,7 +81,7 @@ class CrimeDescription(db.Model):
   
   crime = db.relationship('Crime')
   
-  def __init__(self, description, crime, location=None):
+  def __init__(self, description, crime, location):
     self.location = location
     self.description = description
     self.crime = crime
