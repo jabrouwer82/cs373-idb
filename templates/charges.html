@@ -6,12 +6,14 @@
 	</div>
         <ul class="list-group">           
             {% for charge in charges %}
+            <a href="/charges/{{ charge.id }}">
             <li class="list-group-item" style="text-overflow:ellipsis;">
-		<dl>
-			<dt> {{ charge.celebrity.name }} </dt>
-			<dd> {{ charge.crime.name }} - {{ charge.location }} ({{ charge.date }}) </dd>
-		</dl>
-	    </li>
+                <dl>
+                    <dt> {{ charge.celebrity.name }} </dt>
+                    <dd> {{ charge.crime.name }} - {{ charge.location }} ({{ date_formatter(charge.date) }}) </dd>
+                </dl>
+            </li>
+        </a>
             {% endfor %}
         </ul>
     </div>
