@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <div class="page-header"><h1>Details of the Charge</h1></div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4>{{ charge.celebrity.name }} was charged with {{ charge.crime.name }} on {{ date_formatter(charge.date) }}</h4>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-8>
+                    {{ charge.description }}
+                </div>
+                <div class="col-md-4>
+                    <ul class="list-group">
+                        <li class="list-group-item"><img src="{{ charge.celebrity.picture_url }}" class="img-thumbnail"></li>
+                        <li class="list-group-item">
+                            {{ charge.celebrity.name }}
+                            <ul class="list-unstyled">
+                                {% for alias in charge.celebrity.aliases %}
+                                <li>{{ alias }}</li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        <li class="list-group-item">Represented by: {{ charge.attorney }}</li>
+                        <li class="list-group-item">Charge classified as: {{ charge.classification }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
