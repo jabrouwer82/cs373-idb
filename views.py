@@ -18,6 +18,33 @@ def splash():
 def celebrities():
     celebrity_list = Celebrity.query.all()
     return render_template('celebrities.html', celebrities=celebrity_list)
+    
+# Poor implementation of sorting, will fix in next phase.
+@app.route('/celebrities/alph')
+def alphCelebrities():
+    celebrity_list = Celebrity.query.all()
+    celebrity_list.sort(key = lambda celebrity: celebrity.name)
+    return render_template('celebrities.html', celebrities=celebrity_list)
+
+@app.route('/celebrities/bday')
+def bdayCelebrities():
+    celebrity_list = Celebrity.query.all()
+    celebrity_list.sort(key = lambda celebrity: celebrity.birthday)
+    return render_template('celebrities.html', celebrities=celebrity_list)
+
+@app.route('/crimes/alph')
+def alphCrimes():
+    crime_list = Crime.query.all()
+    crime_list.sort(key = lambda crime: crime.name)
+    return render_template('crimes.html', crimes=crime_list)
+
+@app.route('/charges/alph')
+def alphCharges():
+    charge_list = Charge.query.all()
+    charge_list.sort(key = lambda charge: charge.celebrity.name)
+    return render_template('charges.html', charges=charge_list, date_formatter=date_formatter)
+
+    
 @app.route('/celebrities/<int:celebrity_id>')
 def getCelebrity(celebrity_id):
   celebrity_info = Celebrity.query.filter(Celebrity.id== celebrity_id).first()
