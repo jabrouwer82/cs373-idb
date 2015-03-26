@@ -194,7 +194,18 @@ charges = [
     description='Broadus was first arrested Oct. 26 at Burbank Airport. Thompson said he had 39.14 grams of marijuana – some of it in individual canisters – at the time of this arrest. A search warrant served at his home in the Diamond Bar in November turned up a semi-automatic handgun', classification='Felony'),
 
   Charge(snoop, possessionGunFelon, date(2006, 11, 1), 'Burbank, California',
-    description='Broadus was first arrested Oct. 26 at Burbank Airport. Thompson said he had 39.14 grams of marijuana – some of it in individual canisters – at the time of this arrest. A search warrant served at his home in the Diamond Bar in November turned up a semi-automatic handgun', classification='Felony')
+    description='Broadus was first arrested Oct. 26 at Burbank Airport. Thompson said he had 39.14 grams of marijuana – some of it in individual canisters – at the time of this arrest. A search warrant served at his home in the Diamond Bar in November turned up a semi-automatic handgun', classification='Felony'),
+
+  Charge(dMX, possessionFirearm, date(1999, 7, 2), None, description='When officers of the Fort Lee Police Department executed a search of his home in 1999, DMX promptly surrendered himself on weapons possession charges'),
+
+  Charge(mSheen, tresspassing, date(2007, 4, 1), 'Nevada', description='Sheen was arrested, with 38 other activists, for trespassing at the Nevada Test Site at a Nevada Desert Experience event protesting against the site.'),
+
+  Charge(gClooney, civilDisobedience, date(2012, 3, 16), 'Washington D.C.', description='Clooney was arrested Friday for civil disobedience after taking part in a protest outside of the Sudanese embassy in Washington, D.C.'),
+
+  Charge(rWitherspoon, dUI, date(2013, 4, 19), None, description='She and husband Jim Toth had been arrested in a DUI incident.'),
+
+  Charge(pReubens, indecentExposure, date(1991, 7, 12), None, description='Indecent exposure, masturbating in an adult theater. Nearly two decades later, Reubens claimed he was innocent in a Playboy interview: "I\'m right-handed, and the police report said I was jerking off with my left hand. That would have been the end of the case right there, proof it couldn\'t have been me."')
+
 ]
 
 # Add everything to the database
@@ -213,7 +224,6 @@ http://en.wikipedia.org/wiki/DMX_%28rapper%29
 http://www.imdb.com/name/nm0229422/
 @DMX
 12-18-1970
-7-2-199 When officers of the Fort Lee Police Department executed a search of his home in 1999, DMX promptly surrendered himself on weapons possession charges
 5-5-2000 DMX served a 15-day jail sentence in 2000 for possession of marijuana.
 5-22-2000 DMX served another jail sentence in 2001 for driving without a license and possession of marijuana. His appeal to reduce the sentence was denied; rather, he was charged with assault for throwing objects at prison guards. DMX entered rehab to treat his addiction to drugs in 2002
 6-26-2004 DMX was arrested in June 2004, at the John F. Kennedy International Airport, on charges of cocaine possession, criminal impersonation, criminal possession of a weapon, criminal mischief, menacing, and driving under the influence of drugs or alcohol, while claiming to be a federal agent and attempting to carjack a vehicle. He was given a conditional discharge on December 8, 2004, but pled guilty on October 25, 2005, to violating parole.
@@ -234,24 +244,7 @@ http://en.wikipedia.org/wiki/Martin_Sheen
 http://www.imdb.com/name/nm0000640
 @csheensdad
 8-3-1940
-4-1-2007 Sheen was arrested, with 38 other activists, for trespassing at the Nevada Test Site at a Nevada Desert Experience event protesting against the site
-5-16-1990 Actor Martin Sheen and three others were arrested Wednesday morning after they splashed what appeared to be blood on the front of the downtown Federal Building in the latest of a series of demonstrations there to protest U.S. policies in El Salvador.
 8-12-2000 Martin was one of 22 people arrested for crossing over a line established by the Air Force in an anti-militarization protest at California's Vandenberg Air Force base. He was charged with trespassing.
-
-
-George Clooney
-Actor, ... etc
-@clooney_clooney
-http://en.wikipedia.org/wiki/George_Clooney
-http://www.imdb.com/name/nm0000123/
-5-6-1961
-3-16-2012 Clooney was arrested Friday for civil disobedience after taking part in a protest outside of the Sudanese embassy in Washington, D.C.
-
-Reese Witherspoon
-4-19-2013 he and husband Jim Toth had been arrested in a DUI incident
-
-Paul Reubens (Pee Wee Herman)
-7-12-1991 Indecent exposure, masturbating in an adult theater. Nearly two decades later, Reubens claimed he was innocent in a Playboy interview: "I'm right-handed, and the police report said I was jerking off with my left hand. That would have been the end of the case right there, proof it couldn't have been me."
 
 Fred Willard
 7-18-2012 Lewd conduct, the then-72-year-old actor was handcuffed after he was caught with his pants down at a Hollywood porn theater. "It was embarrassing. Embrassing as hell," the "American Pie" actor told Jimmy Kimmel. "It's the last time I'm going to listen to my wife when she says, 'Why don't you go out to see a movie?'"
