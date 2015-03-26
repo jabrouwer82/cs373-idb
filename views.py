@@ -12,7 +12,7 @@ def splash():
 @app.route('/celebrities/')
 def celebrities():
     celebrity_list = Celebrity.query.all()
-    return render_template('celebrities.html', celebrities=celebrity_list)
+    return render_template('celebrities.html', celebrities=celebrity_list, string_truncater=string_truncater)
 @app.route('/celebrities/<int:celebrity_id>')
 def getCelebrity(celebrity_id):
   celebrity_info = Celebrity.query.filter(Celebrity.id== celebrity_id).first()
@@ -33,7 +33,7 @@ def getCrime(crime):
 @app.route('/charges/')
 def charges():
 	charge_list = Charge.query.all()
-	return render_template('charges.html', charges=charge_list)
+	return render_template('charges.html', charges=charge_list, date_formatter=date_formatter)
 
 @app.route('/about_us')
 @app.route('/about_us/')
@@ -43,7 +43,15 @@ def about_us():
      
 def date_formatter(d):
   return '{month} {day}, {year}'.format(month=d.strftime('%B'), day=d.day, year=d.year)
-  
+
+def string_truncater(s):
+    truncate = 100
+    if(len(s) < 100):
+        return s
+
+    while(s[truncate] != ' '):
+        truncate += 1
+    return s[0:truncate] + '...'
 
 
 
