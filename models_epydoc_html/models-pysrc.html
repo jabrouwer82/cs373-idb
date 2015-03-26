@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>models</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Module&nbsp;models
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="models-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="models-module.html">Module models</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">flask</tt> <tt class="py-keyword">import</tt> <tt class="py-name">Flask</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">flask</tt><tt class="py-op">.</tt><tt class="py-name">ext</tt><tt class="py-op">.</tt><tt class="py-name">sqlalchemy</tt> <tt class="py-keyword">import</tt> <tt class="py-name">SQLAlchemy</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">app</tt> <tt class="py-keyword">import</tt> <tt class="py-name">app</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt id="link-0" class="py-name" targets="Variable models.db=models-module.html#db"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-0', 'db', 'link-0');">db</a></tt> <tt class="py-op">=</tt> <tt class="py-name">SQLAlchemy</tt><tt class="py-op">(</tt><tt class="py-name">app</tt><tt class="py-op">)</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"> </tt>
+<a name="Celebrity"></a><div id="Celebrity-def"><a name="L8"></a><tt class="py-lineno">  8</tt> <a class="py-toggle" href="#" id="Celebrity-toggle" onclick="return toggle('Celebrity');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="models.Celebrity-class.html">Celebrity</a><tt class="py-op">(</tt><tt class="py-base-class">db</tt><tt class="py-op">.</tt><tt class="py-base-class">Model</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Celebrity-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Celebrity-expanded"><a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line">  <tt id="link-1" class="py-name" targets="Variable models.Celebrity.id=models.Celebrity-class.html#id,Variable models.CelebrityAlias.id=models.CelebrityAlias-class.html#id,Variable models.Charge.id=models.Charge-class.html#id,Variable models.Crime.id=models.Crime-class.html#id,Variable models.CrimeDescription.id=models.CrimeDescription-class.html#id"><a title="models.Celebrity.id
+models.CelebrityAlias.id
+models.Charge.id
+models.Crime.id
+models.CrimeDescription.id" class="py-name" href="#" onclick="return doclink('link-1', 'id', 'link-1');">id</a></tt> <tt class="py-op">=</tt> <tt id="link-2" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-2', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-3" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-3', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt class="py-name">primary_key</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line">  <tt id="link-4" class="py-name" targets="Variable models.Celebrity.name=models.Celebrity-class.html#name,Variable models.Crime.name=models.Crime-class.html#name"><a title="models.Celebrity.name
+models.Crime.name" class="py-name" href="#" onclick="return doclink('link-4', 'name', 'link-4');">name</a></tt> <tt class="py-op">=</tt> <tt id="link-5" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-5', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-6" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-6', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">4000</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line">  <tt id="link-7" class="py-name" targets="Variable models.Celebrity.description=models.Celebrity-class.html#description,Variable models.Charge.description=models.Charge-class.html#description,Variable models.Crime.description=models.Crime-class.html#description,Variable models.CrimeDescription.description=models.CrimeDescription-class.html#description"><a title="models.Celebrity.description
+models.Charge.description
+models.Crime.description
+models.CrimeDescription.description" class="py-name" href="#" onclick="return doclink('link-7', 'description', 'link-7');">description</a></tt> <tt class="py-op">=</tt> <tt id="link-8" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-8', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-9" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-9', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Text</tt><tt class="py-op">)</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line">  <tt id="link-10" class="py-name" targets="Variable models.Celebrity.twitter_handle=models.Celebrity-class.html#twitter_handle"><a title="models.Celebrity.twitter_handle" class="py-name" href="#" onclick="return doclink('link-10', 'twitter_handle', 'link-10');">twitter_handle</a></tt> <tt class="py-op">=</tt> <tt id="link-11" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-11', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-12" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-12', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">4000</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line">  <tt id="link-13" class="py-name" targets="Variable models.Celebrity.birthday=models.Celebrity-class.html#birthday"><a title="models.Celebrity.birthday" class="py-name" href="#" onclick="return doclink('link-13', 'birthday', 'link-13');">birthday</a></tt> <tt class="py-op">=</tt> <tt id="link-14" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-14', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-15" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-15', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">DateTime</tt><tt class="py-op">)</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line">  <tt id="link-16" class="py-name" targets="Variable models.Celebrity.wiki_url=models.Celebrity-class.html#wiki_url,Variable models.Crime.wiki_url=models.Crime-class.html#wiki_url"><a title="models.Celebrity.wiki_url
+models.Crime.wiki_url" class="py-name" href="#" onclick="return doclink('link-16', 'wiki_url', 'link-16');">wiki_url</a></tt> <tt class="py-op">=</tt> <tt id="link-17" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-17', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-18" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-18', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">4000</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line">  <tt id="link-19" class="py-name" targets="Variable models.Celebrity.imdb_url=models.Celebrity-class.html#imdb_url"><a title="models.Celebrity.imdb_url" class="py-name" href="#" onclick="return doclink('link-19', 'imdb_url', 'link-19');">imdb_url</a></tt> <tt class="py-op">=</tt> <tt id="link-20" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-20', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-21" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-21', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">4000</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line">  <tt id="link-22" class="py-name" targets="Variable models.Celebrity.picture_url=models.Celebrity-class.html#picture_url"><a title="models.Celebrity.picture_url" class="py-name" href="#" onclick="return doclink('link-22', 'picture_url', 'link-22');">picture_url</a></tt> <tt class="py-op">=</tt> <tt id="link-23" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-23', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-24" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-24', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">4000</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line">  <tt id="link-25" class="py-name" targets="Variable models.Celebrity.aliases=models.Celebrity-class.html#aliases"><a title="models.Celebrity.aliases" class="py-name" href="#" onclick="return doclink('link-25', 'aliases', 'link-25');">aliases</a></tt> <tt class="py-op">=</tt> <tt id="link-26" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-26', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">relationship</tt><tt class="py-op">(</tt><tt class="py-string">'CelebrityAlias'</tt><tt class="py-op">)</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line">  <tt id="link-27" class="py-name" targets="Variable models.Celebrity.crimes=models.Celebrity-class.html#crimes"><a title="models.Celebrity.crimes" class="py-name" href="#" onclick="return doclink('link-27', 'crimes', 'link-27');">crimes</a></tt> <tt class="py-op">=</tt> <tt id="link-28" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-28', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">relationship</tt><tt class="py-op">(</tt><tt class="py-string">'Crime'</tt><tt class="py-op">,</tt> <tt class="py-name">secondary</tt><tt class="py-op">=</tt><tt class="py-string">'charge'</tt><tt class="py-op">)</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line">  <tt id="link-29" class="py-name" targets="Variable models.Celebrity.charges=models.Celebrity-class.html#charges,Variable models.Crime.charges=models.Crime-class.html#charges"><a title="models.Celebrity.charges
+models.Crime.charges" class="py-name" href="#" onclick="return doclink('link-29', 'charges', 'link-29');">charges</a></tt> <tt class="py-op">=</tt> <tt id="link-30" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-30', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">relationship</tt><tt class="py-op">(</tt><tt class="py-string">'Charge'</tt><tt class="py-op">)</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"> </tt>
+<a name="Celebrity.__init__"></a><div id="Celebrity.__init__-def"><a name="L22"></a><tt class="py-lineno"> 22</tt> <a class="py-toggle" href="#" id="Celebrity.__init__-toggle" onclick="return toggle('Celebrity.__init__');">-</a><tt class="py-line">  <tt class="py-keyword">def</tt> <a class="py-def-name" href="models.Celebrity-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line">               <tt class="py-param">name</tt><tt class="py-op">,</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">               <tt class="py-param">description</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">               <tt class="py-param">twitter_handle</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">               <tt class="py-param">birthday</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">               <tt class="py-param">wiki_url</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">               <tt class="py-param">imdb_url</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">               <tt class="py-param">picture_url</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Celebrity.__init__-collapsed" style="display:none;" pad="+++" indent="++++++"></div><div id="Celebrity.__init__-expanded"><a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-31" class="py-name"><a title="models.Celebrity.name
+models.Crime.name" class="py-name" href="#" onclick="return doclink('link-31', 'name', 'link-4');">name</a></tt> <tt class="py-op">=</tt> <tt id="link-32" class="py-name"><a title="models.Celebrity.name
+models.Crime.name" class="py-name" href="#" onclick="return doclink('link-32', 'name', 'link-4');">name</a></tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-33" class="py-name"><a title="models.Celebrity.description
+models.Charge.description
+models.Crime.description
+models.CrimeDescription.description" class="py-name" href="#" onclick="return doclink('link-33', 'description', 'link-7');">description</a></tt> <tt class="py-op">=</tt> <tt id="link-34" class="py-name"><a title="models.Celebrity.description
+models.Charge.description
+models.Crime.description
+models.CrimeDescription.description" class="py-name" href="#" onclick="return doclink('link-34', 'description', 'link-7');">description</a></tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-35" class="py-name"><a title="models.Celebrity.twitter_handle" class="py-name" href="#" onclick="return doclink('link-35', 'twitter_handle', 'link-10');">twitter_handle</a></tt><tt class="py-op">=</tt><tt id="link-36" class="py-name"><a title="models.Celebrity.twitter_handle" class="py-name" href="#" onclick="return doclink('link-36', 'twitter_handle', 'link-10');">twitter_handle</a></tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-37" class="py-name"><a title="models.Celebrity.birthday" class="py-name" href="#" onclick="return doclink('link-37', 'birthday', 'link-13');">birthday</a></tt> <tt class="py-op">=</tt> <tt id="link-38" class="py-name"><a title="models.Celebrity.birthday" class="py-name" href="#" onclick="return doclink('link-38', 'birthday', 'link-13');">birthday</a></tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-39" class="py-name"><a title="models.Celebrity.wiki_url
+models.Crime.wiki_url" class="py-name" href="#" onclick="return doclink('link-39', 'wiki_url', 'link-16');">wiki_url</a></tt> <tt class="py-op">=</tt> <tt id="link-40" class="py-name"><a title="models.Celebrity.wiki_url
+models.Crime.wiki_url" class="py-name" href="#" onclick="return doclink('link-40', 'wiki_url', 'link-16');">wiki_url</a></tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-41" class="py-name"><a title="models.Celebrity.imdb_url" class="py-name" href="#" onclick="return doclink('link-41', 'imdb_url', 'link-19');">imdb_url</a></tt> <tt class="py-op">=</tt> <tt id="link-42" class="py-name"><a title="models.Celebrity.imdb_url" class="py-name" href="#" onclick="return doclink('link-42', 'imdb_url', 'link-19');">imdb_url</a></tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-43" class="py-name"><a title="models.Celebrity.picture_url" class="py-name" href="#" onclick="return doclink('link-43', 'picture_url', 'link-22');">picture_url</a></tt> <tt class="py-op">=</tt> <tt id="link-44" class="py-name"><a title="models.Celebrity.picture_url" class="py-name" href="#" onclick="return doclink('link-44', 'picture_url', 'link-22');">picture_url</a></tt> </tt>
+</div><a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"> </tt>
+<a name="Celebrity.__repr__"></a><div id="Celebrity.__repr__-def"><a name="L38"></a><tt class="py-lineno"> 38</tt> <a class="py-toggle" href="#" id="Celebrity.__repr__-toggle" onclick="return toggle('Celebrity.__repr__');">-</a><tt class="py-line">  <tt class="py-keyword">def</tt> <a class="py-def-name" href="models.Celebrity-class.html#__repr__">__repr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Celebrity.__repr__-collapsed" style="display:none;" pad="+++" indent="++++++"></div><div id="Celebrity.__repr__-expanded"><a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-string">'(Celebrity {num}: {name})'</tt><tt class="py-op">.</tt><tt class="py-name">format</tt><tt class="py-op">(</tt><tt id="link-45" class="py-name"><a title="models.Celebrity.name
+models.Crime.name" class="py-name" href="#" onclick="return doclink('link-45', 'name', 'link-4');">name</a></tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-46" class="py-name"><a title="models.Celebrity.name
+models.Crime.name" class="py-name" href="#" onclick="return doclink('link-46', 'name', 'link-4');">name</a></tt><tt class="py-op">,</tt> <tt class="py-name">num</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-47" class="py-name"><a title="models.Celebrity.id
+models.CelebrityAlias.id
+models.Charge.id
+models.Crime.id
+models.CrimeDescription.id" class="py-name" href="#" onclick="return doclink('link-47', 'id', 'link-1');">id</a></tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"> </tt>
+<a name="CelebrityAlias"></a><div id="CelebrityAlias-def"><a name="L41"></a><tt class="py-lineno"> 41</tt> <a class="py-toggle" href="#" id="CelebrityAlias-toggle" onclick="return toggle('CelebrityAlias');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="models.CelebrityAlias-class.html">CelebrityAlias</a><tt class="py-op">(</tt><tt class="py-base-class">db</tt><tt class="py-op">.</tt><tt class="py-base-class">Model</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="CelebrityAlias-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="CelebrityAlias-expanded"><a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">  <tt id="link-48" class="py-name"><a title="models.Celebrity.id
+models.CelebrityAlias.id
+models.Charge.id
+models.Crime.id
+models.CrimeDescription.id" class="py-name" href="#" onclick="return doclink('link-48', 'id', 'link-1');">id</a></tt> <tt class="py-op">=</tt> <tt id="link-49" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-49', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-50" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-50', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt class="py-name">primary_key</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">  <tt id="link-51" class="py-name" targets="Variable models.CelebrityAlias.alias=models.CelebrityAlias-class.html#alias"><a title="models.CelebrityAlias.alias" class="py-name" href="#" onclick="return doclink('link-51', 'alias', 'link-51');">alias</a></tt> <tt class="py-op">=</tt> <tt id="link-52" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-52', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-53" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-53', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">4000</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">   </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">  <tt id="link-54" class="py-name" targets="Variable models.CelebrityAlias.celebrity_id=models.CelebrityAlias-class.html#celebrity_id,Variable models.Charge.celebrity_id=models.Charge-class.html#celebrity_id"><a title="models.CelebrityAlias.celebrity_id
+models.Charge.celebrity_id" class="py-name" href="#" onclick="return doclink('link-54', 'celebrity_id', 'link-54');">celebrity_id</a></tt> <tt class="py-op">=</tt> <tt id="link-55" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-55', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-56" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-56', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt id="link-57" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-57', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">ForeignKey</tt><tt class="py-op">(</tt><tt class="py-string">'celebrity.id'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">   </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">  <tt id="link-58" class="py-name" targets="Variable models.CelebrityAlias.celebrity=models.CelebrityAlias-class.html#celebrity,Variable models.Charge.celebrity=models.Charge-class.html#celebrity"><a title="models.CelebrityAlias.celebrity
+models.Charge.celebrity" class="py-name" href="#" onclick="return doclink('link-58', 'celebrity', 'link-58');">celebrity</a></tt> <tt class="py-op">=</tt> <tt id="link-59" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-59', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">relationship</tt><tt class="py-op">(</tt><tt class="py-string">'Celebrity'</tt><tt class="py-op">)</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">   </tt>
+<a name="CelebrityAlias.__init__"></a><div id="CelebrityAlias.__init__-def"><a name="L49"></a><tt class="py-lineno"> 49</tt> <a class="py-toggle" href="#" id="CelebrityAlias.__init__-toggle" onclick="return toggle('CelebrityAlias.__init__');">-</a><tt class="py-line">  <tt class="py-keyword">def</tt> <a class="py-def-name" href="models.CelebrityAlias-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">alias</tt><tt class="py-op">,</tt> <tt class="py-param">celebrity</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="CelebrityAlias.__init__-collapsed" style="display:none;" pad="+++" indent="++++++"></div><div id="CelebrityAlias.__init__-expanded"><a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-60" class="py-name"><a title="models.CelebrityAlias.alias" class="py-name" href="#" onclick="return doclink('link-60', 'alias', 'link-51');">alias</a></tt> <tt class="py-op">=</tt> <tt id="link-61" class="py-name"><a title="models.CelebrityAlias.alias" class="py-name" href="#" onclick="return doclink('link-61', 'alias', 'link-51');">alias</a></tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-62" class="py-name"><a title="models.CelebrityAlias.celebrity
+models.Charge.celebrity" class="py-name" href="#" onclick="return doclink('link-62', 'celebrity', 'link-58');">celebrity</a></tt> <tt class="py-op">=</tt> <tt id="link-63" class="py-name"><a title="models.CelebrityAlias.celebrity
+models.Charge.celebrity" class="py-name" href="#" onclick="return doclink('link-63', 'celebrity', 'link-58');">celebrity</a></tt> </tt>
+</div><a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"> </tt>
+<a name="CelebrityAlias.__repr__"></a><div id="CelebrityAlias.__repr__-def"><a name="L53"></a><tt class="py-lineno"> 53</tt> <a class="py-toggle" href="#" id="CelebrityAlias.__repr__-toggle" onclick="return toggle('CelebrityAlias.__repr__');">-</a><tt class="py-line">  <tt class="py-keyword">def</tt> <a class="py-def-name" href="models.CelebrityAlias-class.html#__repr__">__repr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="CelebrityAlias.__repr__-collapsed" style="display:none;" pad="+++" indent="++++++"></div><div id="CelebrityAlias.__repr__-expanded"><a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-string">'(Celebrity Alias {num}: {celebrity}/{alias})'</tt><tt class="py-op">.</tt><tt class="py-name">format</tt><tt class="py-op">(</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">        <tt id="link-64" class="py-name"><a title="models.CelebrityAlias.alias" class="py-name" href="#" onclick="return doclink('link-64', 'alias', 'link-51');">alias</a></tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-65" class="py-name"><a title="models.CelebrityAlias.alias" class="py-name" href="#" onclick="return doclink('link-65', 'alias', 'link-51');">alias</a></tt><tt class="py-op">,</tt> <tt id="link-66" class="py-name"><a title="models.CelebrityAlias.celebrity
+models.Charge.celebrity" class="py-name" href="#" onclick="return doclink('link-66', 'celebrity', 'link-58');">celebrity</a></tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-67" class="py-name"><a title="models.CelebrityAlias.celebrity
+models.Charge.celebrity" class="py-name" href="#" onclick="return doclink('link-67', 'celebrity', 'link-58');">celebrity</a></tt><tt class="py-op">,</tt> <tt class="py-name">num</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-68" class="py-name"><a title="models.Celebrity.id
+models.CelebrityAlias.id
+models.Charge.id
+models.Crime.id
+models.CrimeDescription.id" class="py-name" href="#" onclick="return doclink('link-68', 'id', 'link-1');">id</a></tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"> </tt>
+<a name="Crime"></a><div id="Crime-def"><a name="L57"></a><tt class="py-lineno"> 57</tt> <a class="py-toggle" href="#" id="Crime-toggle" onclick="return toggle('Crime');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="models.Crime-class.html">Crime</a><tt class="py-op">(</tt><tt class="py-base-class">db</tt><tt class="py-op">.</tt><tt class="py-base-class">Model</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Crime-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Crime-expanded"><a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">  <tt id="link-69" class="py-name"><a title="models.Celebrity.id
+models.CelebrityAlias.id
+models.Charge.id
+models.Crime.id
+models.CrimeDescription.id" class="py-name" href="#" onclick="return doclink('link-69', 'id', 'link-1');">id</a></tt> <tt class="py-op">=</tt> <tt id="link-70" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-70', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-71" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-71', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt class="py-name">primary_key</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">  <tt id="link-72" class="py-name"><a title="models.Celebrity.name
+models.Crime.name" class="py-name" href="#" onclick="return doclink('link-72', 'name', 'link-4');">name</a></tt> <tt class="py-op">=</tt> <tt id="link-73" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-73', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-74" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-74', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">4000</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">  <tt id="link-75" class="py-name"><a title="models.Celebrity.description
+models.Charge.description
+models.Crime.description
+models.CrimeDescription.description" class="py-name" href="#" onclick="return doclink('link-75', 'description', 'link-7');">description</a></tt> <tt class="py-op">=</tt> <tt id="link-76" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-76', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-77" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-77', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Text</tt><tt class="py-op">)</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">  <tt id="link-78" class="py-name"><a title="models.Celebrity.wiki_url
+models.Crime.wiki_url" class="py-name" href="#" onclick="return doclink('link-78', 'wiki_url', 'link-16');">wiki_url</a></tt> <tt class="py-op">=</tt> <tt id="link-79" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-79', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-80" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-80', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">4000</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">  <tt id="link-81" class="py-name" targets="Variable models.Crime.descriptions=models.Crime-class.html#descriptions"><a title="models.Crime.descriptions" class="py-name" href="#" onclick="return doclink('link-81', 'descriptions', 'link-81');">descriptions</a></tt> <tt class="py-op">=</tt> <tt id="link-82" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-82', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">relationship</tt><tt class="py-op">(</tt><tt class="py-string">'CrimeDescription'</tt><tt class="py-op">)</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">  <tt id="link-83" class="py-name" targets="Variable models.Crime.celebrities=models.Crime-class.html#celebrities"><a title="models.Crime.celebrities" class="py-name" href="#" onclick="return doclink('link-83', 'celebrities', 'link-83');">celebrities</a></tt> <tt class="py-op">=</tt> <tt id="link-84" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-84', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">relationship</tt><tt class="py-op">(</tt><tt class="py-string">'Celebrity'</tt><tt class="py-op">,</tt> <tt class="py-name">secondary</tt><tt class="py-op">=</tt><tt class="py-string">'charge'</tt><tt class="py-op">)</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">  <tt id="link-85" class="py-name"><a title="models.Celebrity.charges
+models.Crime.charges" class="py-name" href="#" onclick="return doclink('link-85', 'charges', 'link-29');">charges</a></tt> <tt class="py-op">=</tt> <tt id="link-86" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-86', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">relationship</tt><tt class="py-op">(</tt><tt class="py-string">'Charge'</tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"> </tt>
+<a name="Crime.__init__"></a><div id="Crime.__init__-def"><a name="L67"></a><tt class="py-lineno"> 67</tt> <a class="py-toggle" href="#" id="Crime.__init__-toggle" onclick="return toggle('Crime.__init__');">-</a><tt class="py-line">  <tt class="py-keyword">def</tt> <a class="py-def-name" href="models.Crime-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">,</tt> <tt class="py-param">wiki_url</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">description</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Crime.__init__-collapsed" style="display:none;" pad="+++" indent="++++++"></div><div id="Crime.__init__-expanded"><a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-87" class="py-name"><a title="models.Celebrity.name
+models.Crime.name" class="py-name" href="#" onclick="return doclink('link-87', 'name', 'link-4');">name</a></tt> <tt class="py-op">=</tt> <tt id="link-88" class="py-name"><a title="models.Celebrity.name
+models.Crime.name" class="py-name" href="#" onclick="return doclink('link-88', 'name', 'link-4');">name</a></tt>  </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-89" class="py-name"><a title="models.Celebrity.wiki_url
+models.Crime.wiki_url" class="py-name" href="#" onclick="return doclink('link-89', 'wiki_url', 'link-16');">wiki_url</a></tt> <tt class="py-op">=</tt> <tt id="link-90" class="py-name"><a title="models.Celebrity.wiki_url
+models.Crime.wiki_url" class="py-name" href="#" onclick="return doclink('link-90', 'wiki_url', 'link-16');">wiki_url</a></tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-91" class="py-name"><a title="models.Celebrity.description
+models.Charge.description
+models.Crime.description
+models.CrimeDescription.description" class="py-name" href="#" onclick="return doclink('link-91', 'description', 'link-7');">description</a></tt><tt class="py-op">=</tt><tt id="link-92" class="py-name"><a title="models.Celebrity.description
+models.Charge.description
+models.Crime.description
+models.CrimeDescription.description" class="py-name" href="#" onclick="return doclink('link-92', 'description', 'link-7');">description</a></tt> </tt>
+</div><a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"> </tt>
+<a name="Crime.__repr__"></a><div id="Crime.__repr__-def"><a name="L72"></a><tt class="py-lineno"> 72</tt> <a class="py-toggle" href="#" id="Crime.__repr__-toggle" onclick="return toggle('Crime.__repr__');">-</a><tt class="py-line">  <tt class="py-keyword">def</tt> <a class="py-def-name" href="models.Crime-class.html#__repr__">__repr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Crime.__repr__-collapsed" style="display:none;" pad="+++" indent="++++++"></div><div id="Crime.__repr__-expanded"><a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-string">'(Crime {num}: {name})'</tt><tt class="py-op">.</tt><tt class="py-name">format</tt><tt class="py-op">(</tt><tt id="link-93" class="py-name"><a title="models.Celebrity.name
+models.Crime.name" class="py-name" href="#" onclick="return doclink('link-93', 'name', 'link-4');">name</a></tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-94" class="py-name"><a title="models.Celebrity.name
+models.Crime.name" class="py-name" href="#" onclick="return doclink('link-94', 'name', 'link-4');">name</a></tt><tt class="py-op">,</tt> <tt class="py-name">num</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-95" class="py-name"><a title="models.Celebrity.id
+models.CelebrityAlias.id
+models.Charge.id
+models.Crime.id
+models.CrimeDescription.id" class="py-name" href="#" onclick="return doclink('link-95', 'id', 'link-1');">id</a></tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"> </tt>
+<a name="CrimeDescription"></a><div id="CrimeDescription-def"><a name="L75"></a><tt class="py-lineno"> 75</tt> <a class="py-toggle" href="#" id="CrimeDescription-toggle" onclick="return toggle('CrimeDescription');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="models.CrimeDescription-class.html">CrimeDescription</a><tt class="py-op">(</tt><tt class="py-base-class">db</tt><tt class="py-op">.</tt><tt class="py-base-class">Model</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="CrimeDescription-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="CrimeDescription-expanded"><a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">  <tt id="link-96" class="py-name"><a title="models.Celebrity.id
+models.CelebrityAlias.id
+models.Charge.id
+models.Crime.id
+models.CrimeDescription.id" class="py-name" href="#" onclick="return doclink('link-96', 'id', 'link-1');">id</a></tt> <tt class="py-op">=</tt> <tt id="link-97" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-97', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-98" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-98', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt class="py-name">primary_key</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">  <tt id="link-99" class="py-name" targets="Variable models.Charge.location=models.Charge-class.html#location,Variable models.CrimeDescription.location=models.CrimeDescription-class.html#location"><a title="models.Charge.location
+models.CrimeDescription.location" class="py-name" href="#" onclick="return doclink('link-99', 'location', 'link-99');">location</a></tt> <tt class="py-op">=</tt> <tt id="link-100" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-100', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-101" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-101', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">4000</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">  <tt id="link-102" class="py-name"><a title="models.Celebrity.description
+models.Charge.description
+models.Crime.description
+models.CrimeDescription.description" class="py-name" href="#" onclick="return doclink('link-102', 'description', 'link-7');">description</a></tt> <tt class="py-op">=</tt> <tt id="link-103" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-103', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-104" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-104', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Text</tt><tt class="py-op">)</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">   </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">  <tt id="link-105" class="py-name" targets="Variable models.Charge.crime_id=models.Charge-class.html#crime_id,Variable models.CrimeDescription.crime_id=models.CrimeDescription-class.html#crime_id"><a title="models.Charge.crime_id
+models.CrimeDescription.crime_id" class="py-name" href="#" onclick="return doclink('link-105', 'crime_id', 'link-105');">crime_id</a></tt> <tt class="py-op">=</tt> <tt id="link-106" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-106', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-107" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-107', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt id="link-108" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-108', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">ForeignKey</tt><tt class="py-op">(</tt><tt class="py-string">'crime.id'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">   </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">  <tt id="link-109" class="py-name" targets="Variable models.Charge.crime=models.Charge-class.html#crime,Variable models.CrimeDescription.crime=models.CrimeDescription-class.html#crime"><a title="models.Charge.crime
+models.CrimeDescription.crime" class="py-name" href="#" onclick="return doclink('link-109', 'crime', 'link-109');">crime</a></tt> <tt class="py-op">=</tt> <tt id="link-110" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-110', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">relationship</tt><tt class="py-op">(</tt><tt class="py-string">'Crime'</tt><tt class="py-op">)</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">   </tt>
+<a name="CrimeDescription.__init__"></a><div id="CrimeDescription.__init__-def"><a name="L84"></a><tt class="py-lineno"> 84</tt> <a class="py-toggle" href="#" id="CrimeDescription.__init__-toggle" onclick="return toggle('CrimeDescription.__init__');">-</a><tt class="py-line">  <tt class="py-keyword">def</tt> <a class="py-def-name" href="models.CrimeDescription-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">description</tt><tt class="py-op">,</tt> <tt class="py-param">crime</tt><tt class="py-op">,</tt> <tt class="py-param">location</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="CrimeDescription.__init__-collapsed" style="display:none;" pad="+++" indent="++++++"></div><div id="CrimeDescription.__init__-expanded"><a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-111" class="py-name"><a title="models.Charge.location
+models.CrimeDescription.location" class="py-name" href="#" onclick="return doclink('link-111', 'location', 'link-99');">location</a></tt> <tt class="py-op">=</tt> <tt id="link-112" class="py-name"><a title="models.Charge.location
+models.CrimeDescription.location" class="py-name" href="#" onclick="return doclink('link-112', 'location', 'link-99');">location</a></tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-113" class="py-name"><a title="models.Celebrity.description
+models.Charge.description
+models.Crime.description
+models.CrimeDescription.description" class="py-name" href="#" onclick="return doclink('link-113', 'description', 'link-7');">description</a></tt> <tt class="py-op">=</tt> <tt id="link-114" class="py-name"><a title="models.Celebrity.description
+models.Charge.description
+models.Crime.description
+models.CrimeDescription.description" class="py-name" href="#" onclick="return doclink('link-114', 'description', 'link-7');">description</a></tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-115" class="py-name"><a title="models.Charge.crime
+models.CrimeDescription.crime" class="py-name" href="#" onclick="return doclink('link-115', 'crime', 'link-109');">crime</a></tt> <tt class="py-op">=</tt> <tt id="link-116" class="py-name"><a title="models.Charge.crime
+models.CrimeDescription.crime" class="py-name" href="#" onclick="return doclink('link-116', 'crime', 'link-109');">crime</a></tt> </tt>
+</div><a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"> </tt>
+<a name="CrimeDescription.__repr__"></a><div id="CrimeDescription.__repr__-def"><a name="L89"></a><tt class="py-lineno"> 89</tt> <a class="py-toggle" href="#" id="CrimeDescription.__repr__-toggle" onclick="return toggle('CrimeDescription.__repr__');">-</a><tt class="py-line">  <tt class="py-keyword">def</tt> <a class="py-def-name" href="models.CrimeDescription-class.html#__repr__">__repr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="CrimeDescription.__repr__-collapsed" style="display:none;" pad="+++" indent="++++++"></div><div id="CrimeDescription.__repr__-expanded"><a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-string">'(Crime Description {num}: {crime})'</tt><tt class="py-op">.</tt><tt class="py-name">format</tt><tt class="py-op">(</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">        <tt class="py-name">num</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-117" class="py-name"><a title="models.Celebrity.id
+models.CelebrityAlias.id
+models.Charge.id
+models.Crime.id
+models.CrimeDescription.id" class="py-name" href="#" onclick="return doclink('link-117', 'id', 'link-1');">id</a></tt><tt class="py-op">,</tt> <tt id="link-118" class="py-name"><a title="models.Charge.crime
+models.CrimeDescription.crime" class="py-name" href="#" onclick="return doclink('link-118', 'crime', 'link-109');">crime</a></tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-119" class="py-name"><a title="models.Charge.crime
+models.CrimeDescription.crime" class="py-name" href="#" onclick="return doclink('link-119', 'crime', 'link-109');">crime</a></tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-comment"># Association table</tt> </tt>
+<a name="Charge"></a><div id="Charge-def"><a name="L94"></a><tt class="py-lineno"> 94</tt> <a class="py-toggle" href="#" id="Charge-toggle" onclick="return toggle('Charge');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="models.Charge-class.html">Charge</a><tt class="py-op">(</tt><tt class="py-base-class">db</tt><tt class="py-op">.</tt><tt class="py-base-class">Model</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Charge-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Charge-expanded"><a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">  <tt id="link-120" class="py-name"><a title="models.Celebrity.id
+models.CelebrityAlias.id
+models.Charge.id
+models.Crime.id
+models.CrimeDescription.id" class="py-name" href="#" onclick="return doclink('link-120', 'id', 'link-1');">id</a></tt> <tt class="py-op">=</tt> <tt id="link-121" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-121', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-122" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-122', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt class="py-name">primary_key</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">  <tt id="link-123" class="py-name" targets="Variable models.Charge.date=models.Charge-class.html#date"><a title="models.Charge.date" class="py-name" href="#" onclick="return doclink('link-123', 'date', 'link-123');">date</a></tt> <tt class="py-op">=</tt> <tt id="link-124" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-124', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-125" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-125', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">DateTime</tt><tt class="py-op">)</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">  <tt id="link-126" class="py-name"><a title="models.Charge.location
+models.CrimeDescription.location" class="py-name" href="#" onclick="return doclink('link-126', 'location', 'link-99');">location</a></tt> <tt class="py-op">=</tt> <tt id="link-127" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-127', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-128" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-128', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">4000</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">  <tt id="link-129" class="py-name"><a title="models.Celebrity.description
+models.Charge.description
+models.Crime.description
+models.CrimeDescription.description" class="py-name" href="#" onclick="return doclink('link-129', 'description', 'link-7');">description</a></tt> <tt class="py-op">=</tt> <tt id="link-130" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-130', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-131" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-131', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Text</tt><tt class="py-op">)</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">  <tt id="link-132" class="py-name" targets="Variable models.Charge.attorney=models.Charge-class.html#attorney"><a title="models.Charge.attorney" class="py-name" href="#" onclick="return doclink('link-132', 'attorney', 'link-132');">attorney</a></tt> <tt class="py-op">=</tt> <tt id="link-133" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-133', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-134" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-134', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">4000</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">  <tt id="link-135" class="py-name" targets="Variable models.Charge.classification=models.Charge-class.html#classification"><a title="models.Charge.classification" class="py-name" href="#" onclick="return doclink('link-135', 'classification', 'link-135');">classification</a></tt> <tt class="py-op">=</tt> <tt id="link-136" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-136', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-137" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-137', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">4000</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">  <tt id="link-138" class="py-name"><a title="models.CelebrityAlias.celebrity_id
+models.Charge.celebrity_id" class="py-name" href="#" onclick="return doclink('link-138', 'celebrity_id', 'link-54');">celebrity_id</a></tt> <tt class="py-op">=</tt> <tt id="link-139" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-139', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-140" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-140', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt id="link-141" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-141', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">ForeignKey</tt><tt class="py-op">(</tt><tt class="py-string">'celebrity.id'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">  <tt id="link-142" class="py-name"><a title="models.Charge.crime_id
+models.CrimeDescription.crime_id" class="py-name" href="#" onclick="return doclink('link-142', 'crime_id', 'link-105');">crime_id</a></tt> <tt class="py-op">=</tt> <tt id="link-143" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-143', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-144" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-144', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt id="link-145" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-145', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">ForeignKey</tt><tt class="py-op">(</tt><tt class="py-string">'crime.id'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">   </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">  <tt id="link-146" class="py-name"><a title="models.Charge.crime
+models.CrimeDescription.crime" class="py-name" href="#" onclick="return doclink('link-146', 'crime', 'link-109');">crime</a></tt> <tt class="py-op">=</tt> <tt id="link-147" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-147', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">relationship</tt><tt class="py-op">(</tt><tt class="py-string">'Crime'</tt><tt class="py-op">)</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">  <tt id="link-148" class="py-name"><a title="models.CelebrityAlias.celebrity
+models.Charge.celebrity" class="py-name" href="#" onclick="return doclink('link-148', 'celebrity', 'link-58');">celebrity</a></tt> <tt class="py-op">=</tt> <tt id="link-149" class="py-name"><a title="models.db" class="py-name" href="#" onclick="return doclink('link-149', 'db', 'link-0');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">relationship</tt><tt class="py-op">(</tt><tt class="py-string">'Celebrity'</tt><tt class="py-op">)</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"> </tt>
+<a name="Charge.__init__"></a><div id="Charge.__init__-def"><a name="L108"></a><tt class="py-lineno">108</tt> <a class="py-toggle" href="#" id="Charge.__init__-toggle" onclick="return toggle('Charge.__init__');">-</a><tt class="py-line">  <tt class="py-keyword">def</tt> <a class="py-def-name" href="models.Charge-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">               <tt class="py-param">celebrity</tt><tt class="py-op">,</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">               <tt class="py-param">crime</tt><tt class="py-op">,</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">               <tt class="py-param">date</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">               <tt class="py-param">location</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">               <tt class="py-param">description</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">               <tt class="py-param">attorney</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">               <tt class="py-param">classification</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Charge.__init__-collapsed" style="display:none;" pad="+++" indent="++++++"></div><div id="Charge.__init__-expanded"><a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-150" class="py-name"><a title="models.CelebrityAlias.celebrity
+models.Charge.celebrity" class="py-name" href="#" onclick="return doclink('link-150', 'celebrity', 'link-58');">celebrity</a></tt> <tt class="py-op">=</tt> <tt id="link-151" class="py-name"><a title="models.CelebrityAlias.celebrity
+models.Charge.celebrity" class="py-name" href="#" onclick="return doclink('link-151', 'celebrity', 'link-58');">celebrity</a></tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-152" class="py-name"><a title="models.Charge.crime
+models.CrimeDescription.crime" class="py-name" href="#" onclick="return doclink('link-152', 'crime', 'link-109');">crime</a></tt> <tt class="py-op">=</tt> <tt id="link-153" class="py-name"><a title="models.Charge.crime
+models.CrimeDescription.crime" class="py-name" href="#" onclick="return doclink('link-153', 'crime', 'link-109');">crime</a></tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-154" class="py-name"><a title="models.Charge.attorney" class="py-name" href="#" onclick="return doclink('link-154', 'attorney', 'link-132');">attorney</a></tt> <tt class="py-op">=</tt> <tt id="link-155" class="py-name"><a title="models.Charge.attorney" class="py-name" href="#" onclick="return doclink('link-155', 'attorney', 'link-132');">attorney</a></tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-156" class="py-name"><a title="models.Charge.date" class="py-name" href="#" onclick="return doclink('link-156', 'date', 'link-123');">date</a></tt> <tt class="py-op">=</tt> <tt id="link-157" class="py-name"><a title="models.Charge.date" class="py-name" href="#" onclick="return doclink('link-157', 'date', 'link-123');">date</a></tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-158" class="py-name"><a title="models.Charge.location
+models.CrimeDescription.location" class="py-name" href="#" onclick="return doclink('link-158', 'location', 'link-99');">location</a></tt> <tt class="py-op">=</tt> <tt id="link-159" class="py-name"><a title="models.Charge.location
+models.CrimeDescription.location" class="py-name" href="#" onclick="return doclink('link-159', 'location', 'link-99');">location</a></tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-160" class="py-name"><a title="models.CelebrityAlias.celebrity
+models.Charge.celebrity" class="py-name" href="#" onclick="return doclink('link-160', 'celebrity', 'link-58');">celebrity</a></tt> <tt class="py-op">=</tt> <tt id="link-161" class="py-name"><a title="models.CelebrityAlias.celebrity
+models.Charge.celebrity" class="py-name" href="#" onclick="return doclink('link-161', 'celebrity', 'link-58');">celebrity</a></tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-162" class="py-name"><a title="models.Charge.crime
+models.CrimeDescription.crime" class="py-name" href="#" onclick="return doclink('link-162', 'crime', 'link-109');">crime</a></tt> <tt class="py-op">=</tt> <tt id="link-163" class="py-name"><a title="models.Charge.crime
+models.CrimeDescription.crime" class="py-name" href="#" onclick="return doclink('link-163', 'crime', 'link-109');">crime</a></tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-164" class="py-name"><a title="models.Celebrity.description
+models.Charge.description
+models.Crime.description
+models.CrimeDescription.description" class="py-name" href="#" onclick="return doclink('link-164', 'description', 'link-7');">description</a></tt> <tt class="py-op">=</tt> <tt id="link-165" class="py-name"><a title="models.Celebrity.description
+models.Charge.description
+models.Crime.description
+models.CrimeDescription.description" class="py-name" href="#" onclick="return doclink('link-165', 'description', 'link-7');">description</a></tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-166" class="py-name"><a title="models.Charge.classification" class="py-name" href="#" onclick="return doclink('link-166', 'classification', 'link-135');">classification</a></tt> <tt class="py-op">=</tt> <tt id="link-167" class="py-name"><a title="models.Charge.classification" class="py-name" href="#" onclick="return doclink('link-167', 'classification', 'link-135');">classification</a></tt> </tt>
+</div><a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line"> </tt>
+<a name="Charge.__repr__"></a><div id="Charge.__repr__-def"><a name="L126"></a><tt class="py-lineno">126</tt> <a class="py-toggle" href="#" id="Charge.__repr__-toggle" onclick="return toggle('Charge.__repr__');">-</a><tt class="py-line">  <tt class="py-keyword">def</tt> <a class="py-def-name" href="models.Charge-class.html#__repr__">__repr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Charge.__repr__-collapsed" style="display:none;" pad="+++" indent="++++++"></div><div id="Charge.__repr__-expanded"><a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-string">'(Charge {num}: {celebrity}, {crime})'</tt><tt class="py-op">.</tt><tt class="py-name">format</tt><tt class="py-op">(</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-168" class="py-name"><a title="models.Celebrity.id
+models.CelebrityAlias.id
+models.Charge.id
+models.Crime.id
+models.CrimeDescription.id" class="py-name" href="#" onclick="return doclink('link-168', 'id', 'link-1');">id</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-169" class="py-name"><a title="models.Charge.crime
+models.CrimeDescription.crime" class="py-name" href="#" onclick="return doclink('link-169', 'crime', 'link-109');">crime</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-170" class="py-name"><a title="models.CelebrityAlias.celebrity
+models.Charge.celebrity" class="py-name" href="#" onclick="return doclink('link-170', 'celebrity', 'link-58');">celebrity</a></tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Thu Mar 26 23:03:46 2015
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
