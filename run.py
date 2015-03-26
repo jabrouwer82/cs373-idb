@@ -12,14 +12,14 @@ import sys
 # load the url routing functions
 from views import *
 from api import *
+if __name__ == '__main':
+  # CMD opts handling
+  opts = getopt.getopt(sys.argv[1:], 'p:', ['port='])
+  port = 5000
+  for opt, arg in opts[0]:
+    if opt in ('-p', '--port'):
+      port = int(arg)
 
-# CMD opts handling
-opts = getopt.getopt(sys.argv[1:], 'p:', ['port='])
-port = 5000
-for opt, arg in opts[0]:
-  if opt in ('-p', '--port'):
-    port = int(arg)
 
-
-app.run(host='0.0.0.0', port=port,  debug=True)
+  app.run(host='0.0.0.0', port=port,  debug=True)
 
