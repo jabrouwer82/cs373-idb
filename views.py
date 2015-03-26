@@ -34,6 +34,10 @@ def getCrime(crime):
 def charges():
 	charge_list = Charge.query.all()
 	return render_template('charges.html', charges=charge_list, date_formatter=date_formatter)
+@app.route('/charges/<int:charge_id>')
+def getCharge(charge_id):
+    charge = Charge.query.filter(Charge.id == charge_id).first()
+    return render_template('charge.html', charge=charge, date_formatter=date_formatter)
 
 @app.route('/about_us')
 @app.route('/about_us/')
