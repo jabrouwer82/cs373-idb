@@ -12,7 +12,7 @@ import sys
 # load the url routing functions
 from views import *
 from api import *
-if __name__ == '__main':
+if __name__ == '__main__':
   # CMD opts handling
   opts = getopt.getopt(sys.argv[1:], 'p:', ['port='])
   port = 5000
