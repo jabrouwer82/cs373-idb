@@ -43,7 +43,7 @@
                     <h5 align="center">Crimes charged with:</h5>
                     <ul class="list-group">
                         {% for crime in celebrity.crimes %}
-                        <li class="list-group-item">{{ crime.name }}</li>
+                        <li class="list-group-item"><a href="/crimes/{{ crime.name }}">{{ crime.name }}</a></li>
                         {% endfor %}
                     </ul>    
                 </div>
