@@ -1,5 +1,5 @@
 from unittest import TestCase, main
-from models import db, Celebrity, Crime, Charge, CelebrityAlias, CrimeDescription
+from models import db, Celebrity, Crime, Charge, CelebrityAlias
 from datetime import date
 from app import app
 import json
@@ -81,14 +81,7 @@ class TestModels(TestCase):
     alias = CelebrityAlias("Cheese Man", self.ched)
     self.assertEqual(alias.alias, "Cheese Man")
     self.assertEqual(alias.celebrity, self.ched)
-  
-  def test_crimedescription_attributes(self):
-    desc = CrimeDescription(location='Austin', description='Driving Fast', crime=self.speeding)    
-    self.assertEqual(desc.location, 'Austin')
-    self.assertEqual(desc.description, 'Driving Fast')
-    self.assertEqual(desc.crime, self.speeding)
-
-
+ 
   ### Test models in db ###
   def test_crime_in_db(self):
     c = self.speeding
@@ -113,13 +106,6 @@ class TestModels(TestCase):
     db.session.add(alias)
     db.session.commit()
     self.assertEqual(CelebrityAlias.query.all(), [alias])
-
-  def test_crimedescription_in_db(self):
-    desc = CrimeDescription(location='Austin', description='Driving Fast', crime=self.speeding)    
-    db.session.add(desc)
-    db.session.commit()
-    self.assertEqual(CrimeDescription.query.all(), [desc])
-
 
   ### Query attributes ###
   def test_celebs_charges(self):
@@ -223,10 +209,9 @@ class TestModels(TestCase):
   def test_crime_api(self):
     charge1 = Charge(self.ce1, self.cr1)
     charge2 = Charge(self.ce2, self.cr1)
-    cr1_desc = CrimeDescription('crime description', self.cr1)
-    db.session.add_all([charge1, charge2, cr1_desc])
+    db.session.add_all([charge1, charge2])
     db.session.commit()
-    expected = {'descriptions': [{'location': None, 'description': 'crime description', 'id': 1}], 
+    expected = {'descriptions': [], 
                 'wiki_url': None, 
                 'id': 1, 
                 'name': '1', 
