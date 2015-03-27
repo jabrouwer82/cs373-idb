@@ -1,0 +1,127 @@
+FORMAT: 1A
+
+# Celebrity Rap Sheet API
+The Celebrity Rap Sheet API is a platform for querying data
+about celebrities and their criminal charges.
+
+# Group Celebrities
+Celebrity related resources of the **Celebrity Rap Sheet API**
+
+## Celebrity Collection [/api/celebrity]
+### List all Celebrities [GET]
++ Response 200 (application/json)
+
+        [{
+          "uri": "http://23.253.252.30/api/celebrity/1", "name": "John Smith", "id": 1
+        }, {
+          "uri": "http://23.253.252.30/api/celebrity/1", "name": "Jane Doe", "id": 2
+        }]
+
+## Celebrity [/api/celebrity/{id}]
+A single Celebrity object with all its details
+### Retrieve all data for a Celebrity [GET]
++ Response 200 (application/json)
+
+        {
+            "aliases":
+            [{
+                "alias": "Jimmy John", "id": 1
+            }, {
+                "alias": "J", "id": 2
+            }],
+            "birthday": "10-20-2003",
+            "charges":
+            [{
+                "id": 1, "uri": "http://23.253.252.30/api/charge/1"
+            }, {
+                "id": 2, "uri": "http://23.253.252.30/api/charge/2"
+            }],
+            "crimes":
+            [{
+                "id": 1, "name": "Rhymin",
+                "uri": "http://23.253.252.30/api/crime/1"
+            }, {
+                "id": 3, "name": "Stealin",
+                "uri": "http://23.253.252.30/api/crime/3"
+            }],
+            "description": "Description that may contain markup<br />.",
+            "id": 1,
+            "imdb_url": "http://www.imdb.com/name/nm0123456/",
+            "name": "John Smith",
+            "picture_url": "http://some.domain/resource",
+            "twitter_handle": "@JSmith",
+            "wiki_url": "http://en.wikipedia.org/wiki/JohnSmith"
+        }
+
+# Group Crimes
+Crime related resources of the **Celebrity Rap Sheet API**
+
+## Crime Collection [/api/crime]
+### List all Crimes [GET]
++ Response 200 (application/json)
+
+        [{
+            "uri": "http://23.253.252.30/api/crime/1", "name": "Rhymin", "id": 1
+        }, {
+            "uri": "http://23.253.252.30/api/crime/2", "name": "Cheatin", "id": 2
+        }, {
+            "uri": "http://23.253.252.30/api/crime/3", "name": "Stealin", "id": 3
+        }]
+
+## Crime [/api/crime/{id}]
+A single Crime object with all its details
+### Retrieve all data for a Crime [GET]
++ Response 200 (application/json)
+
+        {
+            "celebrities":
+            [{
+                "id": 1, "name": "John Smith", "uri": "http://23.253.252.30/api/celebrity/1"
+            }, {
+                "id": 2, "name": "Jane Doe", "uri": "http://23.253.252.30/api/celebrity/2"
+            }],
+            "charges":
+            [{
+                "id": 1, "uri": "http://23.253.252.30/api/charge/1"
+            }, {
+                "id": 2, "uri": "http://23.253.252.30/api/charge/2"
+            }],
+            "description": "Rhymin in the face of the law.",
+            "id": 1,
+            "name": "Rhymin",
+            "wiki_url": "http://en.wikipedia.org/wiki/Rhymin"
+        }
+        
+# Group Charges
+Charge related resource of the **Celebrity Rap Sheet API**
+
+## Charge Collection [/api/charge]
+### List all Charges [GET]
++ Response 200 (application/json)
+
+        [{
+            "uri": "http://23.253.252.30/api/charge/1", "id": 1
+        }, {
+            "uri": "http://23.253.252.30/api/charge/2", "id": 2
+        }]
+
+## Charge [/api/charge/{id}]
+A single Charge object with all its details
+### Retrieve all data for a Charge [GET]
++ Response 200 (application/json)
+
+        {
+            "attorney": "Name or Null",
+            "celebrity":
+            {
+                "id": 1, "name": "John Smith", "uri": "http://23.253.252.30/api/celebrity/1"
+            },
+            "classification": "Class A Misdemeanor",
+            "crime":
+            {
+                "id": 1, "name": "Rhymin", "uri": "http://23.253.252.30/api/crime/1"
+            },
+            "date": "10-20-2003",
+            "description": "Actor John Smith was found Rhymin in the early morning.",
+            "location": "Austin, Texas"
+        }
