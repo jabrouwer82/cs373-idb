@@ -1,0 +1,1078 @@
+commit 930661c3d56feae854bb83c975aa6fe8a7ad437e
+Merge: 37fa882 80bebce
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Thu Mar 26 21:58:10 2015 -0500
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit 37fa88200d93974f6c8c77b8b2595b4d496892f1
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Thu Mar 26 21:57:44 2015 -0500
+
+    Re adds UML with correct name.
+
+commit 80bebcea1e43c96057f4e5c86f2688eda388f687
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Fri Mar 27 02:57:24 2015 +0000
+
+    change uml name
+
+commit afc7cbc6a76b18e28412b9245920e1e7965f0a69
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Thu Mar 26 21:57:24 2015 -0500
+
+    Removes uml pdf.
+
+commit 557ba051717fb1156996e86af0d632e58bfcbc52
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Fri Mar 27 02:54:52 2015 +0000
+
+    added tests.out
+
+commit cccd11dd18cdeda65f34b0ef3a3aabdde9739b85
+Author: Parker Berg <pberg@utexas.edu>
+Date:   Thu Mar 26 21:53:09 2015 -0500
+
+    added apiary raw doc
+
+commit d6b059f8f7bcf537b14d452f45438afb30615453
+Merge: e3b11e8 178c4e9
+Author: Parker Berg <pberg@utexas.edu>
+Date:   Thu Mar 26 21:51:52 2015 -0500
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit e3b11e8d57980036dcf4a5afdee407fa63e98cf4
+Author: Parker Berg <pberg@utexas.edu>
+Date:   Thu Mar 26 21:51:44 2015 -0500
+
+    added technical report
+
+commit 178c4e9a6c623c7451e3ec2a2729348c0fda410f
+Merge: a988bf9 d24bd2c
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Fri Mar 27 02:47:45 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit a988bf90f59ee0e338306afbf8c23991c7d8ac6f
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Fri Mar 27 02:47:25 2015 +0000
+
+    Adds tests.out
+
+commit d24bd2ca8cd550f632144f3b261735b56633d7b1
+Author: Parker Berg <pberg@utexas.edu>
+Date:   Thu Mar 26 21:40:14 2015 -0500
+
+    updated group stats
+
+commit a08ec3ee5697998bcbd065538d0146e115475fe1
+Merge: 79195d8 f86e387
+Author: Parker Berg <pberg@utexas.edu>
+Date:   Thu Mar 26 21:37:37 2015 -0500
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit 79195d80f55a101af02fa9130b83e9f905d3a9b2
+Author: Parker Berg <pberg@utexas.edu>
+Date:   Thu Mar 26 21:36:38 2015 -0500
+
+    added a bio for parker berg
+
+commit f86e387608fea6bffac804133bbb7fe588f116da
+Merge: f1f8b7f 1862789
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Fri Mar 27 02:29:26 2015 +0000
+
+    Merge branch 'master' of github.com:plberg/cs373-idb
+
+commit f1f8b7f976c8d1d90e5d8bb734ce45bdc6bd4e57
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Fri Mar 27 02:29:20 2015 +0000
+
+    Modified the crime template to correctly display the description.
+
+commit bf83ba02ff62f42c9aa63e29ffd445107b065681
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Fri Mar 27 02:28:13 2015 +0000
+
+    Fixed bug that wasn't showing the charge description.
+
+commit 77dc988c93f302313a6a4b98e65efb6310ae0924
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Fri Mar 27 02:27:30 2015 +0000
+
+    Added my picture to about us page.
+
+commit 12314cb6975f6640681e893dd794f4623227ea71
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Fri Mar 27 02:27:07 2015 +0000
+
+    Added descriptions for 3 crimes.
+
+commit 18627892c431ab83d5db9a57c3ee166c6e79450a
+Merge: 1ca2ad7 37f66dc
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Thu Mar 26 23:47:56 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit 1ca2ad7f485cbfc64f21b4bf2c5fce370efc2adf
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Thu Mar 26 23:47:37 2015 +0000
+
+    Remove CrimeDescription tests
+
+commit 37f66dc1b033428d4e17054920665d31c6bdf2be
+Merge: 5b367b5 635b853
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Thu Mar 26 23:43:53 2015 +0000
+
+    Merge branch 'master' of github.com:plberg/cs373-idb
+
+commit 5b367b5ac5643d666d57c854c384195a2f7bbb1f
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Thu Mar 26 23:42:51 2015 +0000
+
+    Updated to support sorting option.
+
+commit 3b5892126e00d72563c2a758a18c9d691de5b959
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Thu Mar 26 23:42:19 2015 +0000
+
+    Added sortable functionality to the model pages.
+
+commit 294a4ef5f428b24c9ce8664be1102f7572c687d2
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Thu Mar 26 23:41:10 2015 +0000
+
+    Configured new filter. Might not need it if we're getting rid of crime descriptions.
+
+commit 635b853f23f0acbe48a8578694d4eaae378c718c
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Thu Mar 26 23:39:10 2015 +0000
+
+    Made models.html to redirect to documentation
+
+commit 17e8a298acd6647f5e0e13aa03ffe13bf0878793
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Thu Mar 26 23:25:12 2015 +0000
+
+    Made models.html symlink
+
+commit 4fcf37537d21f7170bd6693b6032eefa8a605b3b
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Thu Mar 26 23:22:46 2015 +0000
+
+    Added epydoc documentation
+
+commit 8307e25df7b0449315b77718b1f8c77a03183931
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Thu Mar 26 22:36:31 2015 +0000
+
+    Updates Jacob's stats on about me
+
+commit b1e71d6db8a89d8ec65e772b34f7fae11df93436
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Thu Mar 26 22:28:43 2015 +0000
+
+    Adds a few more charges.
+
+commit 21989433e9e74e2a90da0ba3cb522578bf01c8c1
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Thu Mar 26 20:46:36 2015 +0000
+
+    We have a properly configured favicon!
+
+commit 63eff27d75d93bbadbd813595d894f378248de33
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Thu Mar 26 15:31:42 2015 -0500
+
+    Adds favicon.
+
+commit 1ef655e7a2ab758e63dd3a80fb6dc39b3707a1e2
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Thu Mar 26 18:44:32 2015 +0000
+
+    Modified bio
+
+commit 823f485f5de034750fa7969b18faf38d754cb60a
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Thu Mar 26 18:16:35 2015 +0000
+
+    Removed Hannah's bio, fixes #35
+
+commit 21d688d64f831c70f8ac68833c4001a2767c3f0c
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Thu Mar 26 18:02:40 2015 +0000
+
+    Deleted these images since they've been moved elsewhere.
+
+commit 19a7d0f42113853642cbb5cff3e4e5b4b4158814
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Thu Mar 26 17:57:09 2015 +0000
+
+    Created template for individual charge page.
+
+commit 954b540c60f164a40df7c44ca7e4af581f38878a
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Thu Mar 26 17:56:45 2015 +0000
+
+    Added routing for individual crime pages.
+
+commit f7cfe14776def8331725bd489bd519f916ef9bde
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Thu Mar 26 17:56:19 2015 +0000
+
+    Modified charges to link to individual charge pages.
+
+commit b2837100c313f663ba58ee3a19d6dccff94157fb
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Thu Mar 26 17:55:57 2015 +0000
+
+    Added Bio information for myself, still need to upload an image.
+
+commit a188388461a497ac82b00fe9d281bfcb3e912eb9
+Merge: 95d29d2 e4ea23b
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Thu Mar 26 15:20:32 2015 +0000
+
+    Merge branch 'master' of github.com:plberg/cs373-idb
+
+commit e4ea23b5026a046fb99f5d78587f0c4852d0d867
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Thu Mar 26 15:16:03 2015 +0000
+
+    Added parker t picture
+
+commit 45c2f22922c6711960532de5e7beac6cf4c39e0f
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Thu Mar 26 14:53:34 2015 +0000
+
+    Change __main to __main__
+
+commit 95d29d23c3108d5e87b586bb318d8cc3a22531d7
+Merge: 6fb4031 e3a397d
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Thu Mar 26 14:41:40 2015 +0000
+
+    Merge branch 'master' of github.com:plberg/cs373-idb
+
+commit 6fb403174b8cc906af42501beafae18c75fad2e3
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Thu Mar 26 14:41:34 2015 +0000
+
+    Added links to the crimes in the celebrity page.
+
+commit e3a397d59eebe7015803a3460b940063f85a5c20
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Thu Mar 26 14:23:28 2015 +0000
+
+    Added Parker T bio
+
+commit 82a3ccd090779c0c03f43663b20b158ea54ce731
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Thu Mar 26 11:46:15 2015 +0000
+
+    Adds all crimes to database.
+    
+    Only charges left to be entered.
+    Also crime descriptions.
+    I can only stare at these for so long.
+
+commit ce9100e56d64700ed30188af4c00bd9b6f54e81b
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Thu Mar 26 11:06:24 2015 +0000
+
+    The uwsgi process lives forever!
+    
+    Also stops uwsgi.pid from pushing to the server.
+
+commit f75a037f3f867374bf4bfb9e1b63fab1657064d1
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Thu Mar 26 11:03:54 2015 +0000
+
+    Typo in uwsgi.sh.
+
+commit 779a81a3073f3ef77cd37cb595540a2bfb472ca2
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Thu Mar 26 10:57:27 2015 +0000
+
+    Adds script for uwsgi managment.
+    
+    'uwsgi.sh start' to start the server.
+    'uwsgi.sh stop' to stop it.
+
+commit be043fdeca2d0ff88206e326710430b5c2d01a9a
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Thu Mar 26 10:37:09 2015 +0000
+
+    Setup for uWSGI application.
+
+commit d23f6483d2f09f2eadb84547f44b7e2182c3f741
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Thu Mar 26 06:18:58 2015 +0000
+
+    Adds template for others to insert their bios.
+
+commit c406ad3ac3c156d12c8c732e36d53170bcfec4ed
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Thu Mar 26 06:06:23 2015 +0000
+
+    Adds Jacob bio, stats section.
+    
+    Closes #20
+    Fixes weird spacing in celebrity.html
+
+commit 181792342f8ffe0466520a847442895b816fdeba
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Thu Mar 26 04:56:15 2015 +0000
+
+    Fixes a few typos.
+
+commit 49179fcf98e950befcef9a19dff411d69f04efff
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Thu Mar 26 04:47:07 2015 +0000
+
+    Redoes the string truncation on the celeb descs.
+    
+    More flexible, finds either paragraphs or sentences to cut off.
+    Makes more assumptions about data. Expects four &nbsp;s at start of string.
+
+commit 6705edd39e8983831aed4b5d9db6d55ac18123fb
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Thu Mar 26 04:46:32 2015 +0000
+
+    Finalizes celebrity data.
+
+commit 9d99fad72c82ebb3300c1e946929a5c70cc5dd1a
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Thu Mar 26 03:15:13 2015 +0000
+
+    Added API json tests
+
+commit 8eaff7df7c60602a289cf758f659144075733bba
+Merge: c5ab4ed 89bb338
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Thu Mar 26 03:11:46 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit c5ab4ed0eba0242e667e66b2518a2dfde8d624e8
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Thu Mar 26 03:11:30 2015 +0000
+
+    Changed json output to reflect model changes
+
+commit 89bb3384e248c1814ec0441f5798b3b90dbacea1
+Merge: 0c6c841 f6b2bda
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Thu Mar 26 03:10:51 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit 0c6c8411e87965b03270fa1b90a94e59844345b1
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Thu Mar 26 03:10:37 2015 +0000
+
+    Finishes adding celebrities to database.
+
+commit f6b2bda50a30d5e92935698a894dd7e3dcaf5293
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 18:17:22 2015 -0500
+
+    Added date_formatter access to the charges template.
+
+commit a52af19a909f05a1446116f2b6dd131acc1e7f9f
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 23:15:47 2015 +0000
+
+    Added icon credits in the footer.
+
+commit 8b8f3bd0c4f5de4e6243d978a6b2ccc01848075a
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 18:03:37 2015 -0500
+
+    Fixed bug in string_truncater.
+
+commit 92382a6d695a362d44a7b89ddb3c9b0d061f9ad2
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 18:01:55 2015 -0500
+
+    Modified string_truncater so that it doesn't attempt to truncate strings shorter than 100 characters.
+
+commit cf91e0fba45e9bcccf2edb7da38383cd6443d52b
+Merge: 1c8f3c2 6beb1fc
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Wed Mar 25 16:55:54 2015 -0500
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit 1c8f3c2514cfcb69f61c5e67ece6a261ce709d99
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Wed Mar 25 16:55:40 2015 -0500
+
+    Fixes color of celebrity icon.
+
+commit 6beb1fc4ebd1832932a30a767081187b7bbc4383
+Merge: 1b21927 c77442e
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 16:54:25 2015 -0500
+
+    Merge branch 'master' of github.com:plberg/cs373-idb
+
+commit 1b219272fbd119571a7334594a120138238ea923
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 16:54:09 2015 -0500
+
+    Truncated length of the descriptions.
+
+commit c77442eeed70e631e9937327f76945a39f43581f
+Merge: 3cb0a51 160ac2d
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Wed Mar 25 21:53:40 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit 3cc2a371fa1e748cb40be479de035b14ca1b6fcc
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 16:53:39 2015 -0500
+
+    Created a method to truncate strings.
+
+commit 3cb0a5136ff6320159c3af44d044838bf8c7a553
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Wed Mar 25 21:52:37 2015 +0000
+
+    FUck autoescape and fuck flask.
+
+commit 160ac2d61eb840e4788d2e0e0bb4ff6b0b3a6068
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 21:30:13 2015 +0000
+
+    Finally fixed the footer.
+
+commit da54bb36a0676d6eb107916b84d7ab92bbe76e7c
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 16:20:07 2015 -0500
+
+    Edited footer.
+
+commit 2622bd4fd224bf5d75d04b79f18f70d8a3663538
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 16:17:57 2015 -0500
+
+    Edited footer.
+
+commit 801d842b238da768d1ddc8d87530c2425d6c3468
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 16:17:12 2015 -0500
+
+    Edited footer.
+
+commit 3a5b8dfedb2415c3da9b8e0351cebea4eb8fdd70
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 16:16:00 2015 -0500
+
+    Edited footer.
+
+commit 08c84c8352c0add06ae01a079836048649db2681
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 16:12:48 2015 -0500
+
+    Edited footer.
+
+commit dbfb7cb09351a50ffcd93de5e546e2918283dea9
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 16:09:54 2015 -0500
+
+    Edited footer.
+
+commit f2fb1095fcab3ae65b7cb1e0f27a7c8fee1614fb
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 16:06:22 2015 -0500
+
+    Edited footer.
+
+commit e287a0805656e31a4757e2fdb60a21d2bbe1f399
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 16:00:43 2015 -0500
+
+    Edited footer.
+
+commit 78554074853048f143c1df479a36f89320273281
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 15:58:14 2015 -0500
+
+    Added footer to splash page.
+
+commit 7f8be3b0c8f9a4885f2ea3a8380008d5e2dc0883
+Merge: 26be557 f1068c9
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Wed Mar 25 20:50:45 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit 26be557b9c51acebaa6d2385b78a8b56925e3142
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Wed Mar 25 20:50:29 2015 +0000
+
+    Added celebrities api test
+
+commit f1068c9557908fc60af37f9019010b31cb995be0
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 20:26:31 2015 +0000
+
+    Fixed link path.
+
+commit 60fdf01e599639f11d66699976102ab89d48bd56
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 20:23:52 2015 +0000
+
+    Moved images once again...
+
+commit 1d49c691b43c93e58e98ab8b2a590cb5d72dccd7
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 20:23:00 2015 +0000
+
+    Modified text alignment
+
+commit 1a54642299c2185ea91be1ca29faffb393c5f53e
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 15:21:24 2015 -0500
+
+    Modified text alignments.
+
+commit 1e7df709c587ff6a12538b17dee38487d8ba8e8d
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 20:18:09 2015 +0000
+
+    Fixed images not showing up.
+
+commit 8fabde07f3fce0ab0452da4cb281d745536055e7
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 20:04:00 2015 +0000
+
+    Edited image syntax.
+
+commit 817fadd625226564cd5185442925d550f80729ce
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 15:01:24 2015 -0500
+
+    Edited image syntax.
+
+commit 846af4181c0ee9ed6b15d204a5563947ae37743d
+Merge: bdcbbc8 baf821b
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 14:58:58 2015 -0500
+
+    Merge branch 'master' of github.com:plberg/cs373-idb
+
+commit bdcbbc843a6927f84c79abf691784a0f369a680b
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 14:58:49 2015 -0500
+
+    Edited image syntax.
+
+commit baf821b99ca5dde156f559440f9efba19228d7f2
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 19:56:33 2015 +0000
+
+    Moved files.
+
+commit baeaf80417daa94a562898a73508a7af354150ed
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 14:53:40 2015 -0500
+
+    Added Icons for splash page.
+
+commit 1310a0cd8d52b71196fccb3e4680d543b4fdc5d6
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 14:53:14 2015 -0500
+
+    Updated look of the splash page.
+
+commit 7030930539569b7efe64e3db0eb4b248e3aaf884
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 14:38:42 2015 -0500
+
+    Updated look and feel of splash page.
+
+commit 8e633aa33981496161f8e5ecaa9a761f138e291f
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Wed Mar 25 19:30:39 2015 +0000
+
+    Change celebrity url from name to id
+
+commit 8f0c865d267a2b431377c0d1e9cabe0e6a428206
+Merge: b141f65 2efa9a9
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Wed Mar 25 19:28:57 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit b141f6582beac847f45427453fb6fcbcd38131c1
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Wed Mar 25 19:28:55 2015 +0000
+
+    Changed birthdate formatting and celebrity url to use id rather than name
+
+commit 2efa9a9c99e9034a4f9838187092811634860ac5
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 14:16:26 2015 -0500
+
+    Changed formatting.
+
+commit bd16a49655d07f42e4413540d4fdfe60708b1342
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 14:14:38 2015 -0500
+
+    Changed formatting.
+
+commit ab0dc54187b0fdc8f7b90c9faea8a12b15012e5e
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 14:14:09 2015 -0500
+
+    Changed formatting.
+
+commit 9bc80b58361d867c2682edb493c730379d4c9851
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 14:12:56 2015 -0500
+
+    Changed formatting.
+
+commit 2897e0f6ef34cd18727736f1a82cea2cf40ca90d
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 14:11:38 2015 -0500
+
+    Changed formatting.
+
+commit cbfe28e307592a9bf375bf7e00ed2bc3552296d6
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 14:09:48 2015 -0500
+
+    Changed formatting.
+
+commit 032ca66862a663c213d314f2b07e06dd43ccac61
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 14:05:04 2015 -0500
+
+    Changed formatting.
+
+commit df2082d56cded6ef919a4cfedb1e6a1b7c451dfe
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 14:02:39 2015 -0500
+
+    Changed formatting.
+
+commit bc42c45a3cf4e1ea02fb59f74eda365b91179b36
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 14:00:27 2015 -0500
+
+    Created individual crime description template.
+
+commit 649d142df125fe6159960e8e75b8da1957459714
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 14:00:08 2015 -0500
+
+    Modified views to route to individual crime description pages.
+
+commit 275ac3cbf5b422653816ad4e1544579b0d17e0bd
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 13:59:47 2015 -0500
+
+    Modified crimes to link to individual crime descriptions.
+
+commit 793b033dceb583c5b99d6084ecdf61f5d411f3c1
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 13:33:05 2015 -0500
+
+    Updated look and feel.
+
+commit 55163dce58013311ba1885beef102607b6c65693
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 13:21:36 2015 -0500
+
+    Updated look and feel.
+
+commit 66579426b50d8914acd1ee6eaca72730c8842e35
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 13:20:05 2015 -0500
+
+    Updated look and feel.
+
+commit e74383e6ce247ff3cfba0c02895ea1506687b65b
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 13:17:22 2015 -0500
+
+    Changed look and feel.
+
+commit 3042a75d78e3c1d7c036d9c012f2b34f5ad8d14c
+Merge: de87665 e2b3a15
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 13:13:55 2015 -0500
+
+    Merge branch 'master' of github.com:plberg/cs373-idb
+
+commit de87665bab5ccddaeb4256000571b0eefb8fc10c
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 13:13:40 2015 -0500
+
+    Changed the look and feel of individual celebrity template.
+
+commit e2b3a15b98e9b0b2921326d4eae0f062eaaf8695
+Merge: 0094377 12550e2
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 17:57:06 2015 +0000
+
+    Merge branch 'master' of github.com:plberg/cs373-idb
+
+commit 0094377f576a580768ee11c67c146b33a870599e
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 17:57:00 2015 +0000
+
+    Modified views.py to accomodate trailing backslashes in the urls.
+
+commit 12550e21d48c9b05c791bab87088ce251f1af6ff
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 12:56:09 2015 -0500
+
+    Updated the look and feel of the individual celebrity template.
+
+commit d7cd2f4426ba2ad1d0197f967cb01026673771d4
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 17:36:37 2015 +0000
+
+    Created template for individual celebrity pages.
+
+commit 429dcf80e1fe25399e87b53d2668772544d5e53b
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 17:36:04 2015 +0000
+
+    Changed formatting of the charge information.
+
+commit 58dd9a9e89cfcc45e45c826c775641390fa7f85c
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 17:35:29 2015 +0000
+
+    Added link to celebrity names.
+
+commit b1eeb8f65d5bd9f42370bb4616713c61b6461e95
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Mar 25 17:34:53 2015 +0000
+
+    Changed Splash button to Home button.
+
+commit a1d9002f5a064d0d592bfdde43ef4ed6b8d89d1a
+Merge: 11a56c1 c9435fb
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Wed Mar 25 03:59:25 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit 11a56c11b6cc4a68e85d99930159f9e8e327e6ab
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Wed Mar 25 03:59:20 2015 +0000
+
+    Added tests for model fields that point to other tables
+
+commit c9435fb8bdc795ad53edca7207aaa767125b3aa0
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Wed Mar 25 03:27:30 2015 +0000
+
+    Fixes syntax errors in init_db
+
+commit d8ba04213715a7fff997867159752cecfba9361a
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Wed Mar 25 03:20:41 2015 +0000
+
+    Converts some raw data to db format.
+
+commit 72af0b388f231acdd2b556a9ccd5a3d4d3c01eff
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Tue Mar 24 23:47:27 2015 +0000
+
+    Created the template for crimes.
+
+commit ddb4dfe06a41e72b35fab22d94c429b77b05a5f1
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Tue Mar 24 23:47:12 2015 +0000
+
+    Created the template for charges.
+
+commit d1677c44287821a48e319e1fddc470b841a4e2b0
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Tue Mar 24 23:46:18 2015 +0000
+
+    Added the templates for all the different pillars of content.
+
+commit 169af0e21d8c9e34524fe0a568901d61f9f4a3c4
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Tue Mar 24 23:45:37 2015 +0000
+
+    Updated the look and feel of the celebrities page.
+
+commit 7d511af62d6408b9e33b7ac0fb840941e8f7b9ae
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Tue Mar 24 23:45:18 2015 +0000
+
+    Updated the base template to reflect the pillars of content we are using.
+
+commit 2088556caee44435024da8d37d7867f9b59115a5
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Tue Mar 24 23:44:50 2015 +0000
+
+    Updated the about us page to include sections for each of us. Yet to be filled in.
+
+commit 548b6a1d32a764ec71aba2bdb1f59d93b5f4c305
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Tue Mar 24 22:53:18 2015 +0000
+
+    Added tests
+
+commit abbfe8af203460b440028e964b0a70d90cf159ca
+Merge: 7b34600 4b0b5ce
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Tue Mar 24 22:12:40 2015 +0000
+
+    tMerge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit 7b3460056a9ae7d25347525f64495f7b4606e6a5
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Tue Mar 24 22:11:01 2015 +0000
+
+    Adds more raw data.
+
+commit 4b0b5ce5cbbe8da2225cb33a82aed5e0cc47e24d
+Merge: 9c869a4 5cf6fbb
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Tue Mar 24 22:10:37 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit 9c869a4f2ce2c29eb7ba06f2fab181dd3dd5ecaf
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Tue Mar 24 22:10:19 2015 +0000
+
+    Prefixed all api urls with "api"
+
+commit 5cf6fbbcb9a5400a5af6aa20a4aeeda293b45c0d
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Tue Mar 24 21:55:22 2015 +0000
+
+    Adds more data to be input.
+
+commit 2d2796019db03b89f380b347a64697952b20d7af
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Tue Mar 24 21:40:41 2015 +0000
+
+    tests.py to test models, just added trivial tests
+
+commit 6766b83c145cab2cc220ec5105574a7e6223c10c
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Tue Mar 24 21:39:57 2015 +0000
+
+    Added missing assignment to instance variables in Charge constructor
+
+commit 0ae43c7e252b9f79ea0b10b930c1120448b761ac
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Tue Mar 24 15:57:34 2015 -0500
+
+    Adds uml diagram and working files.
+    
+    The diagram was created in Oracle Data Modeler.
+
+commit 09ea865f9f6d3b046196af848f1722cf7eabf26a
+Merge: 3d4a13b 8ea6f95
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Tue Mar 24 20:28:52 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+    
+     Changes to test data and new real data
+
+commit 8ea6f95c1f86aa6dec7601c41f6392c146f1d611
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Tue Mar 24 20:28:20 2015 +0000
+
+    Adds swp files to git ignore.
+
+commit 3d4a13b064818b15d8d72d97d7449ca804694bb7
+Merge: 65f8ff1 3904870
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Tue Mar 24 20:27:54 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+    
+    Add some data
+
+commit 65f8ff1b2cae22c06073b7dd33205c132a9f0a6e
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Tue Mar 24 20:23:18 2015 +0000
+
+    Made some real initialization data
+
+commit 3904870f80805ed37fb658a03744f4b6eb05603f
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Tue Mar 24 19:55:10 2015 +0000
+
+    Fixes api json responses to match models.
+
+commit 27083c2026163e9660b5c1da28c6ecbbfd7fdc25
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Tue Mar 24 19:35:25 2015 +0000
+
+    Fix spelling error
+
+commit a695bccfa33a6c755f33a841f76c2d5ec46a54ca
+Merge: 944bb92 96dec33
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Tue Mar 24 19:27:23 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit 944bb92fdbc06d3b3b32e18e76dda917b80cbf7b
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Tue Mar 24 19:26:36 2015 +0000
+
+    Reworks the models.
+    
+    Removes attorneys, adds crime descriptions, celebrity aliases.
+    Fixes initialize_db.
+    Fixes imports.
+
+commit 96dec33188d9ecec8ec5625dfd85fe946267c4fa
+Merge: 0e4d42e deb1051
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Tue Mar 24 13:20:43 2015 -0500
+
+    Merge branch 'master' of github.com:plberg/cs373-idb
+
+commit 0e4d42ea2536990f730a57cf0c4c8cdaf447c31b
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Tue Mar 24 13:20:26 2015 -0500
+
+    Added templates for about us, celebrity, and splash pages.
+
+commit d3f7f195ae05a1da0a6a02a14b4ebae21d8ac4eb
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Tue Mar 24 13:19:38 2015 -0500
+
+    Created and pushed a basic celebrites page.
+
+commit 09c216231ce3d85b3f8270ca6c687264c15c1ce8
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Tue Mar 24 13:19:19 2015 -0500
+
+    Created and pushed a basic about us page.
+
+commit fe6483ef1e4cb2310502858697413907b73a209a
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Tue Mar 24 13:17:42 2015 -0500
+
+    Changed placeholder text on splash page.
+
+commit 427920074481ae4fc1cf20773bfdfd1818697293
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Tue Mar 24 13:17:08 2015 -0500
+
+    Updated the look and feel of base.html as well as the functionality of the navbar links.
+
+commit deb105167b67c800710cd75feb922c4640b392c6
+Merge: 21a5bc8 aac52db
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Tue Mar 24 17:09:00 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit 21a5bc86ea1f0c693c84fbc8cd95f97c39b98c75
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Tue Mar 24 17:08:31 2015 +0000
+
+    Small touchups to files.
+    
+    Adds gitignore.
+
+commit aac52db459236ea68755dc03f3daf1dd903fc77b
+Merge: 2f894b3 b5d3cf6
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Tue Mar 24 12:02:22 2015 -0500
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+    
+    Changed api functions to explicitly written functions rather than generated.
+
+commit 2f894b3cd3b52dea15c32cf86a22cd870dd7f255
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Tue Mar 24 12:01:55 2015 -0500
+
+    Changed api to explicit version of each function associated with the api
+
+commit b5d3cf6b384aa093e5df96d397716302371160b4
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Tue Mar 24 16:39:57 2015 +0000
+
+    External dev server, port option.
+    
+    Adds structure for further command line args.
+
+commit f8a5297a7ed9b992a18d6b335f0f315dba7cf0e7
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Mon Mar 23 19:08:04 2015 -0500
+
+    Moved json stuff to api.py, changed api to contain urls
+
+commit fa16be52552d3c3fbe7bd0eec3ef4cac7a420686
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Mon Mar 23 18:38:20 2015 -0500
+
+    Removed Json builder from models
+
+commit fdc8e2e31d7a2a29a7864624329cd4f1ab88d1e4
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Mon Mar 23 16:11:48 2015 -0500
+
+    Added views.py to serve html pages
+
+commit 5e1f475db6f1fae2ab96060a04d5cb01f97cbc2a
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Mon Mar 23 14:26:03 2015 -0500
+
+    Change app definition to its own file to avoid circular dependencies
+
+commit 87107d8dd204d487caa8af9154fe1db098f41d99
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Wed Mar 18 16:25:55 2015 -0500
+
+    Change api to use make_get_table and make_get_element routing functions
+
+commit 3b0efd94724bc5938f85ef22e47b724fd7b5c56e
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Wed Mar 18 15:00:57 2015 -0500
+
+    Changed models to have explicit many-to-many relationships get Crimes, Attorneys, and Celebrities. Made all models inherit from JsonBuilder
+
+commit 23a36ee7459073952921ec13fd48c29354447d51
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Tue Mar 17 17:59:32 2015 -0500
+
+    Made basic RESTful api
+
+commit 1b39ad4b6ef9f3386449c1182fd45b783a9153d9
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Tue Mar 17 17:59:06 2015 -0500
+
+    Database initialization, currently has dummy data
+
+commit f6979a489ff5923efc287e9728b11a6b27751a26
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Tue Mar 17 17:58:19 2015 -0500
+
+    Made model definitions
+
+commit c50e65c78521e0f443b89838537888ed17cc10a5
+Author: Parker Berg <pberg@utexas.edu>
+Date:   Tue Mar 3 11:35:33 2015 -0600
+
+    Initial commit
