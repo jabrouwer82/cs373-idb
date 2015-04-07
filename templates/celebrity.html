@@ -20,10 +20,6 @@
                           </ul>
                         </li>
                         {% endif %}
-                        {% if celebrity.twitter_handle %}
-                        <li class="list-group-item"><b>Twitter Handle</b></li>
-                        <li class="list-group-item">{{ celebrity.twitter_handle }}</li>
-                        {% endif %}
                         {% if celebrity.birthday %}
                         <li class="list-group-item"><b>Birthday</b></li>
                         <li class="list-group-item">{{ date_formatter(celebrity.birthday) }}</li>
@@ -40,6 +36,9 @@
                               {% endif %}
                           </ul>
                         </li>
+                        {% endif %}
+                        {% if celebrity.twitter_handle %}
+                         <a class="twitter-timeline" href="https://twitter.com/{{ celebrity.twitter_handle|stripTwitter }}" data-widget-id="585560588056715267">Tweets by {{ celebrity.twitter_handle }}</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> 
                         {% endif %}
                     </ul>
               </div>

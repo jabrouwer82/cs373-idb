@@ -1,5 +1,11 @@
 import re
 
+def stripTwitter(string):
+  if string[0] == '@':
+    return string[1:]
+  else:
+    return string
+
 def firstSentence(string):
   string = string[24:]
   res1 = re.search(r'.+<br />', string)
