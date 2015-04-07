@@ -10,6 +10,7 @@
               <div class="panel-body">
                   <img src="{{ celebrity.picture_url }}" class="img-thumbnail" alt="{{ celebrity.picture_url }}">
                   <ul class="list-group">
+                      {% if celebrity.aliases %}
                       <li class="list-group-item"><b>Aliases</b></li>
                       <li class="list-group-item">
                           <ul class="list-unstyled">
@@ -18,17 +19,28 @@
                               {% endfor %}
                           </ul>
                         </li>
+                        {% endif %}
+                        {% if celebrity.twitter_handle %}
                         <li class="list-group-item"><b>Twitter Handle</b></li>
                         <li class="list-group-item">{{ celebrity.twitter_handle }}</li>
+                        {% endif %}
+                        {% if celebrity.birthday %}
                         <li class="list-group-item"><b>Birthday</b></li>
                         <li class="list-group-item">{{ date_formatter(celebrity.birthday) }}</li>
+                        {% endif %}
+                        {% if celebrity.wiki_url or celebrity.imdb_url %}
                         <li class="list-group-item"><b>Additional Links</b></li>
                         <li class="list-group-item">
                           <ul class="list-unstyled">
+                              {% if celebrity.wiki_url %}
                               <li><a href="{{ celebrity.wiki_url }}" target="_blank">Wikipedia</a></li>
+                              {% endif %}
+                              {% if celebrity.imdb_url %}
                               <li><a href="{{ celebrity.imdb_url }}" target="_blank">IMDB</a></li>
+                              {% endif %}
                           </ul>
                         </li>
+                        {% endif %}
                     </ul>
               </div>
             </div>
