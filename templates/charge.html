@@ -21,8 +21,12 @@
                                 {% endfor %}
                             </ul>
                         </li>
+                        {% if charge.attorney %}
                         <li class="list-group-item">Represented by: {{ charge.attorney }}</li>
+                        {% endif %}
+                        {% if charge.classification %}
                         <li class="list-group-item">Charge classified as: {{ charge.classification }}</li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
