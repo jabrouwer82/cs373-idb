@@ -1,25 +1,23 @@
+import os
 from unittest import TestCase, main
-from models import db, Celebrity, Crime, Charge, CelebrityAlias
+from models import Celebrity, Crime, Charge, CelebrityAlias, db
 from datetime import date
-from app import app
 import json
 
 
-# at url routes to app
-from views import *
-from api import *
-
+# set db url before importing app, which needs this value set for configuration
+os.environ['APP_DB_URL'] = 'postgresql+psycopg2:///testsdb'
+from app import app
 
 class TestModels(TestCase):
 
   def setUp(self):
     app.config['TESTING'] = True
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2:///testsdb'
+#    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2:///testsdb'
 
     # May want these settings for testing api calls 
     app.config['WTF_CSRF_ENABLED'] = False
     self.app = app.test_client()
-
 
     db.create_all()
 
@@ -155,7 +153,6 @@ class TestModels(TestCase):
     db.session.commit()
     self.assertEqual(self.cr1.celebrities, [self.ce1])
 
-
   ### Test API functions ###
   def test_celebrities_api(self):
     charge1 = Charge(self.ce1, self.cr1)
@@ -163,7 +160,15 @@ class TestModels(TestCase):
     db.session.add_all([charge1, charge2])
     db.session.commit()
 
-    response_json = self.get_json_from_url('/api/celebrity')
+
+
+
+
+    str_data = self.app.get('/api/celebrity').get_data().decode("utf-8")
+    response_json = json.loads(str_data)
+
+
+    #response_json = self.get_json_from_url('/api/celebrity')
     expected = [{'id': 1, 'name': '1', 'uri': 'http://localhost/api/celebrity/1'}, 
         {'id': 2, 'name': '2', 'uri': 'http://localhost/api/celebrity/2'}]
 
@@ -249,7 +254,6 @@ class TestModels(TestCase):
 
     self.assertEqual(response_json, expected)
     
-
 
    
 
