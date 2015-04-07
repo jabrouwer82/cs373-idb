@@ -1,78 +1,81 @@
-from flask import render_template, Flask, send_from_directory
-from app import app
+from flask import render_template, Flask, send_from_directory, Blueprint
 from models import Crime, Celebrity, Charge
 import os
 
-@app.route('/favicon.ico')
+# Define the interface that app will register to views routes
+viewsBlueprint = Blueprint('views', __name__)
+
+
+@viewsBlueprint.route('/favicon.ico')
 def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'static'),
+    return send_from_directory(os.path.join(viewsBlueprint.root_path, 'static'),
                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
-@app.route('/')
-@app.route('/splash')
+@viewsBlueprint.route('/')
+@viewsBlueprint.route('/splash')
 def splash():
     return render_template('splash.html')
 
-@app.route('/celebrities')
-@app.route('/celebrities/')
+@viewsBlueprint.route('/celebrities')
+@viewsBlueprint.route('/celebrities/')
 def celebrities():
     celebrity_list = Celebrity.query.all()
     return render_template('celebrities.html', celebrities=celebrity_list)
     
 # Poor implementation of sorting, will fix in next phase.
-@app.route('/celebrities/alph')
+@viewsBlueprint.route('/celebrities/alph')
 def alphCelebrities():
     celebrity_list = Celebrity.query.all()
     celebrity_list.sort(key = lambda celebrity: celebrity.name)
     return render_template('celebrities.html', celebrities=celebrity_list)
 
-@app.route('/celebrities/bday')
+@viewsBlueprint.route('/celebrities/bday')
 def bdayCelebrities():
     celebrity_list = Celebrity.query.all()
     celebrity_list.sort(key = lambda celebrity: celebrity.birthday)
     return render_template('celebrities.html', celebrities=celebrity_list)
 
-@app.route('/crimes/alph')
+@viewsBlueprint.route('/crimes/alph')
 def alphCrimes():
     crime_list = Crime.query.all()
     crime_list.sort(key = lambda crime: crime.name)
     return render_template('crimes.html', crimes=crime_list)
 
-@app.route('/charges/alph')
+@viewsBlueprint.route('/charges/alph')
 def alphCharges():
     charge_list = Charge.query.all()
     charge_list.sort(key = lambda charge: charge.celebrity.name)
     return render_template('charges.html', charges=charge_list, date_formatter=date_formatter)
 
     
-@app.route('/celebrities/<int:celebrity_id>')
+@viewsBlueprint.route('/celebrities/<int:celebrity_id>')
 def getCelebrity(celebrity_id):
   celebrity_info = Celebrity.query.filter(Celebrity.id== celebrity_id).first()
   return render_template('celebrity.html', celebrity=celebrity_info, date_formatter=date_formatter)
 
-@app.route('/crimes')
-@app.route('/crimes/')
+@viewsBlueprint.route('/crimes')
+@viewsBlueprint.route('/crimes/')
 def crimes():
 	crime_list = Crime.query.all()
 	return render_template('crimes.html', crimes=crime_list)
 
-@app.route('/crimes/<crime>')
+@viewsBlueprint.route('/crimes/<crime>')
 def getCrime(crime):
     crime_info = Crime.query.filter(Crime.name == crime).first()
     return render_template('crime.html', crime=crime_info)
 
-@app.route('/charges')
-@app.route('/charges/')
+@viewsBlueprint.route('/charges')
+@viewsBlueprint.route('/charges/')
 def charges():
 	charge_list = Charge.query.all()
 	return render_template('charges.html', charges=charge_list, date_formatter=date_formatter)
-@app.route('/charges/<int:charge_id>')
+@viewsBlueprint.route('/charges/<int:charge_id>')
 def getCharge(charge_id):
     charge = Charge.query.filter(Charge.id == charge_id).first()
     return render_template('charge.html', charge=charge, date_formatter=date_formatter)
 
-@app.route('/about_us')
-@app.route('/about_us/')
+@viewsBlueprint.route('/about_us')
+@viewsBlueprint.route('/about_us/')
 def about_us():
     return render_template('about_us.html')
 

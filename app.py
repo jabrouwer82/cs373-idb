@@ -1,6 +1,7 @@
 from flask import Flask
 from filters import *
 
+
 app = Flask(__name__)
 app.debug = True
 app.jinja_env.autoescape = False
@@ -12,3 +13,12 @@ app.config['tipfyext.jinja2'] = {
          'autoescape': False,
     } 
 }
+
+
+from models import db
+from views import viewsBlueprint
+from api import apiBlueprint
+
+db.init_app(app)
+app.register_blueprint(viewsBlueprint)
+app.register_blueprint(apiBlueprint)

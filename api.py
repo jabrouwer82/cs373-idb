@@ -1,7 +1,7 @@
-from app import app
-from flask import Flask, Response, make_response, abort, jsonify, request, url_for
+from flask import Flask, Response, make_response, abort, jsonify, request, url_for, Blueprint
 from models import Celebrity, CelebrityAlias, Crime, CrimeDescription, Charge
 import json
+
 
 class JsonBuild:
   def __init__(self, obj):
@@ -86,38 +86,42 @@ def get_element(table, elmt_id, item_func):
       return jsonify(item_func(match))
     abort(404)
 
+
+
+# Define the interface that app will register to add the api routes
+apiBlueprint = Blueprint('api', __name__)
   
 
 ## Get abbreviations for tables
-@app.route('/api/celebrity')
+@apiBlueprint.route('/api/celebrity')
 def get_celebrities():
   return table_abbrev_json(Celebrity, celebrity_abbrev)
 
-@app.route('/api/crime')
+@apiBlueprint.route('/api/crime')
 def get_crimes():
   return table_abbrev_json(Crime, crime_abbrev)
 
-@app.route('/api/charge')
+@apiBlueprint.route('/api/charge')
 def get_charges():
   return table_abbrev_json(Charge, charge_abbrev)
 
 
 ## Get specific elements in tables
-@app.route('/api/celebrity/<int:elmt_id>')
+@apiBlueprint.route('/api/celebrity/<int:elmt_id>')
 def get_celebrity(elmt_id):
   return get_element(Celebrity, elmt_id, celebrity_to_json)
 
-@app.route('/api/crime/<int:elmt_id>')
+@apiBlueprint.route('/api/crime/<int:elmt_id>')
 def get_crime(elmt_id):
   return get_element(Crime, elmt_id, crime_to_json)
 
-@app.route('/api/charge/<int:elmt_id>')
+@apiBlueprint.route('/api/charge/<int:elmt_id>')
 def get_charge(elmt_id):
   return get_element(Charge, elmt_id, charge_to_json)
 
  
 
-@app.errorhandler(404)
+@apiBlueprint.errorhandler(404)
 def not_found(error):
     return make_response(jsonify({'error': 'Not found'}), 404)
 

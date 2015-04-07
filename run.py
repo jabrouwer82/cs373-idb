@@ -5,13 +5,10 @@
 # Be sure to run 'sudo ufw allow <port num>' to enable the port you are using
 # for external facing servers.
 
-from app import app
 import getopt
 import sys
+from app import app
 
-# load the url routing functions
-from views import *
-from api import *
 if __name__ == '__main__':
   # CMD opts handling
   opts = getopt.getopt(sys.argv[1:], 'p:', ['port='])
