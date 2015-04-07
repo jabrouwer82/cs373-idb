@@ -2,8 +2,6 @@ from datetime import date
 from models import Celebrity, CelebrityAlias, Crime, CrimeDescription, Charge, db
 from app import app
 
-db.init_app(app)
-
 # remove all existing tables
 db.drop_all()
 
