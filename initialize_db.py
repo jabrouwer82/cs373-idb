@@ -213,7 +213,7 @@ charges = [
 
   Charge(dMX, drivingSansLicense, date(2000, 5, 22), None, description='DMX served another jail sentence in 2001 for driving without a license and possession of marijuana. His appeal to reduce the sentence was denied; rather, he was charged with assault for throwing objects at prison guards. DMX entered rehab to treat his addiction to drugs in 2002.'),
 
-  Charge(dMX, posessionMarijuana, date(2000, 5, 22), None, description='DMX served another jail sentence in 2001 for driving without a license and possession of marijuana. His appeal to reduce the sentence was denied; rather, he was charged with assault for throwing objects at prison guards. DMX entered rehab to treat his addiction to drugs in 2002.'),
+  Charge(dMX, possessionMarijuana, date(2000, 5, 22), None, description='DMX served another jail sentence in 2001 for driving without a license and possession of marijuana. His appeal to reduce the sentence was denied; rather, he was charged with assault for throwing objects at prison guards. DMX entered rehab to treat his addiction to drugs in 2002.'),
   
   Charge(dMX, aggrAssault, date(2000, 5, 22), None, description='DMX served another jail sentence in 2001 for driving without a license and possession of marijuana. His appeal to reduce the sentence was denied; rather, he was charged with assault for throwing objects at prison guards. DMX entered rehab to treat his addiction to drugs in 2002.'),
 
@@ -241,7 +241,7 @@ charges = [
 
   Charge(dMX, recklessDriving, date(2010, 11, 19), 'Los Angeles, California', description='On July 27, 2010, DMX turned himself in to Los Angeles Metropolitan Court for a reckless driving charge he received in 2002. He was sentenced to serve ninety days in jail.'),
 
-  Charge(dMX, violationParole, date(2010, 11, 19), 'Maricopa County, Arizona', description='DMX was arrested in Maricopa County, Arizona on November 19, 2010, on charges of violating his probation by consuming alcohol (at a performance). On December 20, 2010, DMX was moved to the Mental Health Unit of the Arizona State Prison, and released on July 18, 2011.'),
+  Charge(dMX, violatingParole, date(2010, 11, 19), 'Maricopa County, Arizona', description='DMX was arrested in Maricopa County, Arizona on November 19, 2010, on charges of violating his probation by consuming alcohol (at a performance). On December 20, 2010, DMX was moved to the Mental Health Unit of the Arizona State Prison, and released on July 18, 2011.'),
 
   Charge(dMX, speeding, date(2011, 8, 24), None, description='DMX was arrested on August 24, 2011, for speeding (recorded as 102 mph in a 65 mph zone), reckless driving, and driving with a suspended license. While DMX admitted to speeding, he claims he was driving 85 mph, not 102 mph as charged.'),
 
@@ -259,7 +259,7 @@ charges = [
   
   Charge(dMX, possessionMarijuana, date(2013, 8, 20), 'Greer, South California', description='DMX was arrested on August 20, 2013 in Greer, South Carolina during a traffic stop after a car he was a passenger in made an improper u-turn. He was arrested due to an outstanding warrant for driving under suspension. Four packages of marijuana were also found in the vehicle, and he along with the driver were cited for them.'),
   
-  Charge(dMX, dsrivingSansLicense, date(2013, 8, 20), 'Greer, South California', description='DMX was arrested on August 20, 2013 in Greer, South Carolina during a traffic stop after a car he was a passenger in made an improper u-turn. He was arrested due to an outstanding warrant for driving under suspension. Four packages of marijuana were also found in the vehicle, and he along with the driver were cited for them.'),
+  Charge(dMX, drivingSansLicense, date(2013, 8, 20), 'Greer, South California', description='DMX was arrested on August 20, 2013 in Greer, South Carolina during a traffic stop after a car he was a passenger in made an improper u-turn. He was arrested due to an outstanding warrant for driving under suspension. Four packages of marijuana were also found in the vehicle, and he along with the driver were cited for them.'),
 
   Charge(dMX, drivingSansLicense, date(2013, 11, 4), 'Greer, South California', description='DMX was again arrested on November 4, 2013 by the Greenville-Spartanburg International Airport police near Greer, South Carolina after police, who were familiar with his prior arrests, noticed DMX behind the wheel of a vehicle at the terminal. DMX was booked on charges of driving under suspension, having an uninsured vehicle, and not having a licensed vehicle. He was subsequently released after spending three hours in jail.'),
   
@@ -271,9 +271,9 @@ charges = [
 
   Charge(wRyder, shoplifting, date(2001, 12, 12), 'Beverly Hills, California', description='Ryder was caught shoplifting almost $5,000 worth of merchandise from a Saks Fifth Avenue in Beverly Hills. Ryder remains notoriously tight-lipped about the incident, but did tell Vogue in 2007 that she didnt feel all that bad about it. "I didn\'t have this tremendous sense of guilt, because I hadn\'t hurt anyone," she said.'),
 
-  Charge(oOsbourne, publicUrination, date(1982, 2, 19), 'San Antonio, Texas', description=' Public urination, intoxication Osbourne was arrested for urinating on a statue honoring the Alamo defenders in San Antonio, Texas. To make things weirder, he was wearing his wife’s dress at the time of his arrest. The arrest got him banned from the city for 10 years, and he was eventually pardoned after making a $10,000 donation to the organization that maintains the Alamo.'),
+  Charge(jOsbourne, publicUrination, date(1982, 2, 19), 'San Antonio, Texas', description=' Public urination, intoxication Osbourne was arrested for urinating on a statue honoring the Alamo defenders in San Antonio, Texas. To make things weirder, he was wearing his wife’s dress at the time of his arrest. The arrest got him banned from the city for 10 years, and he was eventually pardoned after making a $10,000 donation to the organization that maintains the Alamo.'),
   
-  Charge(oOsbourne, publicIntoxication, date(1982, 2, 19), 'San Antonio, Texas', description=' Public urination, intoxication Osbourne was arrested for urinating on a statue honoring the Alamo defenders in San Antonio, Texas. To make things weirder, he was wearing his wife’s dress at the time of his arrest. The arrest got him banned from the city for 10 years, and he was eventually pardoned after making a $10,000 donation to the organization that maintains the Alamo.')
+  Charge(jOsbourne, publicIntoxication, date(1982, 2, 19), 'San Antonio, Texas', description=' Public urination, intoxication Osbourne was arrested for urinating on a statue honoring the Alamo defenders in San Antonio, Texas. To make things weirder, he was wearing his wife’s dress at the time of his arrest. The arrest got him banned from the city for 10 years, and he was eventually pardoned after making a $10,000 donation to the organization that maintains the Alamo.')
   
 ]
 
