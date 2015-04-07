@@ -7,15 +7,23 @@
                 <h4 class="panel-title">{{ crime.name }}</h4>
             </div>
             <div class="panel-body">
+                {% if crime.description %}
                 <p>{{ crime.description }}</p>
+                {% endif %}
+                {% if crime.wiki_url %}
                 <a href="{{ crime.wiki_url }}" target="_blank">More info...</a>
+                {% endif %}
+                {% if crime.description or crime.wiki_url %}
                 <hr/>
+                {% endif %}
+                {% if crime.celebrities %}
                 <h5 align="center">List of celebrities charged with this crime:</h5>
                 <ul class="list-group">
                     {% for celebrity in crime.celebrities %}
                     <li class="list-group-item"><a href="/celebrities/{{ celebrity.id }}">{{ celebrity.name }}</a></li>
                     {% endfor %}
                 </ul>
+                {% endif %}
             </div>
         </div>
     </div>
