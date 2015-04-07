@@ -1,14 +1,12 @@
-import filters
 from flask import Flask
 import os
+import filters
 
 from types import FunctionType
 
 app = Flask(__name__)
 app.debug = True
 app.jinja_env.autoescape = False
-app.jinja_env.filters['firstSentence'] = firstSentence
-app.jinja_env.filters['entireFirstSentence'] = entireFirstSentence
 
 # get database url from os environment variables, defaults to regular (rather than test) database
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('APP_DB_URL', 'postgresql+psycopg2:///celebsdb')
