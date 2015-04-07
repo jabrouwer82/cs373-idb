@@ -15,10 +15,13 @@ app.config['tipfyext.jinja2'] = {
 }
 
 
+
 from models import db
 from views import viewsBlueprint
 from api import apiBlueprint
 
+
+db.app = app
 db.init_app(app)
 app.register_blueprint(viewsBlueprint)
 app.register_blueprint(apiBlueprint)
