@@ -1,4 +1,7 @@
 __pycache__/
 *.py[cod]
 *.swp
+
+# postgres user server details
 uwsgi.pid
+nohup.out

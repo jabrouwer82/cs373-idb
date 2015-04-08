@@ -55,7 +55,8 @@ def table_name(table):
 
 # get url of that func route to when called with ID
 def url_for_call(func, ID):
-  return url_for(func, elmt_id=ID, _external=True)
+  # '.' is prepended to access blueprint routes
+  return url_for('.' + func, elmt_id=ID, _external=True)
 
 
 # Functions to abbreviate a row in each table

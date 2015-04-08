@@ -3,16 +3,17 @@ from flask.ext.sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
+MAX_STRING = 4000
 
 class Celebrity(db.Model):
   id = db.Column(db.Integer, primary_key=True)
-  name = db.Column(db.String(4000))
+  name = db.Column(db.String(MAX_STRING))
   description = db.Column(db.Text)
-  twitter_handle = db.Column(db.String(4000))
+  twitter_handle = db.Column(db.String(MAX_STRING))
   birthday = db.Column(db.DateTime)
-  wiki_url = db.Column(db.String(4000))
-  imdb_url = db.Column(db.String(4000))
-  picture_url = db.Column(db.String(4000))
+  wiki_url = db.Column(db.String(MAX_STRING))
+  imdb_url = db.Column(db.String(MAX_STRING))
+  picture_url = db.Column(db.String(MAX_STRING))
 
   aliases = db.relationship('CelebrityAlias')
   crimes = db.relationship('Crime', secondary='charge')
@@ -39,7 +40,7 @@ class Celebrity(db.Model):
 
 class CelebrityAlias(db.Model):
   id = db.Column(db.Integer, primary_key=True)
-  alias = db.Column(db.String(4000))
+  alias = db.Column(db.String(MAX_STRING))
   
   celebrity_id = db.Column(db.Integer, db.ForeignKey('celebrity.id'))
   
@@ -55,9 +56,9 @@ class CelebrityAlias(db.Model):
 
 class Crime(db.Model):
   id = db.Column(db.Integer, primary_key=True)
-  name = db.Column(db.String(4000))
+  name = db.Column(db.String(MAX_STRING))
   description = db.Column(db.Text)
-  wiki_url = db.Column(db.String(4000))
+  wiki_url = db.Column(db.String(MAX_STRING))
 
   descriptions = db.relationship('CrimeDescription')
   celebrities = db.relationship('Celebrity', secondary='charge')
@@ -73,7 +74,7 @@ class Crime(db.Model):
 
 class CrimeDescription(db.Model):
   id = db.Column(db.Integer, primary_key=True)
-  location = db.Column(db.String(4000))
+  location = db.Column(db.String(MAX_STRING))
   description = db.Column(db.Text)
   
   crime_id = db.Column(db.Integer, db.ForeignKey('crime.id'))
@@ -93,10 +94,10 @@ class CrimeDescription(db.Model):
 class Charge(db.Model):
   id = db.Column(db.Integer, primary_key=True)
   date = db.Column(db.DateTime)
-  location = db.Column(db.String(4000))
+  location = db.Column(db.String(MAX_STRING))
   description = db.Column(db.Text)
-  attorney = db.Column(db.String(4000))
-  classification = db.Column(db.String(4000))
+  attorney = db.Column(db.String(MAX_STRING))
+  classification = db.Column(db.String(MAX_STRING))
 
   celebrity_id = db.Column(db.Integer, db.ForeignKey('celebrity.id'))
   crime_id = db.Column(db.Integer, db.ForeignKey('crime.id'))
