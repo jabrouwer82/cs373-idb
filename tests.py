@@ -10,7 +10,7 @@ import urllib
 os.environ['APP_DB_URL'] = 'postgresql+psycopg2:///testsdb'
 from app import app
 
-class TestModels(TestCase):
+class TestIDB(TestCase):
 
   def setUp(self):
     self.external_url = 'http://23.253.252.30'
