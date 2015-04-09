@@ -1,6 +1,8 @@
 from flask import render_template, Flask, send_from_directory, Blueprint
 from models import Crime, Celebrity, Charge
 import os
+import urllib
+import json
 
 # Define the interface that app will register to views routes
 viewsBlueprint = Blueprint('views', __name__)
@@ -78,6 +80,17 @@ def getCharge(charge_id):
 @viewsBlueprint.route('/about_us/')
 def about_us():
     return render_template('about_us.html')
+
+
+@viewsBlueprint.route('/tests')
+@viewsBlueprint.route('/tests/')
+def tests():
+  test_url = os.environ.get('TEST_API_URL', 'http://23.253.252.30:8989/api/tests')
+  r = urllib.request.urlopen(test_url)
+  data = json.loads(r.read().decode("utf-8"))
+  return render_template('tests.html', test_output_msg=data['message'].replace('\n', '<br>'))
+
+
 
      
 def date_formatter(d):
