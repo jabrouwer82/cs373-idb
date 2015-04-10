@@ -3,15 +3,17 @@ from unittest import TestCase, main
 from models import Celebrity, Crime, Charge, CelebrityAlias, db
 from datetime import date
 import json
+import urllib
 
 
 # set db url before importing app, which needs this value set for configuration
 os.environ['APP_DB_URL'] = 'postgresql+psycopg2:///testsdb'
 from app import app
 
-class TestModels(TestCase):
+class TestIDB(TestCase):
 
   def setUp(self):
+    self.external_url = 'http://23.253.252.30'
     app.config['TESTING'] = True
 #    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2:///testsdb'
 
@@ -255,9 +257,100 @@ class TestModels(TestCase):
     self.assertEqual(response_json, expected)
     
 
-   
+  def test_charges_api(self):
+    charge1 = Charge(self.ce1, self.cr1)
+    charge2 = Charge(self.ce2, self.cr1)
+    db.session.add_all([charge1, charge2])
+    db.session.commit()
+    expected = [{'uri': 'http://localhost/api/charge/1', 'id': 1}, 
+                {'uri': 'http://localhost/api/charge/2', 'id': 2}]
+    response_json = self.get_json_from_url('/api/charge')
+    self.assertEqual(response_json, expected)
+ 
+  
+
+  def test_charges_api_external(self):
+    url = self.external_url + '/api/charge'
+    res = self.get_json_from_url_external(url)
+
+    self.assertTrue(len(res) > 0)
+    for c in res:
+      self.assertTrue('uri' in c)
+      self.assertTrue('id' in c)
+      uri = c['uri']
+      cId = c['id']
+      self.assertEqual(uri, url + '/' + str(cId))
 
 
+  def test_charge_api_external(self):
+    url = self.external_url + '/api/charge/1'
+    c = self.get_json_from_url_external(url)
+    self.assertTrue('attorney' in c)
+    self.assertTrue('celebrity' in c)
+    self.assertTrue('crime' in c)
+    self.assertTrue('classification' in c)
+    self.assertTrue('date' in c)
+    self.assertTrue('description' in c)
+    self.assertTrue('location' in c)
+
+  def test_crimes_api_external(self):
+    url = self.external_url + '/api/crime'
+    res = self.get_json_from_url_external(url)
+
+    self.assertTrue(len(res) > 0)
+    for c in res:
+      self.assertTrue('uri' in c)
+      self.assertTrue('id' in c)
+      self.assertTrue('name' in c)
+      uri = c['uri']
+      cId = c['id']
+      name = c['name']
+      self.assertEqual(uri, url + '/' + str(cId))
+
+  def test_crime_api_external(self):
+    url = self.external_url + '/api/crime/1'
+    c = self.get_json_from_url_external(url)
+    self.assertTrue('celebrities' in c)
+    self.assertTrue('charges' in c)
+    self.assertTrue('descriptions' in c)
+    self.assertTrue('id' in c)
+    self.assertTrue('name' in c)
+    self.assertTrue('wiki_url' in c)
+
+  def test_celebrities_api_external(self):
+    url = self.external_url + '/api/celebrity'
+    res = self.get_json_from_url_external(url)
+
+    self.assertTrue(len(res) > 0)
+    for c in res:
+      self.assertTrue('uri' in c)
+      self.assertTrue('id' in c)
+      self.assertTrue('name' in c)
+      uri = c['uri']
+      cId = c['id']
+      name = c['name']
+      self.assertEqual(uri, url + '/' + str(cId))
+
+  def test_celebrity_api_external(self):
+    url = self.external_url + '/api/celebrity/1'
+    c = self.get_json_from_url_external(url)
+    self.assertTrue('aliases' in c)
+    self.assertTrue('birthday' in c)
+    self.assertTrue('charges' in c)
+    self.assertTrue('id' in c)
+    self.assertTrue('crimes' in c)
+    self.assertTrue('wiki_url' in c)
+    self.assertTrue('description' in c)
+    self.assertTrue('imdb_url' in c)
+    self.assertTrue('name' in c)
+    self.assertTrue('picture_url' in c)
+    self.assertTrue('twitter_handle' in c)
+
+
+
+  def get_json_from_url_external(self, url):
+    r = urllib.request.urlopen(url)
+    return json.loads(r.read().decode("utf-8"))
 
   def get_json_from_url(self, url):
     str_data = self.app.get(url).get_data().decode("utf-8")
