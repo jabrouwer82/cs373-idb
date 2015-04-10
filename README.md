@@ -29,11 +29,17 @@ Make password same as unix password
 
 Make a password, within the postgres prompt the unix username must be entered manually
 
-``` postgres=# \password <USER>```
+```postgres=# \password <USER>```
 
-Make the celebs database
+Make the celebs and test database
 
 ```sudo -u postgres createdb celebsdb```
+```sudo -u postgres createdb testdb```
+
+Grant user access to the celeb and test db (if new user who did not create the databases)
+
+```postgres=# GRANT ALL PRIVILEGES ON DATABASE "celebsdb" to <USER>;```
+```postgres=# GRANT ALL PRIVILEGES ON DATABASE "testsdb" to <USER>;```
 
 
 ## Initialize the database
@@ -42,11 +48,14 @@ Before starting the website server, the database must be initialized, to do this
 
 ```python3 initialize_db.py```
 
+
+## Running the production server
+
 Once the database has been initialized, run this:
 
 ```sudo ./server.sh start```
 
-And let the script handle the rest of the nginx and uwsgi startup/configuration.
+And let the script handle the nginx and uwsgi startup/configuration.
 
 
 
