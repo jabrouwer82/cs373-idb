@@ -7,23 +7,9 @@ from types import FunctionType
 
 test_app = Flask(__name__)
 test_app.debug = True
-'''
-test_app.jinja_env.autoescape = False
-# Auto imports all functions in filters.py to be jinja filters
-for func_name in dir(filters):
-  func = getattr(filters, func_name, None)
-  if isinstance(func, FunctionType):
-    test_app.jinja_env.filters[func_name] = func
-
-test_app.config['tipfyext.jinja2'] = {
-    'environment_args': {
-         'autoescape': False,
-    } 
-}
-
-'''
 
 @test_app.route('/api/tests')
+@test_app.route('/tests')
 def run_tests():
   stream = StringIO()
   runner = unittest.TextTestRunner(stream)
@@ -32,32 +18,6 @@ def run_tests():
   return jsonify({'message':stream.getvalue()})
 
 
-
-# Usage: python3 run.py [(-p | --port) <port nunmber to use>]
-# Example: python3 run.py -p 5050
-# -p or --port to specify the port to run the server on (default 5000)
-
-# Be sure to run 'sudo ufw allow <port num>' to enable the port you are using
-# for external facing servers.
-import getopt
-import sys
-
-if __name__ == '__main__':
-
-  # CMD opts handling
-  opts = getopt.getopt(sys.argv[1:], 'p:', ['port='])
-  port = 5000
-  for opt, arg in opts[0]:
-    if opt in ('-p', '--port'):
-      port = int(arg)
-
-
-  test_app.run(host='0.0.0.0', port=port,  debug=True)
-
-
-
-
-  
 '''
 def wrap_data(gen):
   return ("data: " + g for g in gen)
