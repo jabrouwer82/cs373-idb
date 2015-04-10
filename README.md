@@ -17,6 +17,23 @@ To install dependencies run
 
 ```sudo ./install.sh```
 
+## Create Postgres user and database
+
+Make current unix user a postres superuser
+
+```sudo -u postgres createuser --superuser $USER```
+
+Make password same as unix password
+
+```sudo -u postgres psql```
+
+Within the postgres prompt, unix username must be entered manually
+
+``` postgres=# \password <USER>```
+
+Make the celebs database
+
+```sudo -u postgres createdb celebsdb```
 
 
 ## Starting the production server
