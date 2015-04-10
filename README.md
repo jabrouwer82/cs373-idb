@@ -25,8 +25,11 @@ Before starting the website server, the database must be initialized, to do this
 
 ```python3 initialize_db.py```
 
+Once the database has been initialized, run this:
 
+```sudo ./server.sh start```
 
+And let the script handle the rest of the nginx and uwsgi startup/configuration.
 
 
 
@@ -35,7 +38,7 @@ The website may be run for debugging purposes in flask without starting an nginx
 
 ```python3 run.py -p <port number>```
 
-The port must be enabled to be accessed by external servers. It is not enabled run:
+The port must be enabled to be accessed by external servers. If it is not enabled run:
 
 ```sudo ufw allow <port num>```
 
