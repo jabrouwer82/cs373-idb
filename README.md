@@ -4,8 +4,18 @@
 ## Overview
 This project is a website with information on celebrities and their alleged crimes.
 
+## Get the Project
+
+```git clone https://github.com/plberg/cs373-idb.git```
+
+```cd cs373-idb```
+
 ## Install Dependencies
-Run the following script to install dependencies
+To install dependencies run 
+
+```chmod +x install.sh```
+
+```sudo ./install.sh```
 
 
 
