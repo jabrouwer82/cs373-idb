@@ -2,13 +2,20 @@
 # Swe_t.py's Celebrity Rap Sheet Website
 
 ## Overview
-This project is a webite with information on celebrities and their alleged crimes.
+This project is a website with information on celebrities and their alleged crimes.
+
+## Install Dependencies
+Run the following script to install dependencies
+
+
 
 ## Starting the production server
 
 Before starting the website server, the database must be initialized, to do this run:
 
 ```python3 initialize_db.py```
+
+
 
 
 
