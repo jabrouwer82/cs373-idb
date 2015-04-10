@@ -23,7 +23,7 @@ Make current unix user a postres superuser
 
 ```sudo -u postgres createuser --superuser $USER```
 
-Make password same as unix password
+Get into postgres prompt
 
 ```sudo -u postgres psql```
 
@@ -31,7 +31,9 @@ Make a password, within the postgres prompt the unix username must be entered ma
 
 ``` postgres=# \password <USER>```
 
-Make the celebs database
+After entering a password, enter '\q' to exit the prompt.
+
+Make a new database called 'celebsdb'
 
 ```sudo -u postgres createdb celebsdb```
 
