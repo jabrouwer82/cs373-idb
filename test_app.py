@@ -9,7 +9,6 @@ test_app = Flask(__name__)
 test_app.debug = True
 
 @test_app.route('/api/tests')
-@test_app.route('/tests')
 def run_tests():
   stream = StringIO()
   runner = unittest.TextTestRunner(stream)

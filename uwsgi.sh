@@ -1,5 +1,5 @@
 #! /bin/bash
-
+export TEST_API_URL="http://celebrapsheet.tk/api/tests"
 pidfile="uwsgi.pid"
 
 opt=$1
