@@ -4,6 +4,7 @@ __pycache__/
 
 # uwsgi server details
 uwsgi.pid
+test_uwsgi.pid
 nohup.out
 app.log
 test.log
