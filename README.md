@@ -27,7 +27,7 @@ Make password same as unix password
 
 ```sudo -u postgres psql```
 
-Within the postgres prompt, unix username must be entered manually
+Make a password, within the postgres prompt the unix username must be entered manually
 
 ``` postgres=# \password <USER>```
 
@@ -36,7 +36,7 @@ Make the celebs database
 ```sudo -u postgres createdb celebsdb```
 
 
-## Starting the production server
+## Initialize the database
 
 Before starting the website server, the database must be initialized, to do this run:
 
