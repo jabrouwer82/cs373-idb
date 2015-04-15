@@ -86,13 +86,10 @@ def about_us():
 @viewsBlueprint.route('/tests/')
 def tests():
   test_url = os.environ.get('TEST_API_URL', 'http://23.253.252.30:8989/api/tests')
-  r = urllib.request.urlopen(test_url)
-  data = json.loads(r.read().decode("utf-8"))
-  return render_template('tests.html', test_output_msg=data['message'].replace('\n', '<br>'))
+  return render_template('tests.html', test_url=test_url)
 
 
 
-     
 def date_formatter(d):
   return '{month} {day}, {year}'.format(month=d.strftime('%B'), day=d.day, year=d.year)
 
