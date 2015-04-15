@@ -11,7 +11,7 @@
       </div>
       <div class="panel panel-default">
         <div class="panel-heading">
-                <div id="results">Passed: 0<br>Failed: 0</div>
+                <div id="results">Passed: 0<br>Failed: 0<br>Errors: 0</div>
         </div>
         <div class="panel-body">
           <div  class="progress">
@@ -27,18 +27,19 @@
     </div>
     
         <script>
-                var source = new EventSource('{{test_url}}', { withCredentials: true});
+                var testStream = new EventSource('{{test_url}}', { withCredentials: true});
 
                 var errorBarClass = "progress-bar progress-bar-danger progress-bar-striped active"
 
                 var successes = 0;
                 var failures = 0;
+                var errors = 0
                 var num_tests = 0;
                 var done = false;
 
                 var bar = document.getElementById('progress_bar')
 
-                source.onmessage = function (event) {
+                testStream.onmessage = function (event) {
                   if(!done) {
                     var data = JSON.parse(event.data);
 
@@ -54,30 +55,29 @@
                         successes += 1;
                         msg.innerHTML += 'Passed: ' + data.message + '<br>'
                       }
-                      else {
+                      else if(data.return_code === 'failure') {
                         failures += 1;
                         bar.setAttribute('class', errorBarClass)
                         msg.innerHTML += 'Failed: ' + data.message + '<br>'
-                        
+                      }
+                      else { // data.return_code === 'error'
+                        errors += 1
+                        bar.setAttribute('class', errorBarClass)
+                        msg.innerHTML += 'Error: ' + data.message + '<br>'
                       }
 
               
-                      res.innerHTML = 'Passed: ' + successes + '<br>' + 'Failed: ' + failures + '<br>' 
+                      res.innerHTML = 'Passed: ' + successes + '<br>' + 'Failed: ' + failures + '<br>' + 'Errors: ' + errors + '<br>'
                       var ratioDone = (successes + failures) / num_tests;
                       var percentDone = Math.ceil(ratioDone * 100);
 
-                      console.log(percentDone + "% done running tests")
-                    
                       bar.setAttribute('style', 'width:' + percentDone + '%');
                     }
                   }
                 };
 
-                source.onopen = function () {
-                };
-
-                source.onerror = function () {
-                  done = true;
+                testStream.onerror = function () {
+                  done = true; // calls onerror at end of stream
                 };
 
          </script>

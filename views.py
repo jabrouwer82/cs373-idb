@@ -85,7 +85,8 @@ def about_us():
 @viewsBlueprint.route('/tests')
 @viewsBlueprint.route('/tests/')
 def tests():
-  test_url = os.environ.get('TEST_API_URL', 'http://23.253.252.30:8989/api/tests')
+  test_route = '/api/tests'
+  test_url = os.environ.get('TEST_URL', 'http://celebrapsheet.tk') + test_route
   return render_template('tests.html', test_url=test_url)
 
 
