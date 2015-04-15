@@ -2,7 +2,6 @@
 # Usage: sudo ./server.sh
 # MUST BE SUPER USER TO COMPLETE
 
-export TEST_API_URL="http://celebrapsheet.tk/api/tests"
 
 apppid="uwsgi.pid"
 applog="app.log"
