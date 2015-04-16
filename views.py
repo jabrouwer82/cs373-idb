@@ -90,6 +90,15 @@ def tests():
   return render_template('tests.html', test_url=test_url)
 
 
+@viewsBlueprint.route('/tests/fail')
+@viewsBlueprint.route('/tests/fail/')
+def tests_fail():
+  test_route = '/api/tests/fail'
+  test_url = os.environ.get('TEST_URL', 'http://celebrapsheet.tk') + test_route
+  return render_template('tests.html', test_url=test_url)
+
+
+
 
 def date_formatter(d):
   return '{month} {day}, {year}'.format(month=d.strftime('%B'), day=d.day, year=d.year)

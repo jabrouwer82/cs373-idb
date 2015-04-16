@@ -11,8 +11,9 @@ class TestIDB(TestCase):
 
   def setUp(self):
     self.external_url = 'http://23.253.252.30'
-    app = get_app('othertestdb') 
+    app = get_app('testsdb') 
     self.app = app.test_client()
+  
     db.create_all()
 
     self.speeding = Crime("Speeding", "www.speeding.com")
@@ -336,6 +337,14 @@ class TestIDB(TestCase):
     self.assertTrue('picture_url' in c)
     self.assertTrue('twitter_handle' in c)
 
+
+  def failtest_should_fail(self):
+    self.assertTrue(False)
+
+  def failtest_should_cause_error(self):
+    import NotARealModule
+    self.assertTrue(True)
+    
 
   def get_json_from_url_external(self, url):
     r = urllib.request.urlopen(url)

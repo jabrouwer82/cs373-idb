@@ -11,14 +11,25 @@ test_app.debug = True
 
 @test_app.route('/api/tests')
 def stream():
+  tests = [t for t in functions_in(TestIDB) if t.startswith('test')]
+  return stream_response(test_runner(tests))
+
+@test_app.route('/api/tests/fail')
+def stream_with_fail():
+  tests = [t for t in functions_in(TestIDB) if t.startswith('test')]
+  fail_tests = [t for t in functions_in(TestIDB) if t.startswith('failtest')]
+  for f in fail_tests:
+    tests.insert(len(tests) // 2, f)
+  return stream_response(test_runner(tests))
+
+def stream_response(generator):
   main_app_url = os.environ.get('MAIN_URL', 'http://celebrapsheet.tk')
-  response = Response(encode(test_runner()), mimetype="text/event-stream")
+  response = Response(encode(generator), mimetype="text/event-stream")
   response.headers['Access-Control-Allow-Origin'] = main_app_url
   response.headers['Access-Control-Allow-Credentials'] = 'true'
   return response
 
-def test_runner():
-  test_names = [t for t in dir(TestIDB) if callable(getattr(TestIDB,t)) and t.startswith('test')]
+def test_runner(test_names):
   runner = unittest.TextTestRunner(StringIO()) # throw away result
   yield json.dumps({'return_code':'num_tests', 'message':str(len(test_names))})
  
@@ -42,3 +53,5 @@ def make_suite(test_name):
     suite.addTest(TestIDB(test_name))
     return suite
 
+def functions_in(a_class):
+  return (t for t in dir(a_class) if callable(getattr(a_class, t)))

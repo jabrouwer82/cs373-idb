@@ -7,7 +7,7 @@
   
     <div class="container">
 	    <div class="page-header">
-          <a class="btn btn-default" href="/tests" role="button">Run Tests</a>
+          <a class="btn btn-default" href="." role="button">Run Tests</a>
       </div>
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -38,13 +38,15 @@
                 var done = false;
 
                 var bar = document.getElementById('progress_bar')
+                var msg = document.getElementById('message')
+                var res = document.getElementById('results')
 
                 testStream.onmessage = function (event) {
+              
                   if(!done) {
                     var data = JSON.parse(event.data);
 
-                var msg = document.getElementById('message')
-                var res = document.getElementById('results')
+                    console.log(event.data)
 
                     if(data.return_code === 'num_tests') {
                       num_tests = parseInt(data.message);
@@ -68,8 +70,10 @@
 
               
                       res.innerHTML = 'Passed: ' + successes + '<br>' + 'Failed: ' + failures + '<br>' + 'Errors: ' + errors + '<br>'
-                      var ratioDone = (successes + failures) / num_tests;
+                      var ratioDone = (successes + failures + errors) / num_tests;
                       var percentDone = Math.ceil(ratioDone * 100);
+
+                      console.log("progress bar at " + percentDone + "%")
 
                       bar.setAttribute('style', 'width:' + percentDone + '%');
                     }
