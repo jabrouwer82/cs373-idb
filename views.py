@@ -1,4 +1,4 @@
-from flask import render_template, Flask, send_from_directory, Blueprint
+from flask import Response, render_template, Flask, send_from_directory, Blueprint
 from models import Crime, Celebrity, Charge
 import os
 import urllib
@@ -81,6 +81,17 @@ def getCharge(charge_id):
 def about_us():
     return render_template('about_us.html')
 
+@viewsBlueprint.route('/superheroes')
+@viewsBlueprint.route('/superheroes/')
+def superheroes():
+    supers = list()
+    r = urllib.request.urlopen('http://104.239.165.88/api/characters')
+    supers_id = json.loads(r.read().decode("utf-8"))
+    for super_id in supers_id:
+        super_id_url = urllib.request.urlopen('http://104.239.165.88/api/characters/' + str(super_id['id']))
+        supers.append(json.loads(super_id_url.read().decode("utf-8")))
+    return render_template('superheroes.html', supers=supers)
+    
 
 @viewsBlueprint.route('/tests')
 @viewsBlueprint.route('/tests/')
