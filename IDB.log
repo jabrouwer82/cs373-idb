@@ -1,3 +1,452 @@
+commit 612f8467dec24522b81aaed5028b321f373446f6
+Merge: 252adc4 29738c5
+Author: Parker Berg <pberg@utexas.edu>
+Date:   Thu Apr 9 21:43:01 2015 -0500
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit 252adc49d7be5d7881a60bdce39b1f7b61925242
+Author: Parker Berg <pberg@utexas.edu>
+Date:   Thu Apr 9 21:42:53 2015 -0500
+
+    kill old report
+
+commit 29738c58a54034f65e7b61a830a09d43cbc7036d
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Fri Apr 10 02:42:26 2015 +0000
+
+    Updates tests.out.
+
+commit bf826376087ce100f423fb0404250496122bdab5
+Merge: 29739bc 1a172d6
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Fri Apr 10 02:36:31 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit 1a172d68cabe1f9d0e974765b104bf0478ed80e4
+Author: phtimmins <parkert@cs.utexas.edu>
+Date:   Thu Apr 9 21:36:21 2015 -0500
+
+    Update README.md
+
+commit 29739bc789c542c17df6ff56120199fc776c6802
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Fri Apr 10 02:35:59 2015 +0000
+
+    Fix an old nginx error again.
+    
+    How did this get back here?
+
+commit 3e80970076ec959c29dbfe43581af608fe0f3214
+Merge: 80db380 8e0cb82
+Author: Parker Berg <pberg@utexas.edu>
+Date:   Thu Apr 9 21:35:36 2015 -0500
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit 80db3805f6d5bcac70f7895d19eb8f4c4d5be90c
+Author: Parker Berg <pberg@utexas.edu>
+Date:   Thu Apr 9 21:35:02 2015 -0500
+
+    Add descriptions for the remaining crimes
+    
+    closes #28
+
+commit 8e0cb82cf928c11a32501030ee651963591de6e5
+Merge: 2a27b83 6b0a24b
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Fri Apr 10 02:35:00 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit 2a27b831305c30627fdaf6b3896d6ff41086c680
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Fri Apr 10 02:34:56 2015 +0000
+
+    change issue number
+
+commit 6b0a24be533fedc8db3d941cd10f1f5a7dca314b
+Author: phtimmins <parkert@cs.utexas.edu>
+Date:   Thu Apr 9 21:32:15 2015 -0500
+
+    Update README.md
+
+commit f86a6eae619e0e2129e7821273aa2157a2f67b11
+Merge: 9a73486 dd1759d
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Fri Apr 10 02:27:40 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+    
+    Conflicts:
+    	README.md
+
+commit 9a734867c30232313851a9429f6fc1779e4f21b3
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Fri Apr 10 02:25:44 2015 +0000
+
+    Updates postgres and server sections of readme.
+
+commit dd1759d9fd38e219ea0d8d4f1f569e242052dd2e
+Author: phtimmins <parkert@cs.utexas.edu>
+Date:   Thu Apr 9 21:25:02 2015 -0500
+
+    Update README.md
+
+commit c8429552561d7aa64e34e61414a5fe269189a0f0
+Merge: 1f7f38b fd03a75
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Fri Apr 10 02:19:36 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit 1f7f38b154a4ce77f36685ed63971e29d9070f1d
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Fri Apr 10 02:18:53 2015 +0000
+
+    Updates nginx info on install.sh and README
+    
+    Enhances server.sh to work on first install.
+
+commit fd03a7502c5d3d4a6a55f75118a673cc55c9274b
+Author: phtimmins <parkert@cs.utexas.edu>
+Date:   Thu Apr 9 21:10:06 2015 -0500
+
+    Update README.md
+
+commit a03a06ff7940edd5c1d77c886fbfcd5efb6f0da7
+Author: phtimmins <parkert@cs.utexas.edu>
+Date:   Thu Apr 9 21:08:09 2015 -0500
+
+    Update README.md
+
+commit c96fc197cb24ac7e94102447b717cec7ebd8b524
+Merge: 8cd747e 3ef3448
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Fri Apr 10 02:05:36 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit 8cd747e1692b8d687508b8e68068e1b225db5c2a
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Fri Apr 10 02:04:45 2015 +0000
+
+    Server management just got that much easier!
+    
+    sudo ./server.sh [start|stop|restart] now completely managees the server with output!
+
+commit 3ef344880981aada59afb622317e5f9402a5c1ba
+Merge: 1923efb 66d08a2
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Fri Apr 10 02:00:31 2015 +0000
+
+    Merge branch 'master' of github.com:plberg/cs373-idb
+
+commit 66d08a22c54de8def43ed6c987a9ac737f81fa13
+Author: phtimmins <parkert@cs.utexas.edu>
+Date:   Thu Apr 9 21:00:06 2015 -0500
+
+    Update README.md
+
+commit 1923efb5bb2c19fa4ccee3b8871c22f3058b2525
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Fri Apr 10 01:59:39 2015 +0000
+
+    Added an install script that installs the base dependencies for the project.
+
+commit 9388914b9ba2d9e3023daa5d7ef996780cdefa3b
+Author: phtimmins <parkert@cs.utexas.edu>
+Date:   Thu Apr 9 20:53:09 2015 -0500
+
+    Update README.md
+
+commit 25f891c910b4424d4059c0e8d07231022c258892
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Fri Apr 10 01:37:14 2015 +0000
+
+    Remove useless code
+
+commit 433ffb945a0940b1689d24fd12905ee67d940f1a
+Author: phtimmins <parkert@cs.utexas.edu>
+Date:   Thu Apr 9 20:35:23 2015 -0500
+
+    Update README.md
+
+commit fe7f8955cb4c286b6542d488db868bd7974ef3e2
+Merge: 76425f7 60b791a
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Fri Apr 10 01:30:56 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit 76425f7e51c7102ec1939dc8c77aa29e14318c6f
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Fri Apr 10 01:30:26 2015 +0000
+
+    Fixes server configuration error.
+
+commit 60b791af019f3f95de9fe7a1fd346332cf8762d5
+Author: phtimmins <parkert@cs.utexas.edu>
+Date:   Thu Apr 9 20:30:10 2015 -0500
+
+    Update README.md
+
+commit 373ab28f002e3b33993699db938c39f79ec504fa
+Merge: 8e18682 2633333
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Fri Apr 10 01:04:49 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit 8e18682c245c522ea21fc16ac590c1228f9ca636
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Fri Apr 10 01:03:48 2015 +0000
+
+    Configures the test server.
+    
+    Adds routing to the ngingx and uwsgi app.
+    Adds scripts to run the test server to match the prod server.
+    Splits test app files to resemble prod app files.
+
+commit 2633333694345f85e4d2a274ee67c4b98a0c131a
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Fri Apr 10 01:01:30 2015 +0000
+
+    Made readme file
+
+commit 93002e35b9bf5ec0f2372e9bf947f10a539b8b49
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Fri Apr 10 00:13:42 2015 +0000
+
+    Removed unnecessary code
+
+commit d6a1d3d7faaa7218b7980a29c1cfdbc1e17d100a
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Thu Apr 9 21:42:11 2015 +0000
+
+    Changed test class name from TestModels to TestIDB
+
+commit cb88c1aa6ed44d4eddbe7159124ab5a754352689
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Thu Apr 9 21:16:02 2015 +0000
+
+    changed number unit tests
+
+commit 642adc1740077eb506c7d4eaa4066d6c630279b7
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Thu Apr 9 21:14:26 2015 +0000
+
+    Added external facing api tests
+
+commit f5d6225ce4b46b98d91ad81f69bb9e2dd3b205fc
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Thu Apr 9 18:11:31 2015 +0000
+
+    Html for tests webpage
+
+commit 460be92d5b118d31ffe84ecf0875d1a3ce8a6577
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Thu Apr 9 18:10:35 2015 +0000
+
+    Make tests page that will query tests api and render its output
+
+commit e333d7ed1c65ad95618c8859ce01f468859904e4
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Thu Apr 9 18:09:55 2015 +0000
+
+    Add link to tests page to base.html
+
+commit 675cdafe6f59a65c1c88d19a33aaa9658baadbf6
+Merge: 4b0c83c 2053c42
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Thu Apr 9 16:51:02 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit 4b0c83c931571c6cdbc46bed8fbaa85d0634a09b
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Thu Apr 9 16:50:47 2015 +0000
+
+    Server to run the tests api
+
+commit 2053c42826b979b76ad451a5740795aef0c9e084
+Merge: ccdb959 1f4f899
+Author: Parker Berg <pberg@utexas.edu>
+Date:   Thu Apr 9 10:10:50 2015 -0500
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit ccdb9592747595ac33a4ffd46c02e2a4c6e1fabd
+Author: Parker Berg <pberg@utexas.edu>
+Date:   Thu Apr 9 10:10:39 2015 -0500
+
+    progress on crime descriptions
+
+commit 1f4f8994e684058e8c18a1fef582e3699a4bcc36
+Merge: 8df6bef 53eac69
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Wed Apr 8 21:55:05 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit 8df6bef4dd34188d2982c6aa884863bc13ee10ba
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Wed Apr 8 21:53:39 2015 +0000
+
+    Removes twitter feeds.
+    
+    Handles now link to twitter pages.
+
+commit 53eac69b2af2ff0d589e59f8deac0beff87ad7c2
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Wed Apr 8 21:18:59 2015 +0000
+
+    Fixes some minor issues with server maintenance.
+
+commit cfd3c595230b2809d281e69b9d674707223f2352
+Author: Parker Berg <pberg@utexas.edu>
+Date:   Wed Apr 8 15:58:32 2015 -0500
+
+    store max string in models.py in global
+
+commit 6eb84d42badefa4b18eab5990d31f049a7d9b99e
+Author: Parker Berg <pberg@utexas.edu>
+Date:   Wed Apr 8 15:52:45 2015 -0500
+
+    clean up comments in filters.py
+
+commit 5339336489a422a4a702ebf9a97e42284c52ef38
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Wed Apr 8 04:11:29 2015 +0000
+
+    Changed bio
+
+commit bb1dd32e2bffbe10efa43d7b027ed10a03d52890
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Tue Apr 7 23:11:20 2015 +0000
+
+    Remove duplicate code left from merge
+
+commit f04a43b495a74c46b2651f2433e3e918393c9cb8
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Tue Apr 7 23:07:34 2015 +0000
+
+    Remove incorrect db configuration
+
+commit 97a9f48d74024c563a33ce6ba750951c4c5ebb7a
+Merge: 4a337d8 bede2d1
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Tue Apr 7 23:02:02 2015 +0000
+
+    Merged changes
+
+commit 4a337d895ace789426f055b4b1b16e386b14c35a
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Tue Apr 7 23:00:05 2015 +0000
+
+    Made app discover db url from a environment variable so different databases may be used
+
+commit bede2d182e28ede1ecd88d62d45e1b7a39d99083
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Tue Apr 7 22:16:07 2015 +0000
+
+    Adds twitter feeds to celebrity pages.
+    
+    Part of #31
+    Also makes functions in filters get auto included in the list of jinja filters.
+
+commit 08af433999647383e798514628dda94acceb5fc7
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Tue Apr 7 21:18:25 2015 +0000
+
+    Makes ui elements on charges optional.
+    
+    Closes #38
+
+commit e05568c0b67b445bc4a271787e95d5c74e8e86df
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Tue Apr 7 21:16:07 2015 +0000
+
+    Make ui elements on crimes optional
+    
+    Related to #38
+
+commit a98e056b40c2c880c55704c56144790a5133109d
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Tue Apr 7 21:13:03 2015 +0000
+
+    Makes all sidebar elements optional.
+    
+    Related to #38
+
+commit 443a131722d7279e00fbd27fdd5a1a470b779fed
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Tue Apr 7 21:07:37 2015 +0000
+
+    Fixes last few bugs in init_db.
+    
+    Closes #29
+
+commit 8a54df40c44b962064b59e5312a8d9f8e634cb21
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Tue Apr 7 21:03:27 2015 +0000
+
+    Fixed bug cause by circular dependency fix, where initialize_db was not registering the db with app
+
+commit 4c171f5b3a99e0e925ff5150242970b15ecf1871
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Tue Apr 7 20:41:10 2015 +0000
+
+    Fixes bugs in init_db.
+
+commit 0871e36a09e077cf5ca30956b1abeb14ed9b1b48
+Merge: 11b2c4c f767a66
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Tue Apr 7 20:28:11 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit 11b2c4ceb2a84cc8f68a8acd8d6e0fc58e71908b
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Tue Apr 7 20:27:59 2015 +0000
+
+    Remove circularity in app definition that requires routes to be regstered in run.py
+
+commit f767a66d8f32205cff2d22406ce573709a219d21
+Author: jabrouwer82 <jabrouwer82@gmail.com>
+Date:   Tue Apr 7 15:24:33 2015 -0500
+
+    Adds the last few charges.
+    
+    This is untested, do not run it for now.
+
+commit 3ebdcecebe0a4ab0b1d8dab74986262001adeed2
+Author: jabrouwer82 <jabrouwer82@gmail.com>
+Date:   Tue Apr 7 14:14:16 2015 -0500
+
+    Adds some police tape type resources.
+    
+    Adds a police tape banner, police tape background, and raw svgs of both.
+
+commit 5b4dfc97c354c334e4a8d4fee9d071c3328f9f9d
+Author: Parker Berg <pberg@utexas.edu>
+Date:   Tue Apr 7 12:36:05 2015 -0500
+
+    minor content change apiary link
+
+commit 15443fd93f01b0b123c386301daabd1868db3074
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Wed Apr 1 23:52:48 2015 +0000
+
+    Added Apiary and GitHub links, fixes #44 and #45.
+
+commit 90b95887b8da7668799c6c93d5cec2359b34b189
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Fri Mar 27 03:00:31 2015 +0000
+
+    commit log
+
 commit 930661c3d56feae854bb83c975aa6fe8a7ad437e
 Merge: 37fa882 80bebce
 Author: Jacob Brouwer <jabrouwer82@gmail.com>

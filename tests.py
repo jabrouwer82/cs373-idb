@@ -4,25 +4,17 @@ from models import Celebrity, Crime, Charge, CelebrityAlias, db
 from datetime import date
 import json
 import urllib
+from app import get_app
 
-
-# set db url before importing app, which needs this value set for configuration
-os.environ['APP_DB_URL'] = 'postgresql+psycopg2:///testsdb'
-from app import app
 
 class TestIDB(TestCase):
 
   def setUp(self):
     self.external_url = 'http://23.253.252.30'
-    app.config['TESTING'] = True
-#    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2:///testsdb'
-
-    # May want these settings for testing api calls 
-    app.config['WTF_CSRF_ENABLED'] = False
+    app = get_app('testsdb') 
     self.app = app.test_client()
-
+  
     db.create_all()
-
 
     self.speeding = Crime("Speeding", "www.speeding.com")
     self.ched = Celebrity(name='Ched', description='Actor', twitter_handle='@Ched', 
@@ -37,7 +29,6 @@ class TestIDB(TestCase):
     self.cr2 = Crime("2")
     self.ce1 = Celebrity("1")
     self.ce2 = Celebrity("2")
-
 
 
   def tearDown(self):
@@ -347,6 +338,13 @@ class TestIDB(TestCase):
     self.assertTrue('twitter_handle' in c)
 
 
+  def failtest_should_fail(self):
+    self.assertTrue(False)
+
+  def failtest_should_cause_error(self):
+    import NotARealModule
+    self.assertTrue(True)
+    
 
   def get_json_from_url_external(self, url):
     r = urllib.request.urlopen(url)
@@ -355,6 +353,7 @@ class TestIDB(TestCase):
   def get_json_from_url(self, url):
     str_data = self.app.get(url).get_data().decode("utf-8")
     return json.loads(str_data)
+
 
 
 if __name__ == "__main__" :

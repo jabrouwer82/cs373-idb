@@ -2,17 +2,90 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="container">
-	<div class="page-header">
-		<h1>Tests</h1>
-	</div>
-        <div class="panel panel-default">
-        <div class="panel-heading">Output</div>
-        <div class="panel-body">
-          {{test_output_msg}}
-        </div>
-      </div>
-          <a class="btn btn-default" href="/tests" role="button">Rerun Tests</a>
 
+
+  
+    <div class="container">
+	    <div class="page-header">
+          <a class="btn btn-default" href="." role="button">Run Tests</a>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+                <div id="results">Passed: 0<br>Failed: 0<br>Errors: 0</div>
+        </div>
+        <div class="panel-body">
+          <div  class="progress">
+             <div id="progress_bar" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 container" >
+                <div id="message" style="height: 200px; width: auto; overflow:auto"></div>
+            </div>
+          </div>
+        </div>
     </div>
-{% endblock %}
+    </div>
+    
+        <script>
+                var testStream = new EventSource('{{test_url}}', { withCredentials: true});
+
+                var errorBarClass = "progress-bar progress-bar-danger progress-bar-striped active"
+
+                var successes = 0;
+                var failures = 0;
+                var errors = 0
+                var num_tests = 0;
+                var done = false;
+
+                var bar = document.getElementById('progress_bar')
+                var msg = document.getElementById('message')
+                var res = document.getElementById('results')
+
+                testStream.onmessage = function (event) {
+              
+                  if(!done) {
+                    var data = JSON.parse(event.data);
+
+                    console.log(event.data)
+
+                    if(data.return_code === 'num_tests') {
+                      num_tests = parseInt(data.message);
+                    }
+                    else {
+
+                      if(data.return_code === 'success') {
+                        successes += 1;
+                        msg.innerHTML += 'Passed: ' + data.message + '<br>'
+                      }
+                      else if(data.return_code === 'failure') {
+                        failures += 1;
+                        bar.setAttribute('class', errorBarClass)
+                        msg.innerHTML += 'Failed: ' + data.message + '<br>'
+                      }
+                      else { // data.return_code === 'error'
+                        errors += 1
+                        bar.setAttribute('class', errorBarClass)
+                        msg.innerHTML += 'Error: ' + data.message + '<br>'
+                      }
+
+              
+                      res.innerHTML = 'Passed: ' + successes + '<br>' + 'Failed: ' + failures + '<br>' + 'Errors: ' + errors + '<br>'
+                      var ratioDone = (successes + failures + errors) / num_tests;
+                      var percentDone = Math.ceil(ratioDone * 100);
+
+                      console.log("progress bar at " + percentDone + "%")
+
+                      bar.setAttribute('style', 'width:' + percentDone + '%');
+                    }
+                  }
+                };
+
+                testStream.onerror = function () {
+                  done = true; // calls onerror at end of stream
+                };
+
+         </script>
+
+
+
+    {% endblock %}
