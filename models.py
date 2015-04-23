@@ -1,7 +1,10 @@
 from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
+from sqlalchemy_searchable import make_searchable
+from sqlalchemy_utils.types import TSVectorType
 
 db = SQLAlchemy()
+make_searchable()
 
 MAX_STRING = 4000
 
@@ -18,6 +21,8 @@ class Celebrity(db.Model):
   aliases = db.relationship('CelebrityAlias')
   crimes = db.relationship('Crime', secondary='charge')
   charges = db.relationship('Charge')
+
+  search_vector = db.Column(TSVectorType('name', 'description', 'twitter_handle', 'wiki_url', 'imdb_url'))
 
   def __init__(self,
                name,
@@ -46,6 +51,8 @@ class CelebrityAlias(db.Model):
   
   celebrity = db.relationship('Celebrity')
   
+  search_vector = db.Column(TSVectorType('alias'))
+  
   def __init__(self, alias, celebrity):
     self.alias = alias
     self.celebrity = celebrity
@@ -64,6 +71,8 @@ class Crime(db.Model):
   celebrities = db.relationship('Celebrity', secondary='charge')
   charges = db.relationship('Charge')
 
+  search_vector = db.Column(TSVectorType('name', 'description', 'wiki_url'))
+  
   def __init__(self, name, wiki_url=None, description=None):
     self.name = name 
     self.wiki_url = wiki_url
@@ -80,6 +89,8 @@ class CrimeDescription(db.Model):
   crime_id = db.Column(db.Integer, db.ForeignKey('crime.id'))
   
   crime = db.relationship('Crime')
+  
+  search_vector = db.Column(TSVectorType('location', 'description'))
   
   def __init__(self, description, crime, location):
     self.location = location
@@ -105,6 +116,8 @@ class Charge(db.Model):
   crime = db.relationship('Crime')
   celebrity = db.relationship('Celebrity')
 
+  search_vector = db.Column(TSVectorType('description', 'attorney', 'classification'))
+  
   def __init__(self,
                celebrity,
                crime,

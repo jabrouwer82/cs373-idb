@@ -2,6 +2,9 @@ from datetime import date
 from models import Celebrity, CelebrityAlias, Crime, CrimeDescription, Charge, db
 from app import app
 
+# Populate search vectors
+db.configure_mappers()
+
 # remove all existing tables
 db.drop_all()
 

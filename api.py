@@ -1,5 +1,6 @@
 from flask import Flask, Response, make_response, abort, jsonify, request, url_for, Blueprint
 from models import Celebrity, CelebrityAlias, Crime, CrimeDescription, Charge
+from sqlalchemy_searchable import search
 import json
 
 
@@ -120,7 +121,15 @@ def get_crime(elmt_id):
 def get_charge(elmt_id):
   return get_element(Charge, elmt_id, charge_to_json)
 
- 
+
+# Search
+@apiBlueprint.route('/api/search')
+def api_search():
+  query = Celebrity.query
+  # TODO(jabrouwer82): flesh this out into a proper search api
+  # The query is hard coded in, and we only return the first result.
+  query = search(query, 'actor', sort=True)
+  return jsonify(celebrity_to_json(query.first()))
 
 @apiBlueprint.errorhandler(404)
 def not_found(error):
