@@ -109,6 +109,10 @@ def tests_fail():
   return render_template('tests.html', test_url=test_url)
 
 
+@viewsBlueprint.route('/search')
+@viewsBlueprint.route('/search/')
+def search():
+  return render_template('search.html', items=[{'name': 'test', 'description':'testest', 'href':'lololo'}])
 
 
 def date_formatter(d):

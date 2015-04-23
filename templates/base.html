@@ -2,6 +2,13 @@
 <html lang="en">
 
   <head>
+    <style>
+      @media (min-width: 701px) {
+          .desktop-search {
+            float: right;
+          }
+      }
+    </style>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="/static/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
@@ -38,7 +45,23 @@
           <li><a href="/superheroes">Superheroes</a></li>
           <li><a href="/tests">Tests</a></li>
         </ul>
-
+        <div style="margin-top: 8px;">
+          <div class="desktop-search">
+            <form class="form-inline nav navbar-nav" action="/search">
+              <div class="form-group"> 
+                <select class="form-control" name="table">
+                  <option>Celebrity</option>
+                  <option>Crime</option>
+                  <option>Charge</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="query" placeholder="Search terms">
+              </div>
+              <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+             </form>
+           </div>
+         </div>
        </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>

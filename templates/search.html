@@ -1,0 +1,14 @@
+
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+	<div class="page-header">
+		<h1>Search</h1>
+	</div>
+    <ul class="list-group">           
+      {% for item in items %}
+        <li class="list-group-item"><a href="{{ item.href }}">{{ item.name }}</a> - {{ item.description }} </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
