@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+	<div class="container">
+        <div class="page-header"><h1>Superheroes!</h1></div>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        {% for super in supers %}
+          <div class="panel panel-primary">
+              <div class="panel-heading" role="tab" id="heading_{{ super['id'] }}">
+                    <h4 class="panel-title">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse_{{ super['id'] }}" aria-expanded="false" aria-controls="collapsei_{{ super['id'] }}">
+                                {{ super['name'] }}
+                            </a>
+                    </h4>
+               </div>
+               <div id="collapse_{{ super['id'] }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading_{{ super['id'] }}">
+                   <div class="panel-body">
+                       <div class="container col-md-4">
+                            <img src="{{ super['image']['medium_url'] }}" class="img-responsive img-thumbnail">
+                            <hr/>
+                             Powers:
+                             <ul class="list-group">
+                             {% for power in super['powers'] %}
+                                <li class="list-group-item">{{ power['name'] }}</li>   
+                             {% endfor %} 
+                             </ul>
+                       </div>
+                       <div class="container col-md-8">
+                            <h4 align="center">Description</h4>
+                            {{ super['description'] }}
+                            <hr/>
+                            <a href="http://104.239.165.88/characters/{{ super['id'] }}" target="_target">Click here to learn more about {{ super['name'] }}.</a>
+                       </div>
+                  </div>
+               </div>
+            </div>
+        {% endfor %}
+        </div>
+        <!--
+        {% for super in supers %}
+            <div class="container col-md-4">
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                      <h3 class="panel-title"> {{ super['name'] }}</h3>
+                  </div>
+                 <div class="panel-body">
+                     <img src="{{ super['image']['medium_url'] }}" class="img-responsive">
+                     <br/>
+                     Powers:
+                     <ul class="list-group">
+                     {% for power in super['powers'] %}
+                        <li class="list-group-item">{{ power['name'] }}</li>   
+                     {% endfor %} 
+                     </ul>
+                 </div>
+                </div>
+            </div>
+            <div class="container col-md-8">
+                <h4 align="center">Description</h4>
+                <p>{{ super['description'] }}</p>
+            </div>
+        {% endfor %}
+        -->
+	</div>
+{% endblock %}
