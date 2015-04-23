@@ -82,6 +82,7 @@
 
                 testStream.onerror = function () {
                   done = true; // calls onerror at end of stream
+                  testStream.close();
                 };
 
          </script>
