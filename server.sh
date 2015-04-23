@@ -27,7 +27,7 @@ if [ "$opt" = "start" ]; then
     echo "Starting prod uwsgi server on port 5000, logs located at $applog"
     nohup uwsgi --socket 127.0.0.1:5000 --wsgi-file run.py --master --processes 4 --threads 2 --stats 127.0.0.1:5001 --callable app --pidfile "$apppid" &> "$applog" &
     echo "Starting test uwsgi server on port 5050, logs located at $testlog"
-    nohup uwsgi --socket 127.0.0.1:5050 --wsgi-file test_run.py --master --processes 4 --threads 2 --stats 127.0.0.1:5051 --callable test_app --pidfile "$testpid" &> "$testlog" &
+    nohup uwsgi --socket 127.0.0.1:5050 --wsgi-file test_run.py --master --processes 1 --threads 1 --stats 127.0.0.1:5051 --callable test_app --pidfile "$testpid" &> "$testlog" &
     echo "Success, the server is now running."
   else
     echo "Server already running, please run [sudo ./server.sh restart] to quit and restart the server"
@@ -52,6 +52,6 @@ elif [ "$opt" = "stop" ]; then
   fi
 elif [ "$opt" = "restart" ]; then
   ./server.sh stop
-  sleep 1s
+  sleep 2s
   ./server.sh start
 fi
