@@ -1,6 +1,5 @@
 from flask import Flask, Response, make_response, abort, jsonify, request, url_for, Blueprint
 from models import Celebrity, CelebrityAlias, Crime, CrimeDescription, Charge
-from sqlalchemy_searchable import parse_search_query, search
 import json
 
 
@@ -121,37 +120,6 @@ def get_crime(elmt_id):
 def get_charge(elmt_id):
   return get_element(Charge, elmt_id, charge_to_json)
 
-
-# Search
-@apiBlueprint.route('/api/search')
-def api_search():
-  search_query = request.args.get('query')
-  search_terms = search_query.split(' ')
-  search_query_or = ' or '.join(search_terms)
-  table_query = request.args.get('table')
-  
-  if table_query == 'Celebrity':
-    table = Celebrity
-    json_func = celebrity_to_json
-    search_vector = Celebrity.search_vector | CelebrityAlias.search_vector
-  elif table_query == 'Crime':
-    table = Crime
-    json_func = crime_to_json
-    search_vector = Crime.search_vector
-  elif table_query == 'Charge':
-    table = Charge
-    json_func = charge_to_json
-    search_vector = Charge.search_vector
-  else:
-    abort(500)
-
-  and_query = table.query.filter(search_vector.match(parse_search_query(search_query)))
-  and_results = [json_func(item) for item in and_query]
-  
-  or_query = table.query.filter(search_vector.match(parse_search_query(search_query_or)))
-  or_results = [json_func(item) for item in or_query]
-  final_results = and_results + [item for item in or_results if item not in and_results]
-  return Response(json.dumps(final_results),  mimetype='application/json')
 
 @apiBlueprint.errorhandler(404)
 def not_found(error):

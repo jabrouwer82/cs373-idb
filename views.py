@@ -1,8 +1,9 @@
-from flask import Response, render_template, Flask, send_from_directory, Blueprint
-from models import Crime, Celebrity, Charge
+from flask import Response, request, render_template, Flask, send_from_directory, Blueprint
+from models import Crime, Celebrity, CelebrityAlias, Charge
+from sqlalchemy_searchable import parse_search_query, search
+import json
 import os
 import urllib
-import json
 
 # Define the interface that app will register to views routes
 viewsBlueprint = Blueprint('views', __name__)
@@ -112,8 +113,54 @@ def tests_fail():
 @viewsBlueprint.route('/search')
 @viewsBlueprint.route('/search/')
 def search():
-  return render_template('search.html', items=[{'name': 'test', 'description':'testest', 'href':'lololo'}])
+  search_query = request.args.get('query')
+  search_terms = search_query.split(' ')
+  search_query_or = ' or '.join(search_terms)
+  table_query = request.args.get('table')
+  
+  if table_query == 'Celebrity':
+    table = Celebrity
+    item_mapper = celeb_item_mapper
+    search_vector = Celebrity.search_vector | CelebrityAlias.search_vector
+  elif table_query == 'Crime':
+    table = Crime
+    item_mapper = crime_item_mapper
+    search_vector = Crime.search_vector
+  elif table_query == 'Charge':
+    table = Charge
+    item_mapper = charge_item_mapper
+    search_vector = Charge.search_vector
+  else:
+    abort(500)
 
+  and_query = table.query.filter(search_vector.match(parse_search_query(search_query)))
+  and_results = and_query.all()  
+  or_query = table.query.filter(search_vector.match(parse_search_query(search_query_or)))
+  or_results = or_query.all()  
+  final_results = and_results + [item for item in or_results if item not in and_results]
+  items = [item_mapper(item) for item in final_results]
+  return render_template('search.html', items=items, query=search_query, table=table_query)
+
+def celeb_item_mapper(celeb):
+  item = {}
+  item['name'] = celeb.name
+  item['description'] = ' '.join([val for val in [celeb.name, celeb.description, celeb.twitter_handle, celeb.wiki_url, celeb.imdb_url] + [alias.alias for alias in celeb.aliases] if val is not None])
+  item['href'] = '/celebrities/{id}'.format(id=celeb.id)
+  return item
+
+def crime_item_mapper(crime):
+  item = {}
+  item['name'] = crime.name
+  item['description'] = ' '.join([val for val in [crime.name, crime.description, crime.wiki_url] if val is not None])
+  item['href'] = '/crimes/{name}'.format(name=crime.name)
+  return item
+
+def charge_item_mapper(charge):
+  item = {}
+  item['name'] = charge.celebrity.name + ', ' + charge.crime.name + ', ' + date_formatter(charge.date)
+  item['description'] = ' '.join([val for val in [charge.description, charge.attorney, charge.classification] if val is not None])
+  item['href'] = '/charges/{id}'.format(id=charge.id)
+  return item
 
 def date_formatter(d):
   return '{month} {day}, {year}'.format(month=d.strftime('%B'), day=d.day, year=d.year)
