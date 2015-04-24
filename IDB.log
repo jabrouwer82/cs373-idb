@@ -1,3 +1,233 @@
+commit eca4c34dcfb0f1786f77902ee40f6766358846ac
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Fri Apr 24 02:41:31 2015 +0000
+
+    Updates about_us
+
+commit a8fb8c8fafe58c5e67bbc5739ef71777abb6dd6c
+Merge: b8441f0 6804ea7
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Fri Apr 24 02:29:38 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit b8441f033de602ef23b18d1ba2a640742b96f710
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Fri Apr 24 02:29:25 2015 +0000
+
+    Adds titles and search error message.
+
+commit 6804ea7fbf7fc4e62d734ca96939428269eebff4
+Merge: 402c552 a6bae34
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Fri Apr 24 02:27:41 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+    
+    Conflicts:
+    	views.py
+
+commit 402c5521087d97b6bdff0808f368b40424ca9571
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Fri Apr 24 02:26:31 2015 +0000
+
+    Truncated super hero descriptions
+
+commit a6bae34504fbc1138c8f141b96a89ceb48c6723a
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Fri Apr 24 02:15:32 2015 +0000
+
+    Keep search state.
+
+commit 94c2dfb6ad63405140d4dc6725360e24269e5c63
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Fri Apr 24 02:09:28 2015 +0000
+
+    Finalizes searching.
+
+commit e4a0f41bc6c20b07177f35b7adc08bf764521c19
+Merge: b20a7e7 052d8a2
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Fri Apr 24 00:53:47 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit b20a7e77d0acd118de3f1ae4c955ac6869aabe2a
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Fri Apr 24 00:53:21 2015 +0000
+
+    Adds search page.
+    
+    Removes search api.
+
+commit 052d8a2f57ea57fb699fb0cf1cb3c9ccd50db7cf
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Fri Apr 24 00:41:27 2015 +0000
+
+    Made each superhero panel header a link rather than just the title, unfortunately requires change in coloring
+
+commit 726932fb7fabaf72d87c36eeb74a87231b7b0c2d
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Fri Apr 24 00:01:17 2015 +0000
+
+    Fixes nav-bottom.
+
+commit 884a6b875297322dc7236108a92c343877c7f47d
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Thu Apr 23 23:47:32 2015 +0000
+
+    Adds basic search form/page.
+    
+    Note, searches are not yet performed.
+
+commit 57defc2748717db7f0f6182d1cdd1b1d3b81c3be
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Thu Apr 23 22:36:56 2015 +0000
+
+    Adds search api.
+    
+    Includes both and and or searching.
+
+commit ab1ba2b899926a620a52c5b65d0d64f8bcad030d
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Thu Apr 23 22:36:27 2015 +0000
+
+    Fixes typos in database.
+
+commit 7b4ddaad4eaebe49aaf6d27d72fdb865ccf146f2
+Merge: 1e74393 37035ad
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Thu Apr 23 20:16:07 2015 +0000
+
+    Merge branch 'master' of github.com:plberg/cs373-idb
+
+commit 1e7439311e225b917b41e331fa4e2028b8815636
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Thu Apr 23 20:15:52 2015 +0000
+
+    API exercise page.
+
+commit 6ba141a0c61ce961175c47c5e94c6c8835eaa5a9
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Thu Apr 23 20:15:34 2015 +0000
+
+    Added link to the API exercise page.
+
+commit a580c5808635a55e803ff23842a38e2da78361dc
+Author: Ian <i.daszkowski92@gmail.com>
+Date:   Thu Apr 23 20:15:08 2015 +0000
+
+    Updated views to route to our API exercise page.
+
+commit 37035adaa4c64de3a3585fae045bc072cfa627d2
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Thu Apr 23 19:49:27 2015 +0000
+
+    Fixes for test pages in server configs.
+    
+    Adds lots of flags to nginx to turn off buffering.
+    Turns uwsgi test server down to single process/thread
+
+commit 10777b8239928950eb56dbddf533933f349179ac
+Merge: e927834 ac0b05e
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Thu Apr 23 19:45:45 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit ac0b05e83b2340d81c8647bd48dfcd8024d66b66
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Thu Apr 23 19:45:31 2015 +0000
+
+    close event source
+
+commit e927834a9fef14ab9e7f9f5aea6079776bf22a3f
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Thu Apr 23 18:39:46 2015 +0000
+
+    Reduces the test server to a single process/thread.
+    
+    To fix race-conditions.
+    Also adjusts server script.
+
+commit 21e4dbd8df82ed967047bd82b547c7aa87c7680b
+Merge: 4fecc0b 6126089
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Thu Apr 23 17:17:37 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit 4fecc0b14049c2226fdba9589eaca33d19dc8898
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Thu Apr 23 17:16:04 2015 +0000
+
+    Adds search vectors for all models.
+    
+    These vectors are only established for string data, and do not search associated models.
+    Also add /api/search for hard coded search example.
+
+commit 61260897fee2e57e0cec4db91aa795e6b56734d9
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Thu Apr 16 19:43:47 2015 +0000
+
+    Added fail tests page
+
+commit 933486aee771688d0ffe05ad7e9138ee46207814
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Thu Apr 16 17:29:25 2015 +0000
+
+    Make tests.py use get_app
+
+commit 53b66bab95ce66d92fbe0bd8e6c455116e34d6a1
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Thu Apr 16 04:36:35 2015 +0000
+
+    Make an app factory function so db is an arg rather than env variable
+
+commit 6c3d08b35b916a5d4aad5beb598a16bb890bdf16
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Wed Apr 15 16:26:28 2015 +0000
+
+    Stopped setting environment variables for test app as now defaults to celebrapsheet.tk
+
+commit bcacaa8cdd8c65ae54641d396e05aa4c2da4c099
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Wed Apr 15 16:24:06 2015 +0000
+
+    Added errors message to test output
+
+commit b6872b190095631b50acdc65705bc51e2af43c68
+Author: Parker Timmins <parkert@cs.utexas.edu>
+Date:   Wed Apr 15 01:56:34 2015 +0000
+
+    Add progress bar to tests page
+
+commit e7bea5544e84faaeb031f4dceabaa710b5495211
+Merge: 63f5c45 05e71da
+Author: Parker Berg <pberg@utexas.edu>
+Date:   Thu Apr 9 21:50:20 2015 -0500
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit 63f5c455d1ddfb93dfcc23267ad98f4e2ded3d7e
+Author: Parker Berg <pberg@utexas.edu>
+Date:   Thu Apr 9 21:50:12 2015 -0500
+
+    updated IDB.log
+
+commit 05e71dac010b42a18cd0ac948bdc3cecd70eba5f
+Merge: 0fc81f8 612f846
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Fri Apr 10 02:44:15 2015 +0000
+
+    Merge branch 'master' of https://github.com/plberg/cs373-idb
+
+commit 0fc81f88547eb0251eb1c9f49cfbe6e0b9642e21
+Author: Jacob Brouwer <jabrouwer82@gmail.com>
+Date:   Fri Apr 10 02:43:53 2015 +0000
+
+    Updates about_us stats.
+
 commit 612f8467dec24522b81aaed5028b321f373446f6
 Merge: 252adc4 29738c5
 Author: Parker Berg <pberg@utexas.edu>
