@@ -26,7 +26,7 @@
                        </div>
                        <div class="container col-md-8">
                             <h4 align="center">Description</h4>
-                            {{ super['description'] }}
+                            {{ truncate_super(super['description']) }}
                             <hr/>
                             <a href="http://104.239.165.88/characters/{{ super['id'] }}" target="_target">Click here to learn more about {{ super['name'] }}.</a>
                        </div>
