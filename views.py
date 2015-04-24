@@ -92,7 +92,7 @@ def superheroes():
     for super_id in supers_id:
         super_id_url = urllib.request.urlopen('http://104.239.165.88/api/characters/' + str(super_id['id']))
         supers.append(json.loads(super_id_url.read().decode("utf-8")))
-    return render_template('superheroes.html', supers=supers)
+    return render_template('superheroes.html', supers=supers, truncate_super=truncate_super)
     
 
 @viewsBlueprint.route('/tests')
@@ -181,6 +181,16 @@ def highlighter(description, terms):
                        r'\1</mark>\2...',
                        description)
   return description
+
+def truncate_super(description):
+  if description != None:
+    print('DESC: ' + description[:10])
+    m = re.search( '(.*?</h2>.*?</h2>.*?)<h2>', description)
+    if not m:
+      return ''
+    return m.group(1)
+  return ''
+  
 
 def date_formatter(d):
   return '{month} {day}, {year}'.format(month=d.strftime('%B'), day=d.day, year=d.year)
