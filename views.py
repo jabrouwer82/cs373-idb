@@ -3,6 +3,7 @@ from models import Crime, Celebrity, CelebrityAlias, Charge
 from sqlalchemy_searchable import parse_search_query, search
 import json
 import os
+import re
 import urllib
 
 # Define the interface that app will register to views routes
@@ -121,7 +122,7 @@ def search():
   if table_query == 'Celebrity':
     table = Celebrity
     item_mapper = celeb_item_mapper
-    search_vector = Celebrity.search_vector | CelebrityAlias.search_vector
+    search_vector = Celebrity.search_vector # | CelebrityAlias.search_vector
   elif table_query == 'Crime':
     table = Crime
     item_mapper = crime_item_mapper
@@ -138,29 +139,48 @@ def search():
   or_query = table.query.filter(search_vector.match(parse_search_query(search_query_or)))
   or_results = or_query.all()  
   final_results = and_results + [item for item in or_results if item not in and_results]
-  items = [item_mapper(item) for item in final_results]
+  items = [item_mapper(item, search_terms) for item in final_results]
+  #items = [item_mapper(item, search_terms) for item in and_results]
   return render_template('search.html', items=items, query=search_query, table=table_query)
 
-def celeb_item_mapper(celeb):
+def celeb_item_mapper(celeb, search_terms):
   item = {}
   item['name'] = celeb.name
-  item['description'] = ' '.join([val for val in [celeb.name, celeb.description, celeb.twitter_handle, celeb.wiki_url, celeb.imdb_url] + [alias.alias for alias in celeb.aliases] if val is not None])
+  item['description'] = highlighter(' '.join([val for val in [celeb.name, celeb.description, celeb.twitter_handle, celeb.wiki_url, celeb.imdb_url] + [alias.alias for alias in celeb.aliases] if val is not None]), search_terms)
   item['href'] = '/celebrities/{id}'.format(id=celeb.id)
   return item
 
-def crime_item_mapper(crime):
+def crime_item_mapper(crime, search_terms):
   item = {}
   item['name'] = crime.name
-  item['description'] = ' '.join([val for val in [crime.name, crime.description, crime.wiki_url] if val is not None])
+  item['description'] = highlighter(' '.join([val for val in [crime.name, crime.description, crime.wiki_url] if val is not None]), search_terms)
   item['href'] = '/crimes/{name}'.format(name=crime.name)
   return item
 
-def charge_item_mapper(charge):
+def charge_item_mapper(charge, search_terms):
   item = {}
   item['name'] = charge.celebrity.name + ', ' + charge.crime.name + ', ' + date_formatter(charge.date)
-  item['description'] = ' '.join([val for val in [charge.description, charge.attorney, charge.classification] if val is not None])
+  item['description'] = highlighter(' '.join([val for val in [charge.description, charge.attorney, charge.classification] if val is not None]), search_terms)
   item['href'] = '/charges/{id}'.format(id=charge.id)
   return item
+
+def highlighter(description, terms):
+  for term in terms:
+    description = re.sub('({term})'.format(term=term),
+                         r'<mark>\1</mark>',
+                         description,
+                         flags=re.IGNORECASE)
+
+  description = re.sub('</mark>(.{20})(.*?)(.{20})<mark>',
+                       r'</mark>\1...\3<mark>',
+                       description)
+  description = re.sub('(.*?)(.{20})<mark>(.*)',
+                       r'...\2<mark>\3',
+                       description)
+  description = re.sub('(.*)</mark>(.{20})(.*)',
+                       r'\1</mark>\2...',
+                       description)
+  return description
 
 def date_formatter(d):
   return '{month} {day}, {year}'.format(month=d.strftime('%B'), day=d.day, year=d.year)
