@@ -115,6 +115,7 @@ def tests_fail():
 @viewsBlueprint.route('/search/')
 def search():
   search_query = request.args.get('query')
+  search_query = search_query.strip()
   search_terms = search_query.split(' ')
   search_query_or = ' or '.join(search_terms)
   table_query = request.args.get('table')
@@ -172,13 +173,13 @@ def highlighter(description, terms):
                          flags=re.IGNORECASE)
 
   description = re.sub('</mark>(.{20})(.*?)(.{20})<mark>',
-                       r'</mark>\1...\3<mark>',
+                       r'</mark>\1 ... \3<mark>',
                        description)
   description = re.sub('(.*?)(.{20})<mark>(.*)',
-                       r'...\2<mark>\3',
+                       r'... \2<mark>\3',
                        description)
   description = re.sub('(.*)</mark>(.{20})(.*)',
-                       r'\1</mark>\2...',
+                       r'\1</mark>\2 ...',
                        description)
   return description
 
