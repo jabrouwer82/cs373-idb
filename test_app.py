@@ -8,7 +8,6 @@ import os
 test_app = Flask(__name__)
 test_app.debug = True
 
-
 @test_app.route('/api/tests')
 def stream():
   tests = [t for t in functions_in(TestIDB) if t.startswith('test')]
@@ -30,7 +29,8 @@ def stream_response(generator):
   return response
 
 def test_runner(test_names):
-  runner = unittest.TextTestRunner(StringIO()) # throw away result
+  # Throw away result
+  runner = unittest.TextTestRunner(StringIO())
   yield json.dumps({'return_code':'num_tests', 'message':str(len(test_names))})
  
   for t in test_names:
@@ -44,7 +44,7 @@ def test_runner(test_names):
       return_code = 'success'
     yield json.dumps({'return_code':return_code, 'message':t})
 
-# This will break if g contain \n\n
+# This will break if g contains \n\n
 def encode(gen):
     return ("data: " + g + "\n\n" for g in gen)
 
