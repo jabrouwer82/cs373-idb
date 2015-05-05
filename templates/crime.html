@@ -20,8 +20,26 @@
                 {% if crime.celebrities %}
                 <h5 align="center">List of celebrities charged with this crime:</h5>
                 <ul class="list-group">
-                    {% for celebrity in crime.celebrities %}
-                    <li class="list-group-item"><a href="/celebrities/{{ celebrity.id }}">{{ celebrity.name }}</a></li>
+                  {% for celebrity in crime.celebrities %}
+                    <li class="list-group-item">
+                      <a href="/celebrities/{{ celebrity.id }}">
+                        {{ celebrity.name }}
+                      </a>
+                      <ul class="list-group">
+                        {% for charge in celebrity.charges %}
+                          {% if charge.crime == crime %}
+                          <li class="list-group-item">
+                            <a href="/charges/{{ charge.id }}">
+                              {{ charge.date | date_formatter }}
+                              {% if charge.location %}
+                              in {{ charge.location }}
+                              {% endif %}
+                            </a>
+                          </li>
+                          {% endif %}
+                        {% endfor %}
+                      </ul>
+                    </li>
                     {% endfor %}
                 </ul>
                 {% endif %}
