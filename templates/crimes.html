@@ -19,16 +19,7 @@
             <li class="list-group-item" style="text-overflow:ellipsis;">
                 <a href="/crimes/{{ crime.name }}">{{ crime.name }}</a>
                 <ul class="list-unstyled">
-                    {% for description in crime.descriptions %}
-                        {% if not description.location %}
-                            <li>{{ description.description | entireFirstSentence }}</li>
-                        {% endif %}
-                    {% endfor %}
-                    {% for description in crime.descriptions %}
-                        {% if description.location %}
-                            <li>{{ description.location }} - {{ description.description | entireFirstSentence }}</li>
-                        {% endif %}
-                    {% endfor %}
+                    <li>{{ crime.description  | entireFirstSentence }}</li>
                 </ul>
             </li>
             {% endfor %}
