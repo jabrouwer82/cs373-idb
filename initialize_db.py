@@ -162,29 +162,6 @@ crimes = [aggrAssault, animalCruelty, civilDisobedience, drivingSansLicense, dUI
 # Charges
 charges = [
 
-  Charge(mMcconaughey, possessionMarijuana, date(1999, 10, 29), 'Austin, Texas',
-    description='Actor Matthew McConaughey was arrested early Monday during a disturbance at his home in which police said he was dancing naked and playing the bongo drums.',	
-    attorney=None, classification=None),
-
-  Charge(mMcconaughey, possessionParaphernalia, date(1999, 10, 29), 'Austin, Texas',
-    description='Actor Matthew McConaughey was arrested early Monday during a disturbance at his home in which police said he was dancing naked and playing the bongo drums.'),
-
-  Charge(mMcconaughey, resistingArrest, date(1999, 10, 29), 'Austin, Texas',
-    description='Actor Matthew McConaughey was arrested early Monday during a disturbance at his home in which police said he was dancing naked and playing the bongo drums.',
-    classification='Class A misdemeanor'),
-
-  Charge(rDowneyJr, possessionHeroin, date(1996, 6, 23), 'Malibu, Calinfornia',
-    description='On June 23 at 11:15 a.m., Malibu sheriffs pulled him over after his black 1996 Explorer was clocked going 70 mph along a 50-mph stretch of the Pacific Coast Highway. They found heroin, cocaine and crack—and the gun'),
-
-  Charge(rDowneyJr, possessionCocaine, date(1996, 6, 23), 'Malibu, Calinfornia',
-    description='On June 23 at 11:15 a.m., Malibu sheriffs pulled him over after his black 1996 Explorer was clocked going 70 mph along a 50-mph stretch of the Pacific Coast Highway. They found heroin, cocaine and crack—and the gun'),
-
-  Charge(rDowneyJr, possessionFirearm, date(1996, 6, 23), 'Malibu, Calinfornia',
-    description='On June 23 at 11:15 a.m., Malibu sheriffs pulled him over after his black 1996 Explorer was clocked going 70 mph along a 50-mph stretch of the Pacific Coast Highway. They found heroin, cocaine and crack—and the gun'),
-
-  Charge(rDowneyJr, underInfContSubstance, date(1996, 6, 23), 'Malibu, Calinfornia',
-    description='On June 23 at 11:15 a.m., Malibu sheriffs pulled him over after his black 1996 Explorer was clocked going 70 mph along a 50-mph stretch of the Pacific Coast Highway. They found heroin, cocaine and crack—and the gun'),
-
   Charge(cSheen, menacing, date(2009, 12, 25), 'Aspen, Colorado',
     description='Sheen was arrested in Aspen, Colo., on charges of domestic violence, including assault and menacing, against his wife, Brooke Mueller. She reportedly told police that he had held a knife to her throat and threatened to kill her. Three months later, he was charged with felony menacing, and assault and criminal mischief, both misdemeanors. (latimes)', classification='Felony'),
 
@@ -194,21 +171,7 @@ charges = [
   Charge(cSheen, mischief, date(2009, 12, 25), 'Aspen, Colorado',
     description='Sheen was arrested in Aspen, Colo., on charges of domestic violence, including assault and menacing, against his wife, Brooke Mueller. She reportedly told police that he had held a knife to her throat and threatened to kill her. Three months later, he was charged with felony menacing, and assault and criminal mischief, both misdemeanors. (latimes)', classification='Misdemeanor'),
 
-  Charge(snoop, saleTransportMarijuana, date(2006, 10, 26), 'Burbank California',
-    description='Broadus was first arrested Oct. 26 at Burbank Airport. Thompson said he had 39.14 grams of marijuana – some of it in individual canisters – at the time of this arrest. A search warrant served at his home in the Diamond Bar in November turned up a semi-automatic handgun', classification='Felony'),
-
-  Charge(snoop, possessionGunFelon, date(2006, 11, 1), 'Burbank, California',
-    description='Broadus was first arrested Oct. 26 at Burbank Airport. Thompson said he had 39.14 grams of marijuana – some of it in individual canisters – at the time of this arrest. A search warrant served at his home in the Diamond Bar in November turned up a semi-automatic handgun', classification='Felony'),
-
   Charge(dMX, possessionFirearm, date(1999, 7, 2), None, description='When officers of the Fort Lee Police Department executed a search of his home in 1999, DMX promptly surrendered himself on weapons possession charges'),
-
-  Charge(mSheen, trespassing, date(2007, 4, 1), 'Nevada', description='Sheen was arrested, with 38 other activists, for trespassing at the Nevada Test Site at a Nevada Desert Experience event protesting against the site.'),
-
-  Charge(gClooney, civilDisobedience, date(2012, 3, 16), 'Washington D.C.', description='Clooney was arrested Friday for civil disobedience after taking part in a protest outside of the Sudanese embassy in Washington, D.C.'),
-
-  Charge(rWitherspoon, dUI, date(2013, 4, 19), None, description='She and husband Jim Toth had been arrested in a DUI incident.'),
-
-  Charge(pReubens, indecentExposure, date(1991, 7, 12), None, description='Indecent exposure, masturbating in an adult theater. Nearly two decades later, Reubens claimed he was innocent in a Playboy interview: "I\'m right-handed, and the police report said I was jerking off with my left hand. That would have been the end of the case right there, proof it couldn\'t have been me."'),
 
   Charge(dMX, possessionMarijuana, date(2000, 5, 5), None, description='DMX served a 15-day jail sentence in 2000 for possession of marijuana.'),
 
@@ -266,16 +229,53 @@ charges = [
   
   Charge(dMX, uninsuredVehicle, date(2013, 11, 4), 'Greer, South California', description='DMX was again arrested on November 4, 2013 by the Greenville-Spartanburg International Airport police near Greer, South Carolina after police, who were familiar with his prior arrests, noticed DMX behind the wheel of a vehicle at the terminal. DMX was booked on charges of driving under suspension, having an uninsured vehicle, and not having a licensed vehicle. He was subsequently released after spending three hours in jail.'),
 
-  Charge(mSheen, trespassing, date(2000, 8, 12), 'Vandenberg Air Force Base, California', description='Martin was one of 22 people arrested for crossing over a line established by the Air Force in an anti-militarization protest at California\'s Vandenberg Air Force base. He was charged with trespassing.'),
-
   Charge(fWillard, lewdConduct, date(2012, 7, 18), 'Hollywood, California', description='Lewd conduct, the then-72-year-old actor was handcuffed after he was caught with his pants down at a Hollywood porn theater. "It was embarrassing. Embrassing as hell," the "American Pie" actor told Jimmy Kimmel. "It\'s the last time I\'m going to listen to my wife when she says, \'Why don\'t you go out to see a movie?\'"'),
 
-  Charge(wRyder, shoplifting, date(2001, 12, 12), 'Beverly Hills, California', description='Ryder was caught shoplifting almost $5,000 worth of merchandise from a Saks Fifth Avenue in Beverly Hills. Ryder remains notoriously tight-lipped about the incident, but did tell Vogue in 2007 that she didnt feel all that bad about it. "I didn\'t have this tremendous sense of guilt, because I hadn\'t hurt anyone," she said.'),
+  Charge(gClooney, civilDisobedience, date(2012, 3, 16), 'Washington D.C.', description='Clooney was arrested Friday for civil disobedience after taking part in a protest outside of the Sudanese embassy in Washington, D.C.'),
 
   Charge(jOsbourne, publicUrination, date(1982, 2, 19), 'San Antonio, Texas', description=' Public urination, intoxication Osbourne was arrested for urinating on a statue honoring the Alamo defenders in San Antonio, Texas. To make things weirder, he was wearing his wife’s dress at the time of his arrest. The arrest got him banned from the city for 10 years, and he was eventually pardoned after making a $10,000 donation to the organization that maintains the Alamo.'),
   
   Charge(jOsbourne, publicIntoxication, date(1982, 2, 19), 'San Antonio, Texas', description=' Public urination, intoxication Osbourne was arrested for urinating on a statue honoring the Alamo defenders in San Antonio, Texas. To make things weirder, he was wearing his wife’s dress at the time of his arrest. The arrest got him banned from the city for 10 years, and he was eventually pardoned after making a $10,000 donation to the organization that maintains the Alamo.')
-  
+
+  Charge(mMcconaughey, possessionMarijuana, date(1999, 10, 29), 'Austin, Texas',
+    description='Actor Matthew McConaughey was arrested early Monday during a disturbance at his home in which police said he was dancing naked and playing the bongo drums.',	
+    attorney=None, classification=None),
+
+  Charge(mMcconaughey, possessionParaphernalia, date(1999, 10, 29), 'Austin, Texas',
+    description='Actor Matthew McConaughey was arrested early Monday during a disturbance at his home in which police said he was dancing naked and playing the bongo drums.'),
+
+  Charge(mMcconaughey, resistingArrest, date(1999, 10, 29), 'Austin, Texas',
+    description='Actor Matthew McConaughey was arrested early Monday during a disturbance at his home in which police said he was dancing naked and playing the bongo drums.',
+    classification='Class A misdemeanor'),
+
+  Charge(mSheen, trespassing, date(2007, 4, 1), 'Nevada', description='Sheen was arrested, with 38 other activists, for trespassing at the Nevada Test Site at a Nevada Desert Experience event protesting against the site.'),
+
+  Charge(mSheen, trespassing, date(2000, 8, 12), 'Vandenberg Air Force Base, California', description='Martin was one of 22 people arrested for crossing over a line established by the Air Force in an anti-militarization protest at California\'s Vandenberg Air Force base. He was charged with trespassing.'),
+
+  Charge(pReubens, indecentExposure, date(1991, 7, 12), None, description='Indecent exposure, masturbating in an adult theater. Nearly two decades later, Reubens claimed he was innocent in a Playboy interview: "I\'m right-handed, and the police report said I was jerking off with my left hand. That would have been the end of the case right there, proof it couldn\'t have been me."'),
+
+  Charge(rDowneyJr, possessionHeroin, date(1996, 6, 23), 'Malibu, Calinfornia',
+    description='On June 23 at 11:15 a.m., Malibu sheriffs pulled him over after his black 1996 Explorer was clocked going 70 mph along a 50-mph stretch of the Pacific Coast Highway. They found heroin, cocaine and crack—and the gun'),
+
+  Charge(rDowneyJr, possessionCocaine, date(1996, 6, 23), 'Malibu, Calinfornia',
+    description='On June 23 at 11:15 a.m., Malibu sheriffs pulled him over after his black 1996 Explorer was clocked going 70 mph along a 50-mph stretch of the Pacific Coast Highway. They found heroin, cocaine and crack—and the gun'),
+
+  Charge(rDowneyJr, possessionFirearm, date(1996, 6, 23), 'Malibu, Calinfornia',
+    description='On June 23 at 11:15 a.m., Malibu sheriffs pulled him over after his black 1996 Explorer was clocked going 70 mph along a 50-mph stretch of the Pacific Coast Highway. They found heroin, cocaine and crack—and the gun'),
+
+  Charge(rDowneyJr, underInfContSubstance, date(1996, 6, 23), 'Malibu, Calinfornia',
+    description='On June 23 at 11:15 a.m., Malibu sheriffs pulled him over after his black 1996 Explorer was clocked going 70 mph along a 50-mph stretch of the Pacific Coast Highway. They found heroin, cocaine and crack—and the gun'),
+
+  Charge(rWitherspoon, dUI, date(2013, 4, 19), None, description='She and husband Jim Toth had been arrested in a DUI incident.'),
+
+  Charge(snoop, saleTransportMarijuana, date(2006, 10, 26), 'Burbank California',
+    description='Broadus was first arrested Oct. 26 at Burbank Airport. Thompson said he had 39.14 grams of marijuana – some of it in individual canisters – at the time of this arrest. A search warrant served at his home in the Diamond Bar in November turned up a semi-automatic handgun', classification='Felony'),
+
+  Charge(snoop, possessionGunFelon, date(2006, 11, 1), 'Burbank, California',
+    description='Broadus was first arrested Oct. 26 at Burbank Airport. Thompson said he had 39.14 grams of marijuana – some of it in individual canisters – at the time of this arrest. A search warrant served at his home in the Diamond Bar in November turned up a semi-automatic handgun', classification='Felony'),
+
+  Charge(wRyder, shoplifting, date(2001, 12, 12), 'Beverly Hills, California', description='Ryder was caught shoplifting almost $5,000 worth of merchandise from a Saks Fifth Avenue in Beverly Hills. Ryder remains notoriously tight-lipped about the incident, but did tell Vogue in 2007 that she didnt feel all that bad about it. "I didn\'t have this tremendous sense of guilt, because I hadn\'t hurt anyone," she said.'),
+ 
 ]
 
 # Add everything to the database
