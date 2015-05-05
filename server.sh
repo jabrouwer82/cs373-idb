@@ -55,11 +55,11 @@ elif [ "$opt" = "stop" ]; then
     pid=$(cat "$apppid")
     echo "Killing prod uwsgi server"
     sudo kill -s SIGINT "$pid"
-    rm "$apppid"
+    sudo rm "$apppid"
     echo "Killing test uwsgi server"
     pid=$(cat "$testpid")
     sudo kill -s SIGINT "$pid"
-    rm "$testpid"
+    sudo rm "$testpid"
     echo "Success, killed both prod and test uwsgi servers."
   else
     echo "Failed to kill uwsgi servers."
