@@ -108,7 +108,7 @@ wRyder = Celebrity(name='Winona Ryder',
                    imdb_url='http://www.imdb.com/name/nm0000213/',
                    picture_url='http://cbsnews2.cbsistatic.com/hub/i/r/2012/01/05/fee18367-a643-11e2-a3f0-029118418759/resize/620x465/e51a52e855a077b839a5e6ace912b77f/winonaryder_ss2jpg.jpg')
 
-celebrities = [cSheen, dMX, fWillard, gClooney, jOsbourne, mMcconaughey, mSheen, pReubens, rDowneyJr, snoop, wRyder]
+celebrities = [cSheen, dMX, fWillard, gClooney, jOsbourne, mMcconaughey, mSheen, pReubens, rDowneyJr, rWitherspoon, snoop, wRyder]
 db.session.add_all(celebrities)
 
 # Aliases
