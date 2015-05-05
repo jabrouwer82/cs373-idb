@@ -7,10 +7,18 @@
 		<h1>Search</h1>
 	</div>
     <ul class="list-group">           
-      {% for item in items %}
+      {% for item in and_items %}
         <li class="list-group-item"><a href="{{ item.href }}">{{ item.name }}</a> - {{ item.description }} </li>
       {% endfor %}
-      {% if not items %}
+    </ul>
+    {% if or_items %}
+    <p>The following results may not contain all search terms.</p>
+    {% endif %}
+    <ul class="list-group">
+      {% for item in or_items %}
+        <li class="list-group-item"><a href="{{ item.href }}">{{ item.name }}</a> - {{ item.description }} </li>
+      {% endfor %}
+      {% if not or_items %}
       <p>No items match your search. Examine your search terms and search table.</p>
       {% endif %}
     </ul>
