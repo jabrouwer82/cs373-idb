@@ -20,7 +20,7 @@
             <li class="list-group-item" style="text-overflow:ellipsis;">
                 <dl>
                     <dt> {{ charge.celebrity.name }} </dt>
-                    <dd> {{ charge.crime.name }} - {{ charge.location }} ({{ date_formatter(charge.date) }}) </dd>
+                    <dd> {{ charge.crime.name }} - {{ charge.location }} ({{ charge.date | date_formatter }}) </dd>
                 </dl>
             </li>
         </a>

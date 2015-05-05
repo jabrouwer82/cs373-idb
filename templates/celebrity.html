@@ -23,7 +23,7 @@
                         {% endif %}
                         {% if celebrity.birthday %}
                         <li class="list-group-item"><b>Birthday</b></li>
-                        <li class="list-group-item">{{ date_formatter(celebrity.birthday) }}</li>
+                        <li class="list-group-item">{{ celebrity.birthday | date_formatter }}</li>
                         {% endif %}
                         {% if celebrity.twitter_handle %}
                         <li class="list-group-item"><b>Twitter</b></li>
@@ -58,7 +58,23 @@
                     <h5 align="center">Crimes charged with:</h5>
                     <ul class="list-group">
                         {% for crime in celebrity.crimes %}
-                        <li class="list-group-item"><a href="/crimes/{{ crime.name }}">{{ crime.name }}</a></li>
+                        <li class="list-group-item">
+                          <a href="/crimes/{{ crime.name }}">{{ crime.name }}</a>
+                          <ul class="list-group">
+                          {% for charge in celebrity.charges %}
+                            {% if charge.crime == crime %}
+                            <li class="list-group-item">
+                              <a href="/charges/{{ charge.id }}">
+                                {{ charge.date | date_formatter }}
+                                {% if charge.location %}
+                                in {{ charge.location }}
+                                {% endif %}
+                              </a>
+                            </li>
+                            {% endif %}
+                          {% endfor %}
+                          </ul>
+                        </li>
                         {% endfor %}
                     </ul>    
                 </div>

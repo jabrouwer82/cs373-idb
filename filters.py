@@ -1,5 +1,8 @@
 import re
 
+def date_formatter(d):
+  return '{month} {day}, {year}'.format(month=d.strftime('%B'), day=d.day, year=d.year)
+
 def stripTwitter(string):
   if string[0] == '@':
     return string[1:]
