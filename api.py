@@ -2,7 +2,6 @@ from flask import Flask, Response, make_response, abort, jsonify, request, url_f
 from models import Celebrity, CelebrityAlias, Crime, CrimeDescription, Charge
 import json
 
-
 class JsonBuild:
   def __init__(self, obj):
     self.obj = obj
@@ -20,7 +19,6 @@ class JsonBuild:
     self.json_map[k] = [abbrev_func(a) for a in getattr(self.obj, k)]
     return self
 
-# TODO(jabrouwer82): Fix these to match the new models
 def celebrity_to_json(r):
   return JsonBuild(r).add_scalars('id', 'name', 'description', 'twitter_handle', 'wiki_url',
                                   'imdb_url', 'picture_url', ) \
@@ -32,32 +30,25 @@ def celebrity_to_json(r):
                      .json_map
                 
 def crime_to_json(r):
-  return JsonBuild(r).add_scalars('id', 'name', 'wiki_url') \
+  return JsonBuild(r).add_scalars('id', 'name', 'wiki_url', 'description') \
                      .add_items(celebrity_abbrev, 'celebrities') \
                      .add_items(charge_abbrev, 'charges') \
-                     .add_items(crime_description_abbrev, 'descriptions') \
                      .json_map
 
 def charge_to_json(r):
-  return JsonBuild(r).add_scalars('location', 'description',
-                                  'attorney', 'classification') \
+  return JsonBuild(r).add_scalars('location', 'description', 'classification') \
                      .add('date', r.date.strftime('%m-%d-%Y') if r.date else None) \
                      .add('crime', crime_abbrev(r.crime)) \
                      .add('celebrity', celebrity_abbrev(r.celebrity)) \
                      .json_map
 
-         
-
 def table_name(table):
   return table.__name__.lower()
-
-
 
 # get url of that func route to when called with ID
 def url_for_call(func, ID):
   # '.' is prepended to access blueprint routes
   return url_for('.' + func, elmt_id=ID, _external=True)
-
 
 # Functions to abbreviate a row in each table
 def crime_abbrev(r):
@@ -75,8 +66,6 @@ def alias_abbrev(r):
 def crime_description_abbrev(r):
   return {'id': r.id, 'location': r.location, 'description': r.description}
 
-
-
 def table_abbrev_json(table, item_abbrev_func):
   json_list = [item_abbrev_func(a) for a in table.query.all()]
   return Response(json.dumps(json_list),  mimetype='application/json') 
@@ -87,12 +76,9 @@ def get_element(table, elmt_id, item_func):
       return jsonify(item_func(match))
     abort(404)
 
-
-
 # Define the interface that app will register to add the api routes
 apiBlueprint = Blueprint('api', __name__)
   
-
 ## Get abbreviations for tables
 @apiBlueprint.route('/api/celebrity')
 def get_celebrities():
@@ -105,7 +91,6 @@ def get_crimes():
 @apiBlueprint.route('/api/charge')
 def get_charges():
   return table_abbrev_json(Charge, charge_abbrev)
-
 
 ## Get specific elements in tables
 @apiBlueprint.route('/api/celebrity/<int:elmt_id>')
@@ -120,10 +105,7 @@ def get_crime(elmt_id):
 def get_charge(elmt_id):
   return get_element(Charge, elmt_id, charge_to_json)
 
-
 @apiBlueprint.errorhandler(404)
 def not_found(error):
     return make_response(jsonify({'error': 'Not found'}), 404)
-
-
 
