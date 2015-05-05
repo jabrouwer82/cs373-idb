@@ -142,10 +142,15 @@ def search():
   and_results = and_query.all()  
   or_query = table.query.filter(search_vector.match(parse_search_query(search_query_or)))
   or_results = or_query.all()  
-  final_results = and_results + [item for item in or_results if item not in and_results]
-  items = [item_mapper(item, search_terms) for item in final_results]
+  or_results = [item for item in or_results if item not in and_results]
+  and_items = [item_mapper(item, search_terms) for item in and_results]
+  or_items = [item_mapper(item, search_terms) for item in or_results]
   #items = [item_mapper(item, search_terms) for item in and_results]
-  return render_template('search.html', items=items, query=search_query, table=table_query)
+  return render_template('search.html',
+                         and_items=and_items,
+                         or_items=or_items,
+                         query=search_query,
+                         table=table_query)
 
 def celeb_item_mapper(celeb, search_terms):
   item = {}
