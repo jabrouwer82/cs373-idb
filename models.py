@@ -86,7 +86,6 @@ class Charge(db.Model):
   date = db.Column(db.DateTime)
   location = db.Column(db.String(MAX_STRING))
   description = db.Column(db.Text)
-  attorney = db.Column(db.String(MAX_STRING))
   classification = db.Column(db.String(MAX_STRING))
 
   celebrity_id = db.Column(db.Integer, db.ForeignKey('celebrity.id'))
@@ -95,7 +94,7 @@ class Charge(db.Model):
   crime = db.relationship('Crime')
   celebrity = db.relationship('Celebrity')
 
-  search_vector = db.Column(TSVectorType('description', 'attorney', 'classification'))
+  search_vector = db.Column(TSVectorType('description', 'classification'))
   
   def __init__(self,
                celebrity,
@@ -103,11 +102,9 @@ class Charge(db.Model):
                date=None,
                location=None,
                description=None,
-               attorney=None,
                classification=None):
     self.celebrity = celebrity
     self.crime = crime
-    self.attorney = attorney
     self.date = date
     self.location = location
     self.celebrity = celebrity

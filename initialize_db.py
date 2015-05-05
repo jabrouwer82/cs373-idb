@@ -239,7 +239,7 @@ charges = [
 
   Charge(mMcconaughey, possessionMarijuana, date(1999, 10, 29), 'Austin, Texas',
     description='Actor Matthew McConaughey was arrested early Monday during a disturbance at his home in which police said he was dancing naked and playing the bongo drums.',	
-    attorney=None, classification=None),
+    classification=None),
 
   Charge(mMcconaughey, possessionParaphernalia, date(1999, 10, 29), 'Austin, Texas',
     description='Actor Matthew McConaughey was arrested early Monday during a disturbance at his home in which police said he was dancing naked and playing the bongo drums.'),

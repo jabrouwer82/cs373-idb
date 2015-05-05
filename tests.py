@@ -6,7 +6,6 @@ import json
 import urllib
 from app import get_app
 
-
 class TestIDB(TestCase):
 
   def setUp(self):
@@ -16,11 +15,11 @@ class TestIDB(TestCase):
   
     db.create_all()
 
-    self.speeding = Crime("Speeding", "www.speeding.com")
+    self.speeding = Crime("Speeding", "www.speeding.com", "Goin' real real fast!")
     self.ched = Celebrity(name='Ched', description='Actor', twitter_handle='@Ched', 
                   birthday=date(1900,1,1), wiki_url='ched.wiki', imdb_url='ched.imdb', picture_url='ched.picture')
     self.charge1 = Charge(date=date(2000,1,1), location='Austin, Texas', 
-              description='Driving Fast!', attorney='James Funk',
+              description='Driving Fast!',
               classification='Class A misdemeanor', 
               crime = self.speeding, 
               celebrity = self.ched)
@@ -30,18 +29,16 @@ class TestIDB(TestCase):
     self.ce1 = Celebrity("1")
     self.ce2 = Celebrity("2")
 
-
   def tearDown(self):
     db.session.remove()
     db.drop_all()
-
 
   ### Test model attributes ###
   def test_crime_attributes(self):
     c = self.speeding
     self.assertEqual(c.name, "Speeding")
     self.assertEqual(c.wiki_url, "www.speeding.com")
-    self.assertEqual(c.descriptions, [])
+    self.assertEqual(c.description, "Goin' real real fast!")
     self.assertEqual(c.celebrities, [])
     self.assertEqual(c.charges, [])
 
@@ -63,7 +60,6 @@ class TestIDB(TestCase):
     self.assertEqual(c.date, date(2000,1,1))
     self.assertEqual(c.description, 'Driving Fast!')
     self.assertEqual(c.location, 'Austin, Texas')
-    self.assertEqual(c.attorney, 'James Funk')
     self.assertEqual(c.classification, 'Class A misdemeanor')
     self.assertEqual(c.crime, self.speeding)
     self.assertEqual(c.celebrity, self.ched)
@@ -153,13 +149,8 @@ class TestIDB(TestCase):
     db.session.add_all([charge1, charge2])
     db.session.commit()
 
-
-
-
-
     str_data = self.app.get('/api/celebrity').get_data().decode("utf-8")
     response_json = json.loads(str_data)
-
 
     #response_json = self.get_json_from_url('/api/celebrity')
     expected = [{'id': 1, 'name': '1', 'uri': 'http://localhost/api/celebrity/1'}, 
@@ -209,7 +200,7 @@ class TestIDB(TestCase):
     charge2 = Charge(self.ce2, self.cr1)
     db.session.add_all([charge1, charge2])
     db.session.commit()
-    expected = {'descriptions': [], 
+    expected = {'description': None, 
                 'wiki_url': None, 
                 'id': 1, 
                 'name': '1', 
@@ -241,7 +232,6 @@ class TestIDB(TestCase):
                 'celebrity': {'name': '1', 'id': 1, 'uri': 'http://localhost/api/celebrity/1'}, 
                 'classification': None, 
                 'location': None, 
-                'attorney': None, 
                 'date': None, 
                 'description': None}
 
@@ -257,8 +247,6 @@ class TestIDB(TestCase):
                 {'uri': 'http://localhost/api/charge/2', 'id': 2}]
     response_json = self.get_json_from_url('/api/charge')
     self.assertEqual(response_json, expected)
- 
-  
 
   def test_charges_api_external(self):
     url = self.external_url + '/api/charge'
@@ -276,7 +264,6 @@ class TestIDB(TestCase):
   def test_charge_api_external(self):
     url = self.external_url + '/api/charge/1'
     c = self.get_json_from_url_external(url)
-    self.assertTrue('attorney' in c)
     self.assertTrue('celebrity' in c)
     self.assertTrue('crime' in c)
     self.assertTrue('classification' in c)
@@ -303,7 +290,7 @@ class TestIDB(TestCase):
     c = self.get_json_from_url_external(url)
     self.assertTrue('celebrities' in c)
     self.assertTrue('charges' in c)
-    self.assertTrue('descriptions' in c)
+    self.assertTrue('description' in c)
     self.assertTrue('id' in c)
     self.assertTrue('name' in c)
     self.assertTrue('wiki_url' in c)
@@ -337,7 +324,6 @@ class TestIDB(TestCase):
     self.assertTrue('picture_url' in c)
     self.assertTrue('twitter_handle' in c)
 
-
   def failtest_should_fail(self):
     self.assertTrue(False)
 
@@ -345,7 +331,6 @@ class TestIDB(TestCase):
     import NotARealModule
     self.assertTrue(True)
     
-
   def get_json_from_url_external(self, url):
     r = urllib.request.urlopen(url)
     return json.loads(r.read().decode("utf-8"))
@@ -353,8 +338,6 @@ class TestIDB(TestCase):
   def get_json_from_url(self, url):
     str_data = self.app.get(url).get_data().decode("utf-8")
     return json.loads(str_data)
-
-
 
 if __name__ == "__main__" :
   main()   
