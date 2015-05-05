@@ -2,8 +2,6 @@ from flask import Flask
 import filters
 from types import FunctionType
 
-
-
 def get_app(db_name):
   app = Flask(__name__)
   app.debug = True
@@ -30,8 +28,6 @@ def get_app(db_name):
   app.register_blueprint(apiBlueprint)
   return app
 
-
 # define main app
 app = get_app('celebsdb')   
-
 
