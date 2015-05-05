@@ -1,4 +1,3 @@
-
 # Usage: python3 run.py [(-p | --port) <port nunmber to use>]
 # Example: python3 run.py -p 5050
 # -p or --port to specify the port to run the server on (default 5000)
@@ -17,6 +16,5 @@ if __name__ == '__main__':
   for opt, arg in opts[0]:
     if opt in ('-p', '--port'):
       port = int(arg)
-
 
   test_app.run(host='0.0.0.0', port=port,  debug=True)
