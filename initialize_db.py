@@ -113,14 +113,14 @@ db.session.add_all(celebrities)
 
 # Aliases
 aliases = [
-    CelebrityAlias('Snoop Dogg', snoop),
     CelebrityAlias('Charlie Sheen', cSheen),
-    CelebrityAlias('Martin Sheen', mSheen),
-    CelebrityAlias('DMX', dMX),
     CelebrityAlias('Dark Man X', dMX),
-    CelebrityAlias('Pee Wee Herman', pReubens),
+    CelebrityAlias('DMX', dMX),
+    CelebrityAlias('Martin Sheen', mSheen),
     CelebrityAlias('Ozzy Osbourne', jOsbourne),
+    CelebrityAlias('Pee Wee Herman', pReubens),
     CelebrityAlias('RDJ', rDowneyJr)
+    CelebrityAlias('Snoop Dogg', snoop),
   ]
 
 
