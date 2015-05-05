@@ -172,14 +172,24 @@ def highlighter(description, terms):
                          description,
                          flags=re.IGNORECASE)
 
-  description = re.sub('</mark>(.{20})(.*?)(.{20})<mark>',
-                       r'</mark>\1 ... \3<mark>',
-                       description)
-  description = re.sub('(.*?)(.{20})<mark>(.*)',
-                       r'... \2<mark>\3',
-                       description)
-  description = re.sub('(.*)</mark>(.{20})(.*)',
-                       r'\1</mark>\2 ...',
+  if description.find('<mark>') >= 20:
+    description = re.sub('(.*?)(.{20})<mark>(.*)',
+                         r'... \2<mark>\3',
+                         description)
+  if description[::-1].find('</mark>'[::-1]) >= 20:
+    description = re.sub('(.*)</mark>(.{20})(.*)',
+                         r'\1</mark>\2 ...',
+                         description)
+  def replace(match):
+    ret = match.group(0)
+    group = match.group(1)
+    if len(group) > 40:
+      ret = '</mark>{buffer1} ... {buffer2}<mark>'.format(buffer1=group[:20],
+                                                          buffer2=group[-20:])
+    return ret
+
+  description = re.sub('</mark>(.*?)<mark>',
+                       replace, 
                        description)
   return description
 
