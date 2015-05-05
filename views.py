@@ -169,7 +169,7 @@ def crime_item_mapper(crime, search_terms):
 def charge_item_mapper(charge, search_terms):
   item = {}
   item['name'] = charge.celebrity.name + ', ' + charge.crime.name + ', ' + date_formatter(charge.date)
-  item['description'] = highlighter(' '.join([val for val in [charge.description, charge.attorney, charge.classification] if val is not None]), search_terms)
+  item['description'] = highlighter(' '.join([val for val in [charge.description, charge.classification] if val is not None]), search_terms)
   item['href'] = '/charges/{id}'.format(id=charge.id)
   return item
 
