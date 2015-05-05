@@ -18,7 +18,7 @@
                             {{ charge.celebrity.name }}
                             <ul class="list-unstyled">
                                 {% for alias in charge.celebrity.aliases %}
-                                <li>{{ alias }}</li>
+                                <li>{{ alias.alias }}</li>
                                 {% endfor %}
                             </ul>
                         </li>
