@@ -1,5 +1,5 @@
 from flask import Flask, Response, make_response, abort, jsonify, request, url_for, Blueprint
-from models import Celebrity, CelebrityAlias, Crime, CrimeDescription, Charge
+from models import Celebrity, CelebrityAlias, Crime, Charge
 import json
 
 class JsonBuild:

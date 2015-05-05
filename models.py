@@ -67,7 +67,6 @@ class Crime(db.Model):
   description = db.Column(db.Text)
   wiki_url = db.Column(db.String(MAX_STRING))
 
-  descriptions = db.relationship('CrimeDescription')
   celebrities = db.relationship('Celebrity', secondary='charge')
   charges = db.relationship('Charge')
 
@@ -80,26 +79,6 @@ class Crime(db.Model):
 
   def __repr__(self):
     return '(Crime {num}: {name})'.format(name=self.name, num=self.id)
-
-class CrimeDescription(db.Model):
-  id = db.Column(db.Integer, primary_key=True)
-  location = db.Column(db.String(MAX_STRING))
-  description = db.Column(db.Text)
-  
-  crime_id = db.Column(db.Integer, db.ForeignKey('crime.id'))
-  
-  crime = db.relationship('Crime')
-  
-  search_vector = db.Column(TSVectorType('location', 'description'))
-  
-  def __init__(self, description, crime, location):
-    self.location = location
-    self.description = description
-    self.crime = crime
-
-  def __repr__(self):
-    return '(Crime Description {num}: {crime})'.format(
-        num=self.id, crime=self.crime)
 
 # Association table
 class Charge(db.Model):
