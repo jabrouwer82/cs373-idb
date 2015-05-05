@@ -18,7 +18,7 @@
       {% for item in or_items %}
         <li class="list-group-item"><a href="{{ item.href }}">{{ item.name }}</a> - {{ item.description }} </li>
       {% endfor %}
-      {% if not or_items %}
+      {% if not or_items and not and_items %}
       <p>No items match your search. Examine your search terms and search table.</p>
       {% endif %}
     </ul>
