@@ -59,7 +59,7 @@
                     <ul class="list-group">
                         {% for crime in celebrity.crimes %}
                         <li class="list-group-item">
-                          <a href="/crimes/{{ crime.name }}">{{ crime.name }}</a>
+                          {{ crime | name_link }}
                           <ul class="list-group">
                           {% for charge in celebrity.charges %}
                             {% if charge.crime == crime %}

@@ -17,7 +17,7 @@
         <ul class="list-group">           
             {% for crime in crimes %}
             <li class="list-group-item" style="text-overflow:ellipsis;">
-                <a href="/crimes/{{ crime.name }}">{{ crime.name }}</a>
+                {{ crime | name_link }}
                 <ul class="list-unstyled">
                     <li>{{ crime.description  | entireFirstSentence }}</li>
                 </ul>

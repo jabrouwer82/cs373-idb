@@ -1,5 +1,15 @@
 import re
 
+from models import Celebrity, Crime
+
+def name_link(item):
+  name = item.name
+  if type(item) == Celebrity:
+    link = '/celebrities/{id}'.format(id=item.id)
+  elif type(item) == Crime:
+    link = '/crimes/{id}'.format(id=item.name)
+  return '<a href="{link}">{name}</a>'.format(name=name, link=link)
+
 def date_formatter(d):
   return '{month} {day}, {year}'.format(month=d.strftime('%B'), day=d.day, year=d.year)
 

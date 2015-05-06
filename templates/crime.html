@@ -12,7 +12,7 @@
                 <p>{{ crime.description }}</p>
                 {% endif %}
                 {% if crime.wiki_url %}
-                <a href="{{ crime.wiki_url }}" target="_blank">More info...</a>
+                <a href="{{ crime.wiki_url }}" target="_blank">More info (wikipedia)...</a>
                 {% endif %}
                 {% if crime.description or crime.wiki_url %}
                 <hr/>
@@ -22,9 +22,7 @@
                 <ul class="list-group">
                   {% for celebrity in crime.celebrities %}
                     <li class="list-group-item">
-                      <a href="/celebrities/{{ celebrity.id }}">
-                        {{ celebrity.name }}
-                      </a>
+                      {{ celebrity | name_link }}
                       <ul class="list-group">
                         {% for charge in celebrity.charges %}
                           {% if charge.crime == crime %}

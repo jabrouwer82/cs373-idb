@@ -1,11 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
+    <style>
+      h4 a {
+        color: inherit;
+      }
+    </style>
     <title>{{ charge.celebrity.name }} charged with {{ charge.crime.name }}</title>
     <div class="container">
         <div class="page-header"><h1>Details of the Charge</h1></div>
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h4>{{ charge.celebrity.name }} was charged with {{ charge.crime.name }} on {{ charge.date | date_formatter }}</h4>
+                <h4>{{ charge.celebrity | name_link }} was charged with {{ charge.crime | name_link }} on {{ charge.date | date_formatter }}</h4>
             </div>
             <div class="panel-body">
                 <div class="container-fluid col-md-8">
@@ -15,12 +20,15 @@
                     <ul class="list-group">
                         <li class="list-group-item"><img src="{{ charge.celebrity.picture_url }}" class="img-thumbnail"></li>
                         <li class="list-group-item">
-                            {{ charge.celebrity.name }}
+                            {{ charge.celebrity | name_link }}
                             <ul class="list-unstyled">
                                 {% for alias in charge.celebrity.aliases %}
                                 <li>{{ alias.alias }}</li>
                                 {% endfor %}
                             </ul>
+                        </li>
+                        <li class="list-group-item">
+                          {{ charge.crime | name_link }}
                         </li>
                         {% if charge.classification %}
                         <li class="list-group-item">Charge classified as: {{ charge.classification }}</li>
