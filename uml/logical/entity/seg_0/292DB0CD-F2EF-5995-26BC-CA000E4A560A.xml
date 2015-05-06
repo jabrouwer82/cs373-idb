@@ -52,6 +52,19 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>4000</dataTypeSize>
 </Attribute>
+<Attribute name="description" id="EE8EF69D-1925-2681-2FF5-0090DEB422DD">
+<createdBy>jacobbrouwer</createdBy>
+<createdTime>2015-05-06 01:36:36 UTC</createdTime>
+<ownerDesignName>uml</ownerDesignName>
+<engineerTo>
+<item key="229F7542-0ACA-84EC-1F0E-D6BE5A08378A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="A155E571-C921-DB86-E9E0-0C805D801CEB" name="Crime PK">

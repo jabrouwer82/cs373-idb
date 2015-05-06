@@ -4,9 +4,7 @@
    <object objectType="Entity" objectID="F1AC1169-6A23-B6B6-6626-5D408E727E78" name="CelebrityAlias" seqName="seg_0"/>
    <object objectType="Entity" objectID="16982949-63CA-FBB7-23F9-6B6F8B57A84F" name="Charge" seqName="seg_0"/>
    <object objectType="Entity" objectID="292DB0CD-F2EF-5995-26BC-CA000E4A560A" name="Crime" seqName="seg_0"/>
-   <object objectType="Entity" objectID="86F74B08-0B13-570D-8E03-696CDD11E149" name="CrimeDescription" seqName="seg_0"/>
    <object objectType="Relation" objectID="D1697BDA-4715-5937-3944-191F83BD8344" name="Relation_1" seqName="seg_0"/>
-   <object objectType="Relation" objectID="E61458C0-2650-4C20-922D-0FAEFBF34AF4" name="Relation_2" seqName="seg_0"/>
    <object objectType="Relation" objectID="49B4437D-DB27-C306-D3BE-A36C7C954FDC" name="Relation_3" seqName="seg_0"/>
    <object objectType="Relation" objectID="DE4AFF58-3611-C2A4-7F17-1C9F62A62C02" name="Relation_5" seqName="seg_0"/>
 </oracle.dbtools.crest.model.design.logical.LogicalDesign>

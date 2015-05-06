@@ -52,19 +52,6 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>4000</dataTypeSize>
 </Attribute>
-<Attribute name="attorney" id="CCA80344-2789-CD40-4BE0-5EC2030BAB1F">
-<createdBy>jacobbrouwer</createdBy>
-<createdTime>2015-03-24 20:38:53 UTC</createdTime>
-<ownerDesignName>uml</ownerDesignName>
-<engineerTo>
-<item key="229F7542-0ACA-84EC-1F0E-D6BE5A08378A" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>4000</dataTypeSize>
-</Attribute>
 <Attribute name="date" id="E55267A1-7DA5-5F22-109C-59486C164CEB">
 <createdBy>jacobbrouwer</createdBy>
 <createdTime>2015-03-24 20:39:10 UTC</createdTime>
